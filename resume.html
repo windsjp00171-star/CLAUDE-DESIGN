@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMMARK · 履歷 — 全端工程師 × AI 協作</title>
+<meta name="description" content="EMMARK 履歷 — 全端工程師 × AI 協作。6 個月 10 個部署專案、117K 行程式碼。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --amber:#b8791a; --ink:#1d2129; --sub:#52596b; --line:#e3e6ec;
+    --bg:#ffffff; --soft:#f7f8fa; --chip:#eef0f4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{background:#eceef2;font-family:'Noto Sans TC',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink);line-height:1.55;}
+  .page{
+    max-width:820px;margin:24px auto;background:var(--bg);
+    padding:46px 52px;box-shadow:0 8px 40px rgba(0,0,0,.12);border-radius:6px;
+  }
+  /* ---- Header ---- */
+  header{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;
+    border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:22px;}
+  .brand{display:flex;align-items:center;gap:14px;}
+  .palm{flex:0 0 auto;width:44px;height:44px;}
+  .name{font-family:'Noto Serif TC',serif;font-weight:900;font-size:30px;letter-spacing:1px;line-height:1.1;}
+  .name small{display:block;font-family:'JetBrains Mono',monospace;font-weight:500;
+    font-size:11px;letter-spacing:2px;color:var(--amber);margin-top:4px;}
+  .role{font-family:'Noto Serif TC',serif;font-weight:700;font-size:15px;color:var(--sub);margin-top:6px;}
+  .contact{text-align:right;font-size:12px;color:var(--sub);line-height:1.9;white-space:nowrap;}
+  .contact a{color:var(--sub);text-decoration:none;}
+  .contact b{color:var(--ink);}
+  /* ---- Summary ---- */
+  .summary{font-size:13.5px;color:#384053;margin-bottom:6px;}
+  .verse{font-size:11.5px;color:#8a91a1;font-style:italic;margin-bottom:22px;}
+  /* ---- Stats ---- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
+  .stat{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 14px;text-align:center;}
+  .stat .num{font-family:'Noto Serif TC',serif;font-weight:900;font-size:24px;color:var(--amber);line-height:1;}
+  .stat .lab{font-size:11px;color:var(--sub);margin-top:6px;}
+  /* ---- Section ---- */
+  section{margin-bottom:22px;}
+  h2{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:12px;letter-spacing:2px;
+    color:var(--amber);text-transform:uppercase;border-bottom:1px solid var(--line);
+    padding-bottom:6px;margin-bottom:14px;display:flex;gap:8px;align-items:baseline;}
+  h2 span{font-family:'Noto Sans TC';font-weight:700;font-size:15px;letter-spacing:0;color:var(--ink);}
+  /* ---- Projects ---- */
+  .proj{margin-bottom:13px;page-break-inside:avoid;}
+  .proj-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+  .proj-name{font-weight:700;font-size:14px;}
+  .proj-name em{font-style:normal;color:var(--amber);font-family:'JetBrains Mono',monospace;font-size:11px;margin-right:7px;}
+  .proj-kind{font-size:11px;color:#8a91a1;white-space:nowrap;}
+  .proj-desc{font-size:12.5px;color:#42495a;margin:2px 0 4px;}
+  .tags{display:flex;flex-wrap:wrap;gap:5px;}
+  .tag{font-family:'JetBrains Mono',monospace;font-size:10px;background:var(--chip);
+    color:#4a5163;padding:2px 8px;border-radius:99px;}
+  /* ---- Skills ---- */
+  .skill-row{display:grid;grid-template-columns:128px 1fr;gap:12px;font-size:12.5px;
+    padding:5px 0;border-bottom:1px dashed var(--line);}
+  .skill-row:last-child{border-bottom:none;}
+  .skill-cat{font-weight:700;color:var(--ink);}
+  .skill-val{color:#42495a;}
+  /* ---- How I work ---- */
+  .work{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .work h3{font-size:12px;font-family:'JetBrains Mono',monospace;font-weight:500;
+    letter-spacing:1px;margin-bottom:8px;}
+  .work .me h3{color:var(--amber);}
+  .work .ai h3{color:#6b5fd0;}
+  .work ul{list-style:none;font-size:12px;color:#42495a;}
+  .work li{padding:2px 0 2px 14px;position:relative;}
+  .work li::before{content:'▸';position:absolute;left:0;color:#b9c0cd;}
+  /* ---- Footer ---- */
+  footer{border-top:1px solid var(--line);padding-top:12px;margin-top:8px;
+    font-size:11px;color:#8a91a1;text-align:center;font-family:'JetBrains Mono',monospace;}
+  /* ---- Print ---- */
+  .printbar{max-width:820px;margin:0 auto 0;text-align:right;}
+  .printbar button{font-family:'JetBrains Mono',monospace;font-size:12px;cursor:pointer;
+    background:var(--ink);color:#fff;border:none;padding:9px 18px;border-radius:99px;}
+  @media print{
+    body{background:#fff;}
+    .page{box-shadow:none;margin:0;border-radius:0;max-width:none;padding:24px 28px;}
+    .printbar{display:none;}
+    @page{margin:12mm;}
+  }
+</style>
+</head>
+<body>
+
+<div class="printbar"><button onclick="window.print()">⬇ 列印 / 存成 PDF</button></div>
+
+<div class="page">
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <svg class="palm" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="46" y="34" width="8" height="52" rx="4" fill="#b8791a"/>
+        <path d="M50 34 Q24 24 14 36 Q34 30 50 42 Z" fill="#b8791a"/>
+        <path d="M50 34 Q76 24 86 36 Q66 30 50 42 Z" fill="#b8791a"/>
+        <path d="M50 36 Q40 14 26 12 Q42 24 50 44 Z" fill="#b8791a"/>
+        <path d="M50 36 Q60 14 74 12 Q58 24 50 44 Z" fill="#b8791a"/>
+      </svg>
+      <div>
+        <div class="name">EMMARK<small>以馬內利 × 方舟　EMMANUEL × ARK</small></div>
+        <div class="role">全端工程師 × AI 協作　/　Full-Stack Developer × AI</div>
+      </div>
+    </div>
+    <div class="contact">
+      ✉ <a href="mailto:emmark19890901@gmail.com"><b>emmark19890901@gmail.com</b></a><br>
+      🔗 <a href="https://windsjp00171-star.github.io/CLAUDE-DESIGN/">作品集 Portfolio</a><br>
+      📍 可遠端 · Open to work
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <p class="summary">
+    全端開發者，擅長把模糊的需求變成真正有人在用的產品。以「產品負責人 + 技術主導 × AI」的模式，
+    6 個月內從零交付 10 個已部署專案。所有需求、UX、架構與上線把關都是我的判斷；
+    AI 是我 10 倍速的工程師夥伴。從第一行程式碼就把資安與隱私當成預設，而非事後補丁。
+  </p>
+  <p class="verse">「義人要發旺如棕樹，生長如黎巴嫩的香柏樹。」— 詩篇 92:12 · 用程式碼服事</p>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><div class="num">10</div><div class="lab">個落地專案</div></div>
+    <div class="stat"><div class="num">117K</div><div class="lab">行程式碼</div></div>
+    <div class="stat"><div class="num">444+</div><div class="lab">GitHub Commits</div></div>
+    <div class="stat"><div class="num">6</div><div class="lab">個月持續產出</div></div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>Selected Projects <span>精選作品</span></h2>
+
+    <div class="proj">
+      <div class="proj-head"><div class="proj-name"><em>01</em>天父日記</div><div class="proj-kind">靈修 App · 教會服務</div></div>
+      <div class="proj-desc">讀經計畫自動對應每日經文、Groq LLM 生成反思引導問題、日記提交後永久鎖定（刻意設計的「記錄誠信」）、牧者授權分享。</div>
+      <div class="tags"><span class="tag">Flask</span><span class="tag">Supabase</span><span class="tag">Groq LLM</span><span class="tag">LINE Login</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><div class="proj-name"><em>02</em>活動報名系統</div><div class="proj-kind">服務入口 · 最大規模 / 100 commits</div></div>
+      <div class="proj-desc">教會一站式服務入口，13 個 Blueprint 模組（活動／簽到／課程／週報／代禱）、QR Code 電子簽到。全系統零帳號摩擦——LINE 身分即通行證。</div>
+      <div class="tags"><span class="tag">Flask</span><span class="tag">Supabase</span><span class="tag">LINE OAuth</span><span class="tag">CSRF</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><div class="proj-name"><em>03</em>互動故事裝置</div><div class="proj-kind">互動裝置 · 互動體驗</div></div>
+      <div class="proj-desc">手部追蹤手勢偵測 (WebSocket)、DALL·E 3／Gemini 自動生成故事場景、雙隊搶答遊戲。1 週完成 Windows .exe + macOS .dmg + GitHub Actions 自動 Release。</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">DALL·E 3</span><span class="tag">PyInstaller</span><span class="tag">Inno Setup</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><div class="proj-name"><em>04</em>PitchPal 音樂 Key 工具</div><div class="proj-kind">音樂工具 · 創作工具</div></div>
+      <div class="proj-desc">Krumhansl–Schmuckler 音調輪廓法偵測 Key、±12 半音移調、簡譜轉錄（旋律度數 + 和弦名稱）。部署於 Hugging Face Spaces，公開免費使用。</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">librosa</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">HF Spaces</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><div class="proj-name"><em>05</em>美食獵人</div><div class="proj-kind">RPG 遊戲 · 36 小時部署</div></div>
+      <div class="proj-desc">把吃飯變成 RPG：懸賞令等級系統、Google Places API + 30 天 TTL 快取、Rogue-lite 每日重抽、Canvas 拍立得分享卡。從空 repo 到 Render 正式部署僅 36 小時。</div>
+      <div class="tags"><span class="tag">Flask</span><span class="tag">Supabase</span><span class="tag">Google Places API</span><span class="tag">Canvas API</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><div class="proj-name"><em>06</em>教會整合管理系統</div><div class="proj-kind">整合平台 · 企業級 / 43,795 行</div></div>
+      <div class="proj-desc">整合靈修日記、小組回報、檔案分享、活動報名 4 個子系統，多教會獨立環境部署架構。最大規模專案，展示企業級整合能力。</div>
+      <div class="tags"><span class="tag">Flask</span><span class="tag">Supabase</span><span class="tag">Cloudflare R2</span><span class="tag">Groq</span><span class="tag">DALL·E</span></div>
+    </div>
+
+    <p style="font-size:11px;color:#8a91a1;margin-top:8px;">＋ 小組回報系統 (Django 6 · PWA)、教會資料交換中心 (Cloudflare R2)、教會財務報表系統 (React · TS)、Emmark 小秘書 (LINE Bot · Vercel)。原始碼為私有倉庫。</p>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <h2>Technical Stack <span>技術棧</span></h2>
+    <div class="skill-row"><div class="skill-cat">後端框架</div><div class="skill-val">Flask · Django 6 · FastAPI · Python · RESTful API</div></div>
+    <div class="skill-row"><div class="skill-cat">前端介面</div><div class="skill-val">React · TypeScript · Tailwind CSS · Jinja2 · Canvas API</div></div>
+    <div class="skill-row"><div class="skill-cat">資料與雲端</div><div class="skill-val">Supabase (PostgreSQL) · SQLite · Cloudflare R2 · Render · Vercel · HF Spaces</div></div>
+    <div class="skill-row"><div class="skill-cat">AI / 機器感知</div><div class="skill-val">Groq LLM · Google Gemini · DALL·E 3 · OpenCV · MediaPipe · librosa</div></div>
+    <div class="skill-row"><div class="skill-cat">身分與資安</div><div class="skill-val">LINE OAuth2 · CSRF (hmac) · flask-limiter · HttpOnly/SameSite/Secure · presigned URL · 多租戶隔離</div></div>
+    <div class="skill-row"><div class="skill-cat">交付 & CI/CD</div><div class="skill-val">GitHub Actions · pytest · PWA · PyInstaller · Windows / macOS 跨平台打包</div></div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section>
+    <h2>How I Work <span>我怎麼工作</span></h2>
+    <div class="work">
+      <div class="me">
+        <h3>PRODUCT OWNER — 我負責</h3>
+        <ul>
+          <li>需求定義與產品設計</li>
+          <li>UX 判斷與使用者研究</li>
+          <li>架構決策與技術選型</li>
+          <li>測試驗收與上線把關</li>
+          <li>「這個功能不做」的決定</li>
+        </ul>
+      </div>
+      <div class="ai">
+        <h3>SENIOR ENGINEER × AI — AI 負責</h3>
+        <ul>
+          <li>程式碼實作（≈80%）</li>
+          <li>邊界案例偵測與資安</li>
+          <li>跨專案知識複用</li>
+          <li>Debug 根因分析</li>
+          <li>文件與測試生成</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 EMMARK · 以馬內利 × 方舟 · 全端 × AI 協作 · windsjp00171-star.github.io/CLAUDE-DESIGN</footer>
+</div>
+
+</body>
+</html>
