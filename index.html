@@ -152,6 +152,82 @@ document.addEventListener('DOMContentLoaded', async function() {
     // preserve ordering (React before ReactDOM before Babel before text/babel).
     const doc = new DOMParser().parseFromString(template, 'text/html');
     document.documentElement.replaceWith(doc.documentElement);
+
+    // ── EMMARK · 乘風破浪 進站動畫 ──────────────────────────────────
+    // 文件交換後注入一層方舟蓋板：方舟在三層浪上載浮載沉約 2.4s，
+    // 接著乘風而上、淡出，露出底下的作品集。純 CSS/SVG，不依賴 CDN。
+    try {
+      var __ark = document.createElement('div');
+      __ark.id = '__emmark_intro';
+      var __wave = function (y, amp) {
+        var d = 'M-1200 ' + y + ' q150 ' + (-amp) + ' 300 0';
+        for (var i = 0; i < 12; i++) d += ' t300 0';
+        return d + ' V240 H-1200 Z';
+      };
+      __ark.innerHTML = '<style>'
+        + '#__emmark_intro{position:fixed;inset:0;z-index:2147483647;background:#0f1117;overflow:hidden;'
+        +   'transition:opacity .9s ease,visibility .9s ease;font-family:\'Noto Serif TC\',Georgia,serif;}'
+        + '#__emmark_intro.ei-done{opacity:0;visibility:hidden;pointer-events:none;}'
+        + '#__emmark_intro .ei-glow{position:absolute;left:50%;top:40%;width:130vmax;height:130vmax;'
+        +   'transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(245,166,35,.16),'
+        +   'rgba(239,108,58,.06) 38%,transparent 62%);}'
+        + '#__emmark_intro .ei-cap{position:absolute;left:0;right:0;top:29%;text-align:center;'
+        +   'letter-spacing:.5em;font-size:16px;color:#f5a623;opacity:0;'
+        +   'animation:ei-fade 2s ease forwards .5s;padding-left:.5em;}'
+        + '#__emmark_intro .ei-sub{position:absolute;left:0;right:0;top:calc(29% + 32px);text-align:center;'
+        +   'letter-spacing:.2em;font-size:11px;color:#7e8492;font-family:ui-monospace,monospace;'
+        +   'opacity:0;animation:ei-fade 2s ease forwards .9s;}'
+        + '#__emmark_intro .ei-boat{position:absolute;left:50%;bottom:34vh;width:clamp(120px,17vw,170px);'
+        +   'transform:translateX(-50%);}'
+        + '#__emmark_intro .ei-ark{transform-box:fill-box;transform-origin:50% 100%;'
+        +   'animation:ei-bob 3.6s ease-in-out infinite;}'
+        + '#__emmark_intro .ei-sea{position:absolute;left:0;bottom:0;width:100%;height:46vh;}'
+        + '#__emmark_intro .ei-sea svg{width:100%;height:100%;display:block;}'
+        + '#__emmark_intro .ei-w1{animation:ei-wave 6s linear infinite;}'
+        + '#__emmark_intro .ei-w2{animation:ei-wave 8.5s linear infinite reverse;opacity:.66;}'
+        + '#__emmark_intro .ei-w3{animation:ei-wave 11s linear infinite;opacity:.4;}'
+        + '#__emmark_intro.ei-sail .ei-boat{transform:translateX(-50%) translateY(-72vh) rotate(-6deg) scale(.7);'
+        +   'opacity:0;transition:transform 1.1s cubic-bezier(.4,0,.6,1),opacity 1.1s ease;}'
+        + '#__emmark_intro.ei-sail .ei-cap,#__emmark_intro.ei-sail .ei-sub{opacity:0;transition:opacity .5s ease;}'
+        + '@keyframes ei-bob{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(-13px) rotate(4deg);}}'
+        + '@keyframes ei-wave{from{transform:translateX(0);}to{transform:translateX(-1200px);}}'
+        + '@keyframes ei-fade{to{opacity:1;}}'
+        + '@media (prefers-reduced-motion:reduce){#__emmark_intro .ei-ark,#__emmark_intro .ei-w1,'
+        +   '#__emmark_intro .ei-w2,#__emmark_intro .ei-w3{animation:none;}}'
+        + '</style>'
+        + '<div class="ei-glow"></div>'
+        + '<div class="ei-cap">乘 風 破 浪</div>'
+        + '<div class="ei-sub">EMMARK · 以馬內利 × 方舟</div>'
+        + '<div class="ei-boat">'
+        +   '<svg viewBox="400 224 420 358" width="100%" xmlns="http://www.w3.org/2000/svg">'
+        +     '<g class="ei-ark">'
+        +       '<path d="M610 250 L610 470 L500 470 Z" fill="#f5a623"/>'
+        +       '<rect x="597" y="242" width="26" height="236" rx="13" fill="#f5a623"/>'
+        +       '<path d="M420 490 Q610 610 800 490 L755 490 Q610 555 465 490 Z" fill="#f5a623"/>'
+        +     '</g>'
+        +   '</svg>'
+        + '</div>'
+        + '<div class="ei-sea">'
+        +   '<svg viewBox="0 0 1200 240" preserveAspectRatio="none" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">'
+        +     '<defs><linearGradient id="ei-grad" gradientUnits="userSpaceOnUse" x1="0" y1="20" x2="0" y2="240">'
+        +       '<stop offset="0" stop-color="#fbc24e"/><stop offset="1" stop-color="#b86a12"/>'
+        +     '</linearGradient></defs>'
+        +     '<path class="ei-w3" fill="url(#ei-grad)" d="' + __wave(70, 40) + '"/>'
+        +     '<path class="ei-w2" fill="url(#ei-grad)" d="' + __wave(98, 46) + '"/>'
+        +     '<path class="ei-w1" fill="url(#ei-grad)" d="' + __wave(126, 50) + '"/>'
+        +   '</svg>'
+        + '</div>';
+      document.documentElement.appendChild(__ark);
+      var __ovf = document.documentElement.style.overflow;
+      document.documentElement.style.overflow = 'hidden';
+      setTimeout(function () { __ark.classList.add('ei-sail'); }, 2400);
+      setTimeout(function () { __ark.classList.add('ei-done'); }, 2750);
+      setTimeout(function () {
+        if (__ark.parentNode) __ark.parentNode.removeChild(__ark);
+        document.documentElement.style.overflow = __ovf;
+      }, 3750);
+    } catch (e) { /* 進站動畫為非必要，失敗就直接進站 */ }
+    // ───────────────────────────────────────────────────────────────
     const dead = Array.from(document.scripts);
     for (const old of dead) {
       const s = document.createElement('script');
