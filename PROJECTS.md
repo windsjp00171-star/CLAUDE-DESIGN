@@ -21,7 +21,7 @@
 | 4 | **tianfu-diary** | 個人靈修日記 + AI 反思引導 | Flask + Supabase + LINE | Render | 🟡 部署中，網址待補 |
 | 5 | **GROUP-Devotion** | 學青小組群體共讀靈修 | Flask + Supabase + LINE | Railway | 🟢 上線中 |
 | 6 | **bibile-actionbook** | 互動聖經閱讀（context-aware 標註引擎） | Flask + Supabase | Railway | 🟢 上線中 |
-| 7 | **cell_reporter** | 小組週報回報 | Django 5 + SQLite | ⚠️ **無部署設定** | 🟡 開發中 |
+| 7 | **cell_reporter** | 小組週報回報 | Django 5 + SQLite | **PythonAnywhere** ⚠️ | 🟢 上線中 |
 | 8 | **Church-Financial-Statements** | 教會財務／奉獻／稽核 | React + TS + Vite + Supabase | Vercel | 🔴 **正式站，真實金流** |
 | 9 | **fooding-hunter** | 美食狩獵 RPG（單機） | Flask + Supabase | Render | 🟢 上線中 |
 | 10 | **pitchpal** | 音樂 Key 偵測與移調 | Gradio + librosa | HF Spaces | 🟢 上線中 |
@@ -42,7 +42,7 @@
 | tianfu-diary | ⚠️ 待補 |
 | GROUP-Devotion | https://web-production-c1d3c.up.railway.app |
 | bibile-actionbook | https://web-production-68aee1.up.railway.app |
-| cell_reporter | ⚠️ 尚未部署 |
+| cell_reporter | `https://<帳號>.pythonanywhere.com` ⚠️ 待補實際帳號 |
 | Church-Financial-Statements | ⚠️ 待補（Vercel）|
 | fooding-hunter | https://fooding-hunter.onrender.com |
 | pitchpal | https://winds00171-pitchpal.hf.space |
@@ -109,6 +109,30 @@ OAuth 流程本身幾乎相同，分岔在「登入後寫哪些 session key、�
 
 ---
 
+## ⚠️ 部署方式的例外：cell_reporter
+
+**11 個專案 push 到 GitHub 就自動部署**（Render / Railway / Vercel / GitHub Pages / HF Spaces）。
+**只有 `cell_reporter` 不是**——它跑在 **PythonAnywhere**，三件事跟直覺相反：
+
+1. **push 不會部署**。要到 PA 的 bash console `git pull`，然後**到 Web 分頁按 `Reload`**。
+   沒按 Reload 就是還在跑舊版，而且沒有任何錯誤訊息。
+2. **`settings.py` 在正式站是手動維護的，不從 git 覆蓋**（含正式 LINE 憑證）。
+   改了 settings 並 push，正式站不會有任何變化 —— 靜默失效。
+3. **WSGI 設定檔不在 repo 裡**，在 PA 的 Web 分頁（`/var/www/<帳號>_..._wsgi.py`）。
+
+👉 **不要幫它加 `Procfile` / `render.yaml` / `fly.toml`**，PythonAnywhere 不讀那些，
+加了只會讓下一個人以為它跑在 Render。
+
+它用 SQLite 也是因為 PythonAnywhere 有持久磁碟（Render 免費方案會清掉），
+所以**不要「順手」把它改成跟其他專案一樣接 Supabase**。
+
+備份排程在 PA 的 Tasks 分頁（每日 2:00 打包上傳 Google Drive + Dropbox），
+不在 repo 裡，壞掉不會通知，偶爾要去確認有新檔案。
+
+細節見 `cell_reporter/CLAUDE.md` 的「部署」段與 `小組回報系統_部署工作報告書.md`。
+
+---
+
 ## 各專案的隱藏地雷（跨專案共通）
 
 這幾條在多個專案都會踩到，寫在這裡是為了讓任何一個專案的 session 都查得到。
@@ -149,7 +173,7 @@ OAuth 流程本身幾乎相同，分岔在「登入後寫哪些 session key、�
 ## 待辦
 
 - [ ] 補上 church-data-hub / tianfu-diary / Church-Financial-Statements 的正式網址
-- [ ] cell_reporter：決定是否部署，或標記為純本機工具
+- [ ] 補上 cell_reporter 的 PythonAnywhere 帳號（正式網址）
 - [ ] GROUP-Devotion：Fly.io 搬遷完成後更新此表，並清掉 Railway 設定
 - [ ] Railway 兩個專案設自訂網域（現在的網址看不出是哪個專案）
 - [ ] `cuv.json` 四份副本的同步機制
