@@ -42,7 +42,7 @@
 | tianfu-diary | ⚠️ 待補 |
 | GROUP-Devotion | https://web-production-c1d3c.up.railway.app |
 | bibile-actionbook | https://web-production-68aee1.up.railway.app |
-| cell_reporter | `https://<帳號>.pythonanywhere.com` ⚠️ 待補實際帳號 |
+| cell_reporter | https://anbolc1206.pythonanywhere.com |
 | Church-Financial-Statements | ⚠️ 待補（Vercel）|
 | fooding-hunter | https://fooding-hunter.onrender.com |
 | pitchpal | https://winds00171-pitchpal.hf.space |
@@ -173,7 +173,6 @@ OAuth 流程本身幾乎相同，分岔在「登入後寫哪些 session key、�
 ## 待辦
 
 - [ ] 補上 church-data-hub / tianfu-diary / Church-Financial-Statements 的正式網址
-- [ ] 補上 cell_reporter 的 PythonAnywhere 帳號（正式網址）
 - [ ] GROUP-Devotion：Fly.io 搬遷完成後更新此表，並清掉 Railway 設定
 - [ ] Railway 兩個專案設自訂網域（現在的網址看不出是哪個專案）
 - [ ] `cuv.json` 四份副本的同步機制
