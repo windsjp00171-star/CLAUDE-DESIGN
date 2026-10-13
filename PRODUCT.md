@@ -35,7 +35,7 @@ EMMARK（以馬內利 × 方舟）的個人作品集：展示「全端 × AI 協
 - 目前收錄 13 個專案（天父日記、活動報名／教會入口、小組回報、互動故事裝置、美食獵人、PitchPal、資料交換中心、教會財務、教會整合管理、Emmark 小秘書、聖經互動全書、群體共讀靈修 GROUP、Vibe Coding 實戰課）。
 - 已偵測的過時內容（改版時更新）：整合管理系統已演進為 15 個模組（含差勤、代禱麥田、福音探索）；財務系統已是含傳票、預算、奉獻、權限矩陣、稽核、資產盤點的完整會計系統，非「純前端」；天父日記已具備一鍵匯出與離線閱讀器；教會入口已含門訓學程、行事曆、LIFF；小組回報步驟數（站上寫六步驟、README 寫三步驟）待作者確認。
 - 站上統計數字（127K 行、500+ commits、13 專案）未經重新核算，改版前不得沿用為事實；待作者提供或以實際 repo 重算。
-- 尚未決定：是否新增 sermon-assist-core（無 README）；bible-game、sprital-pets、ordersystem 為空 repo，不收錄。
+- 不收錄：sermon-assist-core（作者 2026-10-13 決定拿掉）；bible-game、sprital-pets、ordersystem 為空 repo。
 - 不得改動既有對外連結（各專案 Live／原始碼連結）除非已確認失效。
 
 ## Brand Commitments

@@ -9,7 +9,7 @@ related_targets: []
 
 Mode: Experience. Visitor: potential client or church partner/peer who wants to see professional ability and how faith is carried out inside that profession. Not an interface for elders (confirmed by author 2026-10-13).
 Action: read the work, open a project, contact by email. Proof: 13 real projects; no testimonials exist.
-Unresolved: LOC and commit totals (not re-counted, not shown); `sermon-assist-core` inclusion.
+Resolved: commit total shown as 近 2,000 次 (re-counted 2026-10); LOC not shown; `sermon-assist-core` excluded by the author.
 
 ## Direction contract
 
