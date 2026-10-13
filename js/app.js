@@ -34,7 +34,7 @@
   var open = null;
 
   D.decks.forEach(function (deck) {
-    var sec = el('div', { 'class': 'deck' });
+    var sec = el('div', { 'class': 'deck', 'data-deck': deck.id });
     var title = el('div', { 'class': 'deck-title' });
     title.appendChild(el('h3', null, deck.name + ' · ' + deck.label));
     title.appendChild(el('span', { 'class': 'measure' }, deck.projects.length + ' 艙'));
