@@ -110,10 +110,10 @@ section { padding: clamp(40px, 7vw, 88px) 0 0; }
 h2 { font-weight: 900; font-size: clamp(1.8rem, 4.4vw, 3rem); line-height: 1.15; text-wrap: balance; }
 .sec-lede { margin-top: 12px; max-width: 38em; color: var(--chalk-soft); text-wrap: pretty; }
 
-.deck { margin-top: 28px; --deck: var(--chalk); }
-.deck[data-deck="ministry"] { --deck: var(--timber); }
-.deck[data-deck="tools"] { --deck: var(--verdigris); }
-.deck[data-deck="play"] { --deck: var(--sea); }
+.deck { margin-top: 28px; --deck: var(--chalk); --deck-bg: var(--hull); }
+.deck[data-deck="ministry"] { --deck: var(--timber); --deck-bg: #8c4d1f; }
+.deck[data-deck="tools"] { --deck: var(--verdigris); --deck-bg: #1e6a5e; }
+.deck[data-deck="play"] { --deck: var(--sea); --deck-bg: #2b6396; }
 .deck-title { display: flex; align-items: baseline; gap: 14px; padding-bottom: 8px; border-bottom: 3px solid var(--deck); }
 .deck-title h3::before { content: ""; display: inline-block; width: .7em; height: .7em; background: var(--deck); margin-right: .55em; }
 .deck-title h3 { font-weight: 900; font-size: 1.35rem; }
@@ -128,16 +128,15 @@ h2 { font-weight: 900; font-size: clamp(1.8rem, 4.4vw, 3rem); line-height: 1.15;
 }
 .room[data-w="3"] { flex: 3 1 340px; min-height: 190px; }
 .room[data-w="1"] { flex: 1 1 200px; min-height: 120px; }
-.room { box-shadow: inset 0 5px 0 var(--deck); padding-top: 22px; }
-.room:hover { background: color-mix(in srgb, var(--deck) 24%, var(--hull)); }
+.room { background-color: var(--deck-bg); box-shadow: inset 0 5px 0 var(--deck); padding-top: 22px; }
+.room:hover { background-color: color-mix(in srgb, var(--deck-bg) 82%, var(--chalk)); }
 .room[aria-expanded="true"] { background: var(--window); color: var(--ink-on-window); }
 .room[aria-expanded="true"] .room-tag { color: #5b2a14; }
 .room-name { font-weight: 900; line-height: 1.2; font-size: 1.15rem; text-wrap: balance; }
 .room[data-w="2"] .room-name { font-size: 1.45rem; }
 .room[data-w="3"] .room-name { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
-.room-tag { font-size: 15px; line-height: 1.5; color: var(--chalk-soft); text-wrap: pretty; }
-.room.private { background-image: repeating-linear-gradient(135deg, rgba(246,237,225,.10) 0 1px, transparent 1px 9px); }
-.room.private:hover { background-color: var(--hull); }
+.room-tag { font-size: 15px; line-height: 1.5; color: var(--chalk); text-wrap: pretty; }
+.room.private { background-image: repeating-linear-gradient(135deg, rgba(246,237,225,.16) 0 1px, transparent 1px 9px); }
 .room[aria-expanded="true"].private { background-image: none; }
 
 .panel {

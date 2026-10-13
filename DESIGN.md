@@ -105,7 +105,7 @@ The ground is committed, not a section color. Every surface is a step of the sam
 
 ## Colors
 
-**Deck colors (added 2026-10).** Each deck carries one drafting-code color: timber (#d08a4a) for 上層甲板, verdigris (#4fb3a2) for 中層甲板, sea (#5aa7d6) for 下層甲板. They appear only as the deck swatch, the 5px top band of each compartment, the deck title rule and the SVG deck labels, never as text or button fills. The 水線以下 band is deep sea (#0e3a47) with sea-colored rules, so the hold reads as below the waterline. Window yellow stays the only accent.
+**Deck colors (added 2026-10).** Each deck carries one drafting-code color, and its compartments are filled with a darkened tone of it: timber (#d08a4a, fill #8c4d1f) for 上層甲板, verdigris (#4fb3a2, fill #1e6a5e) for 中層甲板, sea (#5aa7d6, fill #2b6396) for 下層甲板. Compartment text stays chalk (5.4:1 or better on every fill); the brighter deck color appears only as the 5px top band, the deck title rule and swatch, and the SVG deck labels, never as text. Private compartments add a faint hatch over the fill. The 水線以下 band is deep sea (#0e3a47) with sea-colored rules. Window yellow stays the only accent and the only fill that overrides a deck color (the open compartment).
 
 A one-hue palette of burnt reds and warm chalks with a single yellow light.
 
