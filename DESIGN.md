@@ -1,145 +1,200 @@
 ---
-name: EMMARK 作品集（改版前基準）
-description: 深色底、琥珀金強調、極光背景的單頁開發者作品集；改版前現況快照。
+name: EMMARK 總布置圖
+description: A portfolio drawn as the general arrangement of an ark, chalk linework on red-oxide primer with one window-yellow light.
 colors:
-  night-ink: "#0f1117"
-  panel-ink: "#14161d"
-  popover-ink: "#1b1e26"
-  parchment: "#e8e6e1"
-  mist: "#9aa0ac"
-  slate-muted: "#6b7280"
-  amber: "#f5a623"
-  amber-light: "#ffd488"
-  ember: "#ef6c3a"
-  violet-glow: "#7c6cf0"
-  sky-glow: "#3aa0ef"
-  rose-alert: "#e0556e"
+  oxide: "#7a2616"
+  hull: "#5a190d"
+  hull-deep: "#44110a"
+  chalk: "#f6ede1"
+  chalk-soft: "#e6cfbf"
+  window: "#ffc933"
+  ink-on-window: "#2a0d07"
 typography:
   display:
-    fontFamily: "'Noto Serif TC', serif"
-    fontWeight: 700
+    fontFamily: "Noto Sans TC, system-ui, sans-serif"
+    fontSize: "clamp(2.6rem, 8.2vw, 6rem)"
+    fontWeight: 900
+    lineHeight: 1.02
+    letterSpacing: "-0.01em"
+  headline:
+    fontFamily: "Noto Sans TC, system-ui, sans-serif"
+    fontSize: "clamp(1.8rem, 4.4vw, 3rem)"
+    fontWeight: 900
+    lineHeight: 1.15
+  title:
+    fontFamily: "Noto Sans TC, system-ui, sans-serif"
+    fontSize: "1.15rem to clamp(1.7rem, 3.4vw, 2.4rem)"
+    fontWeight: 900
+    lineHeight: 1.2
   body:
-    fontFamily: "'Noto Sans TC', sans-serif"
+    fontFamily: "Noto Sans TC, system-ui, sans-serif"
+    fontSize: "18px"
     fontWeight: 400
+    lineHeight: 1.75
   label:
-    fontFamily: "'JetBrains Mono', monospace"
-    fontWeight: 500
+    fontFamily: "Noto Sans TC, system-ui, sans-serif"
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: 1.5
+  wordmark:
+    fontFamily: "Barlow Condensed, Noto Sans TC, sans-serif"
+    fontSize: "24px"
+    fontWeight: 700
+    letterSpacing: "0.08em"
+  measure:
+    fontFamily: "JetBrains Mono, ui-monospace, monospace"
+    fontSize: "13px"
+    letterSpacing: "0.04em"
 rounded:
-  chip: "99px"
-  card: "16px"
-  modal: "20px"
-  icon: "12px"
+  none: "0px"
+spacing:
+  gutter: "clamp(16px, 4vw, 56px)"
+  cell: "16px"
+  panel: "clamp(18px, 3vw, 36px)"
+  section: "clamp(40px, 7vw, 88px)"
 components:
-  button-demo:
-    backgroundColor: "{colors.amber}"
-    textColor: "{colors.night-ink}"
-    rounded: "11px"
-    padding: "12px 16px"
-  chip-filter:
-    backgroundColor: "#ffffff0a"
-    textColor: "{colors.mist}"
-    rounded: "{rounded.chip}"
-    padding: "9px 18px"
-  chip-filter-active:
-    backgroundColor: "{colors.amber}"
-    textColor: "{colors.night-ink}"
+  button-primary:
+    backgroundColor: "{colors.window}"
+    textColor: "{colors.ink-on-window}"
+    rounded: "{rounded.none}"
+    padding: "14px 18px"
+    height: "52px"
+  button-secondary:
+    backgroundColor: "{colors.chalk}"
+    textColor: "{colors.oxide}"
+    rounded: "{rounded.none}"
+    padding: "12px 22px"
+  room:
+    backgroundColor: "{colors.oxide}"
+    textColor: "{colors.chalk}"
+    rounded: "{rounded.none}"
+    padding: "16px 16px 18px"
+  room-open:
+    backgroundColor: "{colors.window}"
+    textColor: "{colors.ink-on-window}"
+  panel:
+    backgroundColor: "{colors.hull-deep}"
+    textColor: "{colors.chalk}"
+    padding: "{spacing.panel}"
+  nav-course:
+    backgroundColor: "{colors.oxide}"
+    textColor: "{colors.chalk}"
+    padding: "4px 12px"
 ---
 
-# Design System: EMMARK 作品集（改版前基準）
-
-> 本檔記錄 2026-10 改版前的現況，作為重構的對照基準。改版後會被新的視覺方向取代。
+# Design System: EMMARK 總布置圖
 
 ## Overview
 
-**Creative North Star: "夜間工作台上的琥珀燈"**
+**Creative North Star: "The General Arrangement Drawing"**
 
-深色底上以單一琥珀金作為唯一的聲音，背景有三團緩慢漂移的極光（琥珀、紫、天藍）。整體偏「開發者酷炫感」：卡片 3D 傾斜、滑鼠光暈、標題漸層流動、打字游標、棕樹落葉彩蛋、翻轉技術卡。
+The whole page is one drafting sheet pinned to a red-oxide primer ground. Everything is chalk linework: hairline borders, ruled tables, dimension lines with arrowheads, a title block, section hatching, a scale bar. Projects are compartments on the decks of an ark, and a compartment's size is its rank. The tone is steady and plain-spoken: an engineer's sheet that happens to carry church work, with no neon, no cards, no glass.
+
+The ground is committed, not a section color. Every surface is a step of the same red (oxide, hull, hull-deep), so depth comes from darker or lighter primer and from ruled lines. One accent exists, window yellow, and it is spent on the lit window of the ark, the active compartment, primary actions, and the final line of the closing quote.
 
 **Key Characteristics:**
-- 單一強調色（琥珀）搭配暖白文字，氣質靠漸層與光暈撐起
-- 動效密度高：極光、游標光暈、卡片傾斜、捲動進度條、翻牌
-- 樣式全部內嵌於 Artifact 打包檔，無獨立 CSS 檔
-- 已提供 `prefers-reduced-motion` 降級（極光、標題流動、翻牌）
+- Red-oxide ground across the whole page; chalk is the only ink.
+- Borders and rules carry structure; there are no shadows and no rounded corners.
+- Window yellow is rationed to the places where something is lit, open, or actionable.
+- Black-weight (900) Chinese display type against quiet 400 body text; Latin drafting caps only in the wordmark.
+- Size is rank: flex-weighted compartments, no badges or numbering.
 
 ## Colors
 
-深藍黑底、暖白字、琥珀強調；紫與天藍只出現在背景光與少數分類色。
+A one-hue palette of burnt reds and warm chalks with a single yellow light.
 
 ### Primary
-- **琥珀金** (#f5a623)：連結、按鈕、選取、圖示底、進度條。出現頻率最高的色（約 50 處）。
-- **淡琥珀** (#ffd488)：標題漸層高光與 hover。
-
-### Secondary
-- **餘燼橙** (#ef6c3a)：與琥珀組成漸層（logo、按鈕、標題流動）。
-
-### Tertiary
-- **紫光** (#7c6cf0)、**天藍光** (#3aa0ef)：極光背景與專案分類色。
+- **Window Yellow** (#ffc933): the lit window in the ark drawing, the open compartment fill, primary buttons, focus outline, selection, the panel's top rule, the faith column heading, and the second line of the closing quote. Hover lifts to #ffd966 and active drops to #f0b920 (literal values in the build).
 
 ### Neutral
-- **夜墨** (#0f1117)：頁面底色。
-- **面板墨** (#14161d)、**浮層墨** (#1b1e26)：modal 與術語 popover。
-- **羊皮白** (#e8e6e1)：主要文字。
-- **霧灰** (#9aa0ac)：次要文字與導覽。
-- **石板灰** (#6b7280)：提示與註腳，對比偏低。
+- **Red-Oxide Primer** (#7a2616): page ground, sticky bar, faith box, label plates behind dimension text.
+- **Hull Red** (#5a190d): hover fill for compartments, the right-hand "AI" split column, hatch ground.
+- **Bilge Red** (#44110a): the open compartment panel, the "below the waterline" band, scrollbar track.
+- **Chalk** (#f6ede1): all text and full-strength lines; secondary button fill. Line variants are chalk at 55% (rules) and 18% (inner dividers).
+- **Soft Chalk** (#e6cfbf): secondary text, captions, table headers, labels.
+- **Window Ink** (#2a0d07): text on any yellow surface.
 
 ### Named Rules
-**The Amber Voice Rule.** 琥珀是唯一的行動色；其他色相只作背景光或分類，不作按鈕。
+**The One Light Rule.** Window yellow marks what is lit: the ark's window, the open compartment, the primary action, focus. If two unrelated things on one screen are yellow, one of them is wrong.
+
+**The Primer Rule.** Surfaces are only oxide, hull, or hull-deep. No white, grey, or new hue is introduced; depth is a darker red or a chalk rule.
 
 ## Typography
 
-**Display Font:** Noto Serif TC（serif 後備）
-**Body Font:** Noto Sans TC（sans-serif 後備）
-**Label/Mono Font:** JetBrains Mono
+**Display Font:** Noto Sans TC (with system-ui)
+**Body Font:** Noto Sans TC (with system-ui)
+**Drafting Font:** Barlow Condensed (wordmark only, with Noto Sans TC)
+**Measure Font:** JetBrains Mono (dimension text and small reference marks)
 
-**Character:** 襯線標題帶人文與靈修氣，等寬字用於標籤、技術名詞與提示，有「終端機」感。
+**Character:** Heavy CJK sans at weight 900 for headings reads like stencilled hull lettering; the body stays at 400 with generous leading. Condensed caps and mono appear only as drafting furniture.
 
 ### Hierarchy
-- **Display**（700–900、clamp 縮放）：Hero 標題，含漸層流動。
-- **Title**（700、17–18px）：專案名、技術卡標題。
-- **Body**（400、13.5–16px、行高 1.6–1.7）：內文；卡片內多為 13–14px。
-- **Label**（500、11–13px、mono）：標籤、hint、popover 名詞。
+- **Display** (900, clamp(2.6rem, 8.2vw, 6rem), 1.02): the sheet title h1, balanced wrap.
+- **Headline** (900, clamp(1.8rem, 4.4vw, 3rem), 1.15): section h2.
+- **Title** (900, 1.15rem / 1.45rem / clamp(1.7rem, 3.4vw, 2.4rem), 1.2): compartment names, stepped by compartment weight 1, 2, 3; panel h4 up to 2.2rem.
+- **Body** (400, 18px, 1.75; 17px under 860px): running text, lede at clamp(1.1rem, 2.2vw, 1.35rem), measure about 34 to 38em.
+- **Label** (400 to 700, 15px, 1.5): taglines, tags, title block, table cells, footers.
+- **Wordmark** (Barlow Condensed 700, 24px, 0.08em): top bar only.
+- **Measure** (JetBrains Mono 500, 13px in text; 14 to 15px inside the SVG): dimension lines and scale numerals.
 
 ### Named Rules
-**The Small Print Problem.** 大量說明文字落在 11–13px 且用霧灰／石板灰，對長輩與弱視讀者偏吃力。
+**The Stencil Rule.** Headings are 900 or nothing; there is no mid-weight heading. Contrast comes from 900 against 400.
+
+**The Drafting-Caps Rule.** Barlow Condensed is reserved for the EMMARK wordmark. Mono is reserved for measurements.
 
 ## Layout
 
-單頁縱向捲動，導覽固定頂部（毛玻璃）。區塊：Hero、關於我、作品（可篩選卡片格）、數據、技術、資安、聯絡。內容寬度隨 `clamp()` 邊距縮放。專案卡點擊開 modal。
+A single column on a 1240px wrap with a fluid gutter (16px to 56px). Sections stack with clamp(40px, 7vw, 88px) top spacing and are separated by space and rules, not boxes. The first sheet is a two-column grid (title and lede left, a 260 to 340px title block right) over a full-width SVG elevation. Compartments are a flex-wrap field: base flex 2 1 240px, weight 3 at 340px minimum with a taller 190px cell, weight 1 at 200px; the open panel breaks to a full-width row beneath them. Content columns (bridge, panel columns, bow list) are asymmetric two or three column grids that collapse to one at 860px. At 700px the desktop SVG swaps for a mobile elevation; at 520px compartments go full width.
 
 ## Elevation & Depth
 
-混合：毛玻璃導覽與 modal（`backdrop-filter: blur`）、琥珀光暈陰影（按鈕 hover `0 10px 26px rgba(245,166,35,.42)`）、卡片 3D 傾斜與高光（sheen）。深度主要靠光，不靠實體陰影。
+Flat. There are no box-shadows anywhere. Depth is tonal: oxide is the sheet, hull is a pressed or hovered area, hull-deep is the interior (open panel, below-waterline band). The waterline is drawn as a dashed chalk strip above the hold. Open panels fade and rise 6px over 200ms; this is the only motion besides the ark's one-time draw-in (stroke draw plus window fade, 280ms) and 180 to 200ms background changes, all under `prefers-reduced-motion: no-preference`.
+
+### Named Rules
+**The Flat Sheet Rule.** No shadows, glows, or blur. A state change is a fill change or a rule change.
 
 ## Shapes
 
-大量圓角：膠囊（99px）用於 chip 與標籤，卡片 16–18px，modal 20px，圖示底 12px。邊框為 1px 低透明度白線。
+Square. Every border, button, tag, panel, and field is a rectangle with 0 radius; the only rounded element is the scrollbar thumb. Structure is 1px chalk rules at 55% opacity, 2px full chalk for headers and the deck title underline, and a 3px yellow top rule on the open panel. Private projects are marked by 135-degree chalk hatching at 10% opacity, the same section-hatch idiom as the drawing. Bullets are 9px hairline dashes.
 
 ## Components
 
 ### Buttons
-- **Shape:** 11px 圓角
-- **Primary（demo-btn）:** 琥珀→餘燼 135° 漸層、夜墨字、粗體；hover 上移 2px 並出現琥珀光暈。
+- **Shape:** square, 52px minimum height, 17px bold label with a trailing 1.05em inline-SVG stroke icon.
+- **Primary:** window yellow fill, window ink text, 14px 18px padding (the title block and contact variants widen to 28px sides). Hover #ffd966, active #f0b920, 200ms.
+- **Secondary:** chalk fill with oxide text inside compartment panels (12px 22px), hover white. A plain underlined text link sits beside it.
+- **Outline (nav course link, panel close):** transparent with 1px chalk (or chalk-line) border; nav hover fills chalk with oxide text. Close is 44px minimum height.
+- **Focus:** 3px window outline offset 3px, site-wide.
 
-### Chips
-- **Filter chip:** 膠囊、半透明白底、霧灰字；選取時整顆填琥珀。
+### Compartments (signature)
+A transparent button cell ruled on its right and bottom by chalk lines, name in 900, tagline in soft chalk below. Hover fills hull; open fills yellow with window ink text. Private projects carry diagonal hatching that disappears when open. Size by data weight is the only rank signal.
 
-### Cards / Containers
-- 專案卡：16–18px 圓角、低透明邊框、3D 傾斜與滑鼠高光。
-- 技術卡：翻牌（正面圖示＋名稱，背面白話解釋＋工具標籤）。
+### Detail Panel
+Full-row hull-deep block with a 1px chalk border and 3px yellow top rule. Two columns (1.15fr / 1fr): lists with dash bullets under soft-chalk h5 headings; the faith column is an oxide box with a yellow heading. Tags are 1px outlined rectangles.
 
 ### Navigation
-- 固定頂部、毛玻璃；當前區塊以琥珀標示；右側有醒目的「課程」入口。
+Sticky oxide bar with a bottom chalk rule, wordmark left, text links right with a 2px transparent underline that turns chalk-line on hover. The course link is outlined to stay prominent.
 
-### Signature Components
-- **術語 popover：** 技術標籤 hover 顯示白話解釋（`cursor: help`）。
-- **棕樹落葉彩蛋 / console 彩蛋：** 呼應詩篇 92:12。
+### Title Block and Tables
+Bordered definition list (soft-chalk terms, chalk values, faint inner rules) in the manner of a drawing title block. The equipment table is ruled rows with a 2px chalk header rule and soft-chalk 14px header cells.
+
+### Drawing Furniture
+Inline SVG elevation: 2px chalk outlines, 1px thin lines, mono dimension text on oxide plates, arrow markers, scale bar, a yellow window rectangle, and a yellow-hatched course hatch link on the hull that inverts to solid yellow on hover.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** 保留琥珀作為單一行動色。
-- **Do** 保留 `prefers-reduced-motion` 降級。
+- **Do** keep the whole page on oxide, hull, or hull-deep with chalk ink (#f6ede1).
+- **Do** spend window yellow (#ffc933) only on lit or actionable things, with window ink (#2a0d07) text on it.
+- **Do** build structure from 1px chalk rules at 55% opacity and 2px full-chalk header rules.
+- **Do** carry rank with compartment size alone, via the data weight.
+- **Do** keep corners square (0 radius) and surfaces flat (no shadows).
+- **Do** set headings at weight 900 and body at 400, with 17 to 18px body and 1.75 leading.
+- **Do** gate all motion behind `prefers-reduced-motion: no-preference`, and keep targets clickable while it plays.
 
 ### Don't:
-- **Don't** 把關鍵資訊放在 hover 或翻牌背面才看得到（觸控與連點使用者會漏掉）。
-- **Don't** 用 11–13px 灰字承載重要說明。
+- **Don't** use a card grid, rounded containers, glass, or neon dark-mode developer styling.
+- **Don't** add badges, numbers, or ranking labels to compartments.
+- **Don't** introduce a new hue or a white/grey surface to the primer palette.
+- **Don't** use Barlow Condensed or JetBrains Mono for running text.
+- **Don't** hide required information behind hover or flip states.

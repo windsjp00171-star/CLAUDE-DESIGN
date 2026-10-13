@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T08:30:00Z",
+  "title": "Design System: EMMARK 總布置圖",
+  "extensions": {
+    "colorMeta": {
+      "oxide": { "role": "neutral", "displayName": "Red-Oxide Primer", "canonical": "#7a2616", "tonalRamp": ["#2a0d07", "#44110a", "#5a190d", "#7a2616", "#9c4430", "#bb6b57", "#d79a8b", "#efd0c8"] },
+      "hull": { "role": "neutral", "displayName": "Hull Red", "canonical": "#5a190d", "tonalRamp": ["#1f0905", "#350f08", "#44110a", "#5a190d", "#7a2616", "#9c4430", "#bb6b57", "#d79a8b"] },
+      "hull-deep": { "role": "neutral", "displayName": "Bilge Red", "canonical": "#44110a", "tonalRamp": ["#170603", "#2a0d07", "#350f08", "#44110a", "#5a190d", "#7a2616", "#9c4430", "#bb6b57"] },
+      "chalk": { "role": "neutral", "displayName": "Chalk", "canonical": "#f6ede1", "tonalRamp": ["#6e6459", "#8f8478", "#b0a498", "#cfc3b6", "#e6dccf", "#f6ede1", "#faf4ea", "#fffaf3"] },
+      "chalk-soft": { "role": "neutral", "displayName": "Soft Chalk", "canonical": "#e6cfbf", "tonalRamp": ["#5e4a3e", "#7e6558", "#9e8374", "#bfa595", "#d3baa9", "#e6cfbf", "#f1e0d4", "#f8ede6"] },
+      "window": { "role": "primary", "displayName": "Window Yellow", "canonical": "#ffc933", "tonalRamp": ["#4d3a00", "#7a5b00", "#a67c00", "#d9a300", "#f0b920", "#ffc933", "#ffd966", "#ffeeb3"] },
+      "ink-on-window": { "role": "neutral", "displayName": "Window Ink", "canonical": "#2a0d07", "tonalRamp": ["#0d0402", "#1a0905", "#2a0d07", "#44190f", "#5b2a14", "#7d4a38", "#a67b6c", "#d0b4aa"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Sheet title h1, weight 900." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2, weight 900." },
+      "title": { "displayName": "Title", "purpose": "Compartment names, stepped by weight 1, 2, 3, and panel headings." },
+      "body": { "displayName": "Body", "purpose": "Running text at 18px, 1.75 leading." },
+      "label": { "displayName": "Label", "purpose": "Taglines, tags, title block, table cells." },
+      "wordmark": { "displayName": "Wordmark", "purpose": "Barlow Condensed, top bar EMMARK only." },
+      "measure": { "displayName": "Measure", "purpose": "JetBrains Mono for dimension text and reference marks." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "All transitions and the authored moments." },
+      { "name": "ark-draw", "value": "280ms linear stroke-dashoffset, window fade 280ms with 100ms delay", "purpose": "One-time draw-in of the hull and lighting of the window." },
+      { "name": "panel-open", "value": "200ms, opacity 0 to 1, translateY(-6px) to 0", "purpose": "Compartment detail panel reveal." },
+      { "name": "fill-change", "value": "180ms to 200ms background-color", "purpose": "Compartment and button hover." }
+    ],
+    "breakpoints": [
+      { "name": "wide-stack", "value": "860px" },
+      { "name": "mobile-elevation", "value": "700px" },
+      { "name": "single-column-rooms", "value": "520px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Window-yellow action: email and course entry.",
+      "html": "<a class=\"ds-btn\" href=\"#\">寫信給我</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #ffc933; color: #2a0d07; font-weight: 700; font-size: 17px; text-decoration: none; padding: 14px 18px; min-height: 52px; border-radius: 0; transition: background-color .2s cubic-bezier(.16,1,.3,1); } .ds-btn:hover { background: #ffd966; } .ds-btn:active { background: #f0b920; } .ds-btn:focus-visible { outline: 3px solid #ffc933; outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Chalk-filled link inside an open compartment panel.",
+      "html": "<a class=\"ds-btn-2\" href=\"#\">看線上版</a>",
+      "css": ".ds-btn-2 { display: inline-flex; align-items: center; background: #f6ede1; color: #7a2616; font-weight: 700; font-size: 17px; text-decoration: none; padding: 12px 22px; min-height: 52px; border-radius: 0; } .ds-btn-2:hover { background: #fff; } .ds-btn-2:focus-visible { outline: 3px solid #ffc933; outline-offset: 3px; }"
+    },
+    {
+      "name": "Nav Course Link",
+      "kind": "nav",
+      "refersTo": "nav-course",
+      "description": "Outlined course entry in the sticky bar.",
+      "html": "<a class=\"ds-nav-course\" href=\"#\">課程</a>",
+      "css": ".ds-nav-course { color: #f6ede1; background: #7a2616; font-weight: 700; font-size: 16px; text-decoration: none; border: 1px solid #f6ede1; padding: 4px 12px; } .ds-nav-course:hover { background: #f6ede1; color: #7a2616; } .ds-nav-course:focus-visible { outline: 3px solid #ffc933; outline-offset: 3px; }"
+    },
+    {
+      "name": "Compartment (closed)",
+      "kind": "custom",
+      "refersTo": "room",
+      "description": "Project cell on a deck; size by weight is rank.",
+      "html": "<button class=\"ds-room\" aria-expanded=\"false\"><span class=\"ds-room-name\">天父日記</span><span class=\"ds-room-tag\">提交後鎖定的靈修日記</span></button>",
+      "css": ".ds-room { appearance: none; font: inherit; color: #f6ede1; text-align: left; cursor: pointer; background: #7a2616; border: 0; border-right: 1px solid rgba(246,237,225,.55); border-bottom: 1px solid rgba(246,237,225,.55); padding: 16px 16px 18px; min-height: 120px; width: 260px; display: flex; flex-direction: column; gap: 6px; justify-content: space-between; transition: background-color .18s cubic-bezier(.16,1,.3,1); } .ds-room:hover { background: #5a190d; } .ds-room:focus-visible { outline: 3px solid #ffc933; outline-offset: 3px; } .ds-room-name { font-weight: 900; font-size: 1.45rem; line-height: 1.2; } .ds-room-tag { font-size: 15px; line-height: 1.5; color: #e6cfbf; }"
+    },
+    {
+      "name": "Compartment (open)",
+      "kind": "custom",
+      "refersTo": "room-open",
+      "description": "Active compartment, the one place yellow fills a surface.",
+      "html": "<button class=\"ds-room-open\" aria-expanded=\"true\"><span class=\"ds-room-open-name\">天父日記</span><span class=\"ds-room-open-tag\">提交後鎖定的靈修日記</span></button>",
+      "css": ".ds-room-open { appearance: none; font: inherit; text-align: left; cursor: pointer; background: #ffc933; color: #2a0d07; border: 0; border-right: 1px solid rgba(246,237,225,.55); border-bottom: 1px solid rgba(246,237,225,.55); padding: 16px 16px 18px; min-height: 120px; width: 260px; display: flex; flex-direction: column; gap: 6px; justify-content: space-between; } .ds-room-open:focus-visible { outline: 3px solid #2a0d07; outline-offset: -6px; } .ds-room-open-name { font-weight: 900; font-size: 1.45rem; line-height: 1.2; } .ds-room-open-tag { font-size: 15px; line-height: 1.5; color: #5b2a14; }"
+    },
+    {
+      "name": "Private Compartment",
+      "kind": "custom",
+      "refersTo": "room",
+      "description": "Private project: diagonal chalk hatching, no source link.",
+      "html": "<button class=\"ds-room-private\"><span class=\"ds-room-private-name\">教會財務系統</span></button>",
+      "css": ".ds-room-private { appearance: none; font: inherit; color: #f6ede1; text-align: left; cursor: pointer; background-color: #7a2616; background-image: repeating-linear-gradient(135deg, rgba(246,237,225,.10) 0 1px, transparent 1px 9px); border: 0; border-right: 1px solid rgba(246,237,225,.55); border-bottom: 1px solid rgba(246,237,225,.55); padding: 16px; min-height: 120px; width: 260px; } .ds-room-private:hover { background-color: #5a190d; } .ds-room-private:focus-visible { outline: 3px solid #ffc933; outline-offset: 3px; } .ds-room-private-name { font-weight: 900; font-size: 1.45rem; line-height: 1.2; }"
+    },
+    {
+      "name": "Detail Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Opened compartment: professional column and faith column under a yellow top rule.",
+      "html": "<div class=\"ds-panel\"><h4>天父日記</h4><div class=\"ds-cols\"><div><h5>專業</h5><ul><li>提交後鎖定</li></ul></div><div class=\"ds-faith\"><h5>信仰</h5><p>聖經字句不可編輯。</p></div></div></div>",
+      "css": ".ds-panel { background: #44110a; color: #f6ede1; border: 1px solid #f6ede1; border-top: 3px solid #ffc933; padding: 28px; width: 560px; } .ds-panel h4 { font-weight: 900; font-size: 1.8rem; line-height: 1.2; margin: 0; } .ds-cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; margin-top: 24px; } .ds-cols h5 { margin: 0 0 12px; font-size: 1rem; font-weight: 700; color: #e6cfbf; letter-spacing: .08em; padding-bottom: 8px; border-bottom: 1px solid rgba(246,237,225,.55); } .ds-cols ul { list-style: none; padding: 0; margin: 0; } .ds-cols li { padding: 6px 0 6px 18px; position: relative; } .ds-cols li::before { content: ''; position: absolute; left: 0; top: 1.05em; width: 9px; height: 1px; background: #f6ede1; } .ds-faith { background: #7a2616; border: 1px solid rgba(246,237,225,.55); padding: 18px 20px; } .ds-faith h5 { color: #ffc933; border-bottom-color: rgba(255,201,51,.5); } .ds-faith p { margin: 0; }"
+    },
+    {
+      "name": "Title Block",
+      "kind": "custom",
+      "refersTo": "panel",
+      "description": "Drafting-sheet title block with the email action beneath.",
+      "html": "<aside class=\"ds-tb\"><dl><dt>圖名</dt><dd>EMMARK 作品集</dd><dt>修訂</dt><dd>2026-10</dd></dl></aside>",
+      "css": ".ds-tb { border: 1px solid rgba(246,237,225,.55); font-size: 15px; color: #f6ede1; width: 320px; } .ds-tb dl { display: grid; grid-template-columns: auto 1fr; margin: 0; } .ds-tb dt, .ds-tb dd { margin: 0; padding: 9px 12px; border-top: 1px solid rgba(246,237,225,.18); } .ds-tb dt { color: #e6cfbf; border-right: 1px solid rgba(246,237,225,.18); white-space: nowrap; } .ds-tb dl > :nth-child(-n+2) { border-top: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The General Arrangement Drawing",
+    "overview": "The whole page is one drafting sheet pinned to a red-oxide primer ground. Everything is chalk linework: hairline borders, ruled tables, dimension lines with arrowheads, a title block, section hatching, a scale bar. Projects are compartments on the decks of an ark, and a compartment's size is its rank. The tone is steady and plain-spoken: an engineer's sheet that happens to carry church work, with no neon, no cards, no glass.\n\nThe ground is committed, not a section color. Every surface is a step of the same red (oxide, hull, hull-deep), so depth comes from darker or lighter primer and from ruled lines. One accent exists, window yellow, and it is spent on the lit window of the ark, the active compartment, primary actions, and the final line of the closing quote.",
+    "keyCharacteristics": [
+      "Red-oxide ground across the whole page; chalk is the only ink.",
+      "Borders and rules carry structure; there are no shadows and no rounded corners.",
+      "Window yellow is rationed to the places where something is lit, open, or actionable.",
+      "Black-weight (900) Chinese display type against quiet 400 body text; Latin drafting caps only in the wordmark.",
+      "Size is rank: flex-weighted compartments, no badges or numbering."
+    ],
+    "rules": [
+      { "name": "The One Light Rule", "body": "Window yellow marks what is lit: the ark's window, the open compartment, the primary action, focus. If two unrelated things on one screen are yellow, one of them is wrong.", "section": "colors" },
+      { "name": "The Primer Rule", "body": "Surfaces are only oxide, hull, or hull-deep. No white, grey, or new hue is introduced; depth is a darker red or a chalk rule.", "section": "colors" },
+      { "name": "The Stencil Rule", "body": "Headings are 900 or nothing; there is no mid-weight heading. Contrast comes from 900 against 400.", "section": "typography" },
+      { "name": "The Drafting-Caps Rule", "body": "Barlow Condensed is reserved for the EMMARK wordmark. Mono is reserved for measurements.", "section": "typography" },
+      { "name": "The Flat Sheet Rule", "body": "No shadows, glows, or blur. A state change is a fill change or a rule change.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the whole page on oxide, hull, or hull-deep with chalk ink (#f6ede1).",
+      "Do spend window yellow (#ffc933) only on lit or actionable things, with window ink (#2a0d07) text on it.",
+      "Do build structure from 1px chalk rules at 55% opacity and 2px full-chalk header rules.",
+      "Do carry rank with compartment size alone, via the data weight.",
+      "Do keep corners square (0 radius) and surfaces flat (no shadows).",
+      "Do set headings at weight 900 and body at 400, with 17 to 18px body and 1.75 leading.",
+      "Do gate all motion behind `prefers-reduced-motion: no-preference`, and keep targets clickable while it plays."
+    ],
+    "donts": [
+      "Don't use a card grid, rounded containers, glass, or neon dark-mode developer styling.",
+      "Don't add badges, numbers, or ranking labels to compartments.",
+      "Don't introduce a new hue or a white/grey surface to the primer palette.",
+      "Don't use Barlow Condensed or JetBrains Mono for running text.",
+      "Don't hide required information behind hover or flip states."
+    ]
+  }
+}
