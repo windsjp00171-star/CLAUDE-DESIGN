@@ -121,7 +121,7 @@ window.PORTFOLIO = {
           tagline: "把吃飯變成 RPG：用懸賞令決定今天吃什麼。",
           tags: ["Flask", "Supabase", "Google Places API", "Canvas API"],
           pro: ["S / A / B / C 等級懸賞令（C 級經驗值最高，是設計上的笑點）", "Places API 加三十天快取，每日重抽機制", "Canvas 拍立得分享卡，不上傳伺服器"],
-          faith: "這個專案沒有信仰命題。我把它留在這裡，是因為它證明了速度：三十六小時從空 repo 到正式部署。",
+          faith: "這個專案和信仰沒有直接關係，但做它的人就是基督徒，做事的態度沒有兩樣。我把它留在這裡，也是因為它證明了速度：三十六小時從空 repo 到正式部署。",
           repoUrl: "https://github.com/windsjp00171-star/fooding-hunter"
         }
       ]
