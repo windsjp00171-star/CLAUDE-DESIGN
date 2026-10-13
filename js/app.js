@@ -13,8 +13,18 @@
     items.forEach(function (t) { ul.appendChild(el('li', null, t)); });
     return ul;
   }
+  var NS = 'http://www.w3.org/2000/svg';
+  function icon(d) {
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24'); svg.setAttribute('class', 'ico'); svg.setAttribute('aria-hidden', 'true');
+    var path = document.createElementNS(NS, 'path'); path.setAttribute('d', d); svg.appendChild(path);
+    return svg;
+  }
+  var EXT = 'M7 17L17 7M9 7h8v8';
+  var X = 'M6 6l12 12M18 6L6 18';
   function link(href, text, cls) {
-    var a = el('a', { href: href, target: '_blank', rel: 'noopener' }, text);
+    var a = el('a', { href: href, target: '_blank', rel: 'noopener' }, text + ' ');
+    a.appendChild(icon(EXT));
     if (cls) a.className = cls;
     return a;
   }
@@ -36,7 +46,7 @@
 
     deck.projects.forEach(function (p) {
       var b = el('button', { type: 'button', 'class': 'room', 'data-w': p.weight, 'aria-expanded': 'false', 'aria-controls': panel.id });
-      b.appendChild(el('span', { 'class': 'room-kind' }, p.kind + (p.isPrivate ? ' · 私有' : '')));
+      if (p.isPrivate) b.classList.add('private');
       b.appendChild(el('span', { 'class': 'room-name' }, p.name));
       b.appendChild(el('span', { 'class': 'room-tag' }, p.tagline));
       b.addEventListener('click', function () { toggle(p, b, panel); });
@@ -49,6 +59,14 @@
     root.appendChild(sec);
   });
 
+  function place(b, panel) {
+    var siblings = Array.prototype.slice.call(b.parentNode.querySelectorAll('.room'));
+    var last = b;
+    siblings.forEach(function (r) { if (r.offsetTop === b.offsetTop) last = r; });
+    last.parentNode.insertBefore(panel, last.nextSibling);
+  }
+  window.addEventListener('resize', function () { var r = rooms[open]; if (r) place(r.b, r.panel); });
+
   function fill(panel, p) {
     panel.textContent = '';
     panel.setAttribute('aria-label', p.name);
@@ -57,7 +75,8 @@
     t.appendChild(el('h4', null, p.name));
     t.appendChild(el('p', { 'class': 'tagline' }, p.tagline));
     head.appendChild(t);
-    var close = el('button', { type: 'button', 'class': 'panel-close' }, '收起 ✕');
+    var close = el('button', { type: 'button', 'class': 'panel-close' }, '收起 ');
+    close.appendChild(icon(X));
     close.addEventListener('click', function () { var r = rooms[open]; if (r) toggle(r.p, r.b, r.panel); r && r.b.focus(); });
     head.appendChild(close);
     panel.appendChild(head);
@@ -98,6 +117,7 @@
     open = p.id;
     b.setAttribute('aria-expanded', 'true');
     fill(panel, p);
+    place(b, panel);
     panel.hidden = false;
     history.replaceState(null, '', '#' + p.id);
     var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;

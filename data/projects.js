@@ -18,7 +18,7 @@ window.PORTFOLIO = {
           tags: ["Flask", "Supabase", "Cloudflare R2", "Groq / Gemini", "LINE Login"],
           pro: ["十五個模組：活動報名、電子簽到、牧養小組、小組回報、門訓學程、天父日記、代禱麥田、行事曆、週報、福音探索、留名單、檔案分享、差勤管理、站內通知、系統更新通知", "差勤依勞基法計算特休、補休與加班", "八種角色權限，從訪客到超級管理員", "內建 /setup-wizard 驗證設定、可選 Sentry 錯誤監控"],
           faith: "模組名稱都來自事工現場：代禱麥田、福音探索、留名單。牧者查看日記必須經會友授權；每間教會自己的資料庫與登入頻道，我只維護程式碼。",
-          demoUrl: "https://github.com/windsjp00171-star/Church-Management-System-demo", demoLabel: "看早期公開 Demo ↗"
+          demoUrl: "https://github.com/windsjp00171-star/Church-Management-System-demo", demoLabel: "看早期公開 Demo"
         },
         {
           id: "event-portal", weight: 2, name: "教會入口與活動報名", kind: "服務入口", isPrivate: true,
@@ -61,7 +61,7 @@ window.PORTFOLIO = {
           tags: ["Flask", "Supabase", "Leaflet.js", "Groq / Gemini", "Vercel"],
           pro: ["脈絡感知標註引擎，四層消歧義自動判斷同名不同人（例如兩位約蘭王）", "本章世系 SVG 樹狀圖，地名卡片內嵌互動地圖", "三層快取（字典、資料庫、AI）壓低成本", "讀者回報驅動的詞條精修流程"],
           faith: "對聖經不能含糊：準確優先於數量。五百八十六條精修詞條，寧可少，不亂猜。",
-          repoUrl: "https://github.com/windsjp00171-star/bibile-actionbook", liveUrl: "https://bibile-actionbook.vercel.app/", liveLabel: "開始讀經 ↗"
+          repoUrl: "https://github.com/windsjp00171-star/bibile-actionbook", liveUrl: "https://bibile-actionbook.vercel.app/", liveLabel: "開始讀經"
         },
         {
           id: "group", weight: 2, name: "群體共讀靈修 GROUP", kind: "共讀靈修", isPrivate: false,
@@ -84,7 +84,7 @@ window.PORTFOLIO = {
           tags: ["Vanilla JS", "Supabase", "Google OAuth", "GitHub Pages", "node:test"],
           pro: ["十五個單元，每單元有互動練習：Git 存檔點模擬器、個資遮罩、程式碼體檢", "學員、講師雙模式與投影模式，一鍵印出紙本學習單", "Google 登入、班級加入碼、講師後台看全班進度", "網頁是教材唯一來源，簡報與 Kahoot 題庫由程式自動產生；講師內容放在另一個私有 repo，不進公開站"],
           faith: "我踩過二十五個坑，寫成教材，讓學員不必再踩一次。",
-          repoUrl: "https://github.com/windsjp00171-star/vibe-coding-course", liveUrl: "https://windsjp00171-star.github.io/vibe-coding-course/", liveLabel: "進入課程 ↗"
+          repoUrl: "https://github.com/windsjp00171-star/vibe-coding-course", liveUrl: "https://windsjp00171-star.github.io/vibe-coding-course/", liveLabel: "進入課程"
         },
         {
           id: "pitchpal", weight: 2, name: "PitchPal 音樂 Key 工具", kind: "音樂工具", isPrivate: false,
@@ -92,7 +92,7 @@ window.PORTFOLIO = {
           tags: ["Python", "librosa", "FastAPI", "React", "HF Spaces"],
           pro: ["Krumhansl–Schmuckler 音調輪廓法偵測 Key", "正負十二個半音滑桿移調、簡譜轉錄（旋律度數加和弦名稱）", "六種音色試音，草稿存在瀏覽器"],
           faith: "為敬拜團隊而做，公開免費使用。",
-          repoUrl: "https://github.com/windsjp00171-star/pitchpal", liveUrl: "https://winds00171-pitchpal.hf.space/", liveLabel: "立即體驗 ↗"
+          repoUrl: "https://github.com/windsjp00171-star/pitchpal", liveUrl: "https://winds00171-pitchpal.hf.space/", liveLabel: "立即體驗"
         },
         {
           id: "secretary", weight: 1, name: "Emmark 小秘書", kind: "LINE Bot", isPrivate: true,
