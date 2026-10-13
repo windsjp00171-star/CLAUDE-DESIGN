@@ -8,6 +8,10 @@ colors:
   chalk: "#f6ede1"
   chalk-soft: "#e6cfbf"
   window: "#ffc933"
+  timber: "#d08a4a"
+  verdigris: "#4fb3a2"
+  sea: "#5aa7d6"
+  deep-sea: "#0e3a47"
   ink-on-window: "#2a0d07"
 typography:
   display:
@@ -100,6 +104,8 @@ The ground is committed, not a section color. Every surface is a step of the sam
 - Size is rank: flex-weighted compartments, no badges or numbering.
 
 ## Colors
+
+**Deck colors (added 2026-10).** Each deck carries one drafting-code color: timber (#d08a4a) for 上層甲板, verdigris (#4fb3a2) for 中層甲板, sea (#5aa7d6) for 下層甲板. They appear only as the deck swatch, the 5px top band of each compartment, the deck title rule and the SVG deck labels, never as text or button fills. The 水線以下 band is deep sea (#0e3a47) with sea-colored rules, so the hold reads as below the waterline. Window yellow stays the only accent.
 
 A one-hue palette of burnt reds and warm chalks with a single yellow light.
 
