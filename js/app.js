@@ -1,6 +1,17 @@
 (function () {
   var D = window.PORTFOLIO;
   if (!D) return;
+  // 即時數字（data/live.js，每小時自動更新）。沒有就只顯示手寫內容。
+  var L = window.PORTFOLIO_LIVE || null;
+  function live(id) { return (L && L.projects && L.projects[id]) || null; }
+  function num(n) { return Number(n).toLocaleString('en-US'); }
+  function cn(n) {
+    var d = '零一二三四五六七八九';
+    if (n < 10) return d[n];
+    if (n < 20) return '十' + (n % 10 ? d[n % 10] : '');
+    if (n < 100) return d[Math.floor(n / 10)] + '十' + (n % 10 ? d[n % 10] : '');
+    return String(n);
+  }
 
   function el(tag, attrs, html) {
     var n = document.createElement(tag);
@@ -49,6 +60,8 @@
       if (p.isPrivate) b.classList.add('private');
       b.appendChild(el('span', { 'class': 'room-name' }, p.name));
       b.appendChild(el('span', { 'class': 'room-tag' }, p.tagline));
+      var lv = live(p.id);
+      if (lv && lv.updated) b.appendChild(el('span', { 'class': 'room-live measure' }, '最近更新 ' + lv.updated));
       b.addEventListener('click', function () { toggle(p, b, panel); });
       rooms[p.id] = { p: p, b: b, panel: panel };
       grid.appendChild(b);
@@ -96,6 +109,19 @@
     p.tags.forEach(function (x) { tags.appendChild(el('span', null, x)); });
     panel.appendChild(tags);
 
+    var lv = live(p.id);
+    if (lv) {
+      var box = el('div', { 'class': 'live' });
+      var facts = '開發紀錄：' + num(lv.commits) + ' 次 commit';
+      if (lv.updated) facts += ' · 最近一次 ' + lv.updated;
+      box.appendChild(el('p', { 'class': 'measure' }, facts));
+      if (lv.notes && lv.notes.length) {
+        box.appendChild(el('h5', null, '最近的更新' + (lv.notesDate ? '（' + lv.notesDate + '）' : '')));
+        box.appendChild(list(lv.notes));
+      }
+      panel.appendChild(box);
+    }
+
     var links = el('div', { 'class': 'links' });
     if (p.liveUrl) links.appendChild(link(p.liveUrl, p.liveLabel || '立即體驗 ↗', 'btn'));
     if (p.repoUrl) links.appendChild(link(p.repoUrl, '看原始碼 ↗', 'plain'));
@@ -127,6 +153,43 @@
   if (location.hash && rooms[location.hash.slice(1)]) {
     var r = rooms[location.hash.slice(1)];
     toggle(r.p, r.b, r.panel);
+  }
+
+  // 作品數由資料算，不寫死在文案裡
+  var total = 0;
+  D.decks.forEach(function (d) { total += d.projects.length; });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-count]'), function (n) { n.textContent = cn(total); });
+
+  if (L) {
+    if (L.generatedAt) {
+      var rev = document.getElementById('rev-date');
+      try { rev.textContent = new Date(L.generatedAt.replace('Z', ':00Z')).toLocaleDateString('sv-SE', { timeZone: 'Asia/Taipei' }) + '（自動更新）'; } catch (e) {}
+    }
+    if (L.totals) {
+      document.getElementById('rev-commits').textContent = num(L.totals.commits) + ' 次 commits（' + L.totals.repos + ' 個 repo）';
+    }
+    // 航行日誌：依最近更新排，點名稱打開那個艙室
+    var rows = [];
+    Object.keys(rooms).forEach(function (id) { var x = live(id); if (x && x.updated) rows.push({ id: id, x: x }); });
+    rows.sort(function (a, b) { return a.x.updated < b.x.updated ? 1 : a.x.updated > b.x.updated ? -1 : 0; });
+    var logRoot = document.getElementById('log-root');
+    if (rows.length && logRoot) {
+      rows.slice(0, 8).forEach(function (row) {
+        var li = el('li');
+        li.appendChild(el('span', { 'class': 'measure' }, row.x.updated));
+        var go = el('a', { href: '#' + row.id }, rooms[row.id].p.name);
+        go.addEventListener('click', function (e) {
+          e.preventDefault();
+          var r = rooms[row.id];
+          if (open !== row.id) toggle(r.p, r.b, r.panel);
+          r.b.focus();
+        });
+        li.appendChild(go);
+        li.appendChild(el('span', { 'class': 'log-note' }, row.x.notes && row.x.notes[0] ? row.x.notes[0] : (row.x.public ? '' : '私有專案，只公開更新日期')));
+        logRoot.appendChild(li);
+      });
+      document.getElementById('log').hidden = false;
+    }
   }
 
   var o = document.getElementById('owner-list');
