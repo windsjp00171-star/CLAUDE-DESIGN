@@ -3,6 +3,7 @@
    weight：3 = 主力作品（大卡片）、2 = 中、1 = 小。卡片大小即重要性。
    pro = 專業做法；faith = 因信仰而做的取捨（誠實寫，沒有就寫沒有）。
    isPrivate：true 時不顯示原始碼連結。
+   shot：作品截圖（img/shots/ 底下，1280×800 webp）。沒有就不放，私有系統不要放含會友資料的畫面。
    repo：這個作品對應的 GitHub repo 名稱。每小時自動抓它的 commit 數與最近更新日期，
          寫進 data/live.js（scripts/update_live.py，見 README）。
          公開 repo 另外會抓 CHANGELOG 最上面幾條；私有 repo 只公開數字，不公開任何文字。 */
@@ -16,7 +17,7 @@ window.PORTFOLIO = {
       label: "教會事工系統",
       projects: [
         {
-          id: "church-ms", weight: 3, name: "教會整合管理系統", kind: "整合平台", isPrivate: true, repo: "Church-Management-System-demo",
+          id: "church-ms", shot: "img/shots/church-ms.webp", weight: 3, name: "教會整合管理系統", kind: "整合平台", isPrivate: true, repo: "Church-Management-System-demo",
           tagline: "一套 LINE 登入的教會行政系統，二十個可選模組，每間教會自己決定要開哪些、各自獨立部署。",
           tags: ["Flask", "Supabase", "Cloudflare R2", "Groq / Gemini", "LINE Login"],
           pro: ["二十個可選模組：活動報名與簽到、門訓學程、聚會點名、小組回報、天父日記、聖經速讀、主日信息、代禱牆、福音探索、留名單、週報、行事曆、檔案分享、同工差勤、禱讀本訂購等", "超管在後台開關模組：關掉的整塊消失（網址、首頁、權限欄位一起），資料照常保留與備份", "後台權限矩陣：權限一份判定，降權或封鎖五分鐘內生效，不必等對方重新登入", "聚會點名的修改紀錄只許追加；場次鎖定後的修改必須附原因", "新教會部署精靈與給非技術同工的交接文件"],
@@ -59,7 +60,7 @@ window.PORTFOLIO = {
           faith: "開發者只維護程式碼，不持有、不接觸教會的檔案與會友資料。"
         },
         {
-          id: "bible-book", weight: 3, name: "聖經互動全書", kind: "聖經閱讀器", isPrivate: false, repo: "bibile-actionbook",
+          id: "bible-book", shot: "img/shots/bible-book.webp", weight: 3, name: "聖經互動全書", kind: "聖經閱讀器", isPrivate: false, repo: "bibile-actionbook",
           tagline: "讀經時看不懂的專名、世系，點開就懂。",
           tags: ["Flask", "Supabase", "Leaflet.js", "Groq / Gemini", "Vercel"],
           pro: ["脈絡感知標註引擎，四層消歧義自動判斷同名不同人（例如兩位約蘭王）", "本章世系 SVG 樹狀圖，地名卡片內嵌互動地圖", "三層快取（字典、資料庫、AI）壓低成本", "改動前後跑全本標註回歸檢查，只列出真正消失的標註"],
@@ -81,7 +82,7 @@ window.PORTFOLIO = {
       label: "工具與教學",
       projects: [
         {
-          id: "course", weight: 3, name: "Vibe Coding 實戰課", kind: "線上課程", isPrivate: false, repo: "vibe-coding-course",
+          id: "course", shot: "img/shots/course-lesson.webp", weight: 3, name: "Vibe Coding 實戰課", kind: "線上課程", isPrivate: false, repo: "vibe-coding-course",
           tagline: "我開的課：帶非工程師用 Claude Code 做出自己的網站。",
           tags: ["Vanilla JS", "Supabase", "Google OAuth", "GitHub Pages", "node:test"],
           pro: ["二十多個單元，從 AI 基礎、安裝、Git、上線，一路到資料庫、LINE 登入、推播、交接與成本", "每單元有互動練習：Git 存檔點模擬器、個資遮罩、程式碼體檢", "學員、講師雙模式與投影模式，一鍵印出紙本學習單", "Google 登入、班級加入碼、講師後台看全班進度", "網頁是教材唯一來源，簡報與 Kahoot 題庫由程式自動產生；講師內容放在另一個私有 repo，不進公開站"],
@@ -89,7 +90,7 @@ window.PORTFOLIO = {
           repoUrl: "https://github.com/windsjp00171-star/vibe-coding-course", liveUrl: "https://windsjp00171-star.github.io/vibe-coding-course/", liveLabel: "進入課程"
         },
         {
-          id: "pitchpal", weight: 2, name: "PitchPal 音樂 Key 工具", kind: "音樂工具", isPrivate: false, repo: "pitchpal",
+          id: "pitchpal", shot: "img/shots/pitchpal.webp", weight: 2, name: "PitchPal 音樂 Key 工具", kind: "音樂工具", isPrivate: false, repo: "pitchpal",
           tagline: "為敬拜帶領者偵測歌曲 Key 並移調。",
           tags: ["Python", "librosa", "FastAPI", "React", "HF Spaces"],
           pro: ["Krumhansl–Schmuckler 音調輪廓法偵測 Key", "正負十二個半音滑桿移調、簡譜轉錄（旋律度數加和弦名稱）", "六種音色試音，草稿存在瀏覽器"],
@@ -110,7 +111,7 @@ window.PORTFOLIO = {
       label: "互動與遊戲",
       projects: [
         {
-          id: "acts-survivors", weight: 3, name: "宣教之路", kind: "像素 roguelite 遊戲", isPrivate: false, repo: "acts-survivors",
+          id: "acts-survivors", shot: "img/shots/acts-survivors.webp", weight: 3, name: "宣教之路", kind: "像素 roguelite 遊戲", isPrivate: false, repo: "acts-survivors",
           tagline: "使徒行傳背景的像素風生存遊戲：敵人是黑暗的勢力，人從來不是敵人。",
           tags: ["Godot 4.4", "GDScript", "JSON 資料驅動", "網頁 / Windows / Android", "itch.io"],
           pro: ["劇情照使徒行傳的時間順序，從五旬節的耶路撒冷走到拔摩海島；最後一章是 1865 年的台南府城", "關卡、同伴、劇情都寫在 JSON，不會寫程式的人也能改", "同一份專案匯出網頁、Windows、Android；存檔碼可跨裝置搬移", "通過劇情後開放自由模式：選主角、組隊、組流派，挑戰信心等級與無盡模式"],

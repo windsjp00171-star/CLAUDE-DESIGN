@@ -40,61 +40,95 @@
     return a;
   }
 
-  var grid = document.getElementById('grid');
-  var panel = el('div', { 'class': 'panel', role: 'region', id: 'detail', hidden: '' });
   var rooms = {};
   var open = null;
   var all = [];
   D.decks.forEach(function (deck) {
-    deck.projects.forEach(function (p, i) { all.push({ p: p, deck: deck, i: all.length }); });
+    deck.projects.forEach(function (p) { all.push({ p: p, deck: deck, i: all.length }); });
   });
-  // 卡片大小即重要性：主力作品排前面，同級照資料檔順序
+  // 重要性決定位置：weight 3 是主力作品（大段落），其餘進「更多作品」；同級照資料檔順序
   all.sort(function (a, b) { return (b.p.weight - a.p.weight) || (a.i - b.i); });
+
+  function frame(src, cls) {
+    var f = el('figure', { 'class': 'frame' + (cls ? ' ' + cls : '') });
+    var bar = el('div', { 'class': 'frame-bar', 'aria-hidden': 'true' });
+    bar.appendChild(el('i')); bar.appendChild(el('i')); bar.appendChild(el('i'));
+    f.appendChild(bar);
+    f.appendChild(el('img', { src: src, alt: '', width: '1280', height: '800', loading: 'lazy', decoding: 'async' }));
+    return f;
+  }
+  function badge(p) { return el('span', { 'class': 'badge' + (p.isPrivate ? '' : ' is-public') }, p.isPrivate ? '私有' : '公開'); }
+
+  var features = document.getElementById('features');
+  var grid = document.getElementById('grid');
+  var gridPanel = el('div', { 'class': 'panel', role: 'region', id: 'detail-grid', hidden: '' });
 
   all.forEach(function (row) {
     var p = row.p;
-    var b = el('button', { type: 'button', 'class': 'tile', 'data-deck': row.deck.id, 'data-w': p.weight, 'aria-expanded': 'false', 'aria-controls': 'detail' });
+    var lv = live(p.id);
+    if (p.weight === 3) {
+      var art = el('article', { 'class': 'feature reveal', 'data-deck': row.deck.id });
+      var copy = el('div', { 'class': 'feature-copy' });
+      copy.appendChild(el('h3', null, p.name));
+      var chip = el('p', { 'class': 'chip' });
+      chip.appendChild(el('span', null, row.deck.label + ' · ' + p.kind));
+      chip.appendChild(badge(p));
+      copy.appendChild(chip);
+      copy.appendChild(el('p', { 'class': 'feature-tag' }, p.tagline));
+      var pts = list(p.pro.slice(0, 3)); pts.className = 'points';
+      copy.appendChild(pts);
+      // 沒截圖的私有系統，信仰取捨已經是主視覺，不再重複一次
+      if (p.shot) copy.appendChild(el('blockquote', { 'class': 'faith-line' }, p.faith.split('。')[0] + '。'));
+      var acts = el('div', { 'class': 'feature-actions' });
+      var panelId = 'detail-' + p.id;
+      var more = el('button', { type: 'button', 'class': 'btn btn-ghost', 'aria-expanded': 'false', 'aria-controls': panelId }, '看完整介紹');
+      acts.appendChild(more);
+      if (p.liveUrl) acts.appendChild(link(p.liveUrl, p.liveLabel || '立即體驗', 'btn'));
+      if (lv && lv.updated) acts.appendChild(el('span', { 'class': 'feature-live' }, '最近更新 ')).appendChild(el('span', { 'class': 'num' }, lv.updated));
+      copy.appendChild(acts);
+      var vis;
+      if (p.shot) { vis = frame(p.shot, 'feature-shot'); }
+      else {
+        // 私有系統不公開畫面：用信仰上的取捨當主視覺，照實標示
+        vis = el('div', { 'class': 'frame feature-shot no-shot' });
+        var inner = el('div', { 'class': 'no-shot-in' });
+        inner.appendChild(icon('M6 11h12v9H6zM9 11V8a3 3 0 0 1 6 0v3'));
+        inner.appendChild(el('p', null, p.faith.split('。')[0] + '。'));
+        inner.appendChild(el('span', null, '私有系統，不公開畫面'));
+        vis.appendChild(inner);
+      }
+      art.appendChild(copy);
+      art.appendChild(vis);
+      var fp = el('div', { 'class': 'panel', role: 'region', id: panelId, hidden: '' });
+      features.appendChild(art);
+      features.appendChild(fp);
+      more.addEventListener('click', function () { toggle(p, more, fp); });
+      rooms[p.id] = { p: p, b: more, panel: fp };
+      return;
+    }
+    var b = el('button', { type: 'button', 'class': 'tile reveal', 'data-deck': row.deck.id, 'data-w': p.weight, 'aria-expanded': 'false', 'aria-controls': 'detail-grid' });
+    if (p.shot) { b.classList.add('has-shot'); var sh = el('span', { 'class': 'tile-shot' }); sh.appendChild(el('img', { src: p.shot, alt: '', width: '1280', height: '800', loading: 'lazy', decoding: 'async' })); b.appendChild(sh); }
     var top = el('span', { 'class': 'tile-top' });
     top.appendChild(el('span', { 'class': 'tile-name' }, p.name));
-    top.appendChild(el('span', { 'class': 'badge' + (p.isPrivate ? '' : ' is-public') }, p.isPrivate ? '私有' : '公開'));
+    top.appendChild(badge(p));
     b.appendChild(top);
-    b.appendChild(el('span', { 'class': 'tile-kind' }, p.kind));
+    b.appendChild(el('span', { 'class': 'tile-kind' }, row.deck.label + ' · ' + p.kind));
     b.appendChild(el('span', { 'class': 'tile-tag' }, p.tagline));
-    if (p.weight === 3 && p.pro && p.pro[0]) b.appendChild(el('span', { 'class': 'tile-pro' }, p.pro[0]));
     var meta = el('span', { 'class': 'tile-meta' });
     meta.appendChild(el('span', { 'class': 'tile-tech' }, p.tags.slice(0, 3).join(' · ')));
-    var lv = live(p.id);
     if (lv && lv.updated) meta.appendChild(el('span', { 'class': 'num' }, lv.updated));
     b.appendChild(meta);
-    b.addEventListener('click', function () { toggle(p, b, panel); });
-    rooms[p.id] = { p: p, b: b, panel: panel };
+    b.addEventListener('click', function () { toggle(p, b, gridPanel); });
+    rooms[p.id] = { p: p, b: b, panel: gridPanel };
     grid.appendChild(b);
   });
-  grid.appendChild(panel);
-
-  // 篩選：全部 + 每個類別
-  var filters = document.getElementById('filters');
-  var cats = [{ id: 'all', label: '全部', n: all.length }].concat(D.decks.map(function (d) { return { id: d.id, label: d.label, n: d.projects.length }; }));
-  cats.forEach(function (c) {
-    var f = el('button', { type: 'button', 'class': 'filter', 'aria-pressed': c.id === 'all' ? 'true' : 'false' });
-    f.appendChild(document.createTextNode(c.label));
-    f.appendChild(el('span', { 'class': 'num' }, String(c.n)));
-    f.addEventListener('click', function () {
-      if (open) { close(open); open = null; history.replaceState(null, '', location.pathname + location.search); }
-      Array.prototype.forEach.call(filters.children, function (x) { x.setAttribute('aria-pressed', x === f ? 'true' : 'false'); });
-      Object.keys(rooms).forEach(function (id) {
-        var t = rooms[id].b;
-        t.hidden = c.id !== 'all' && t.getAttribute('data-deck') !== c.id;
-      });
-    });
-    filters.appendChild(f);
-  });
+  grid.appendChild(gridPanel);
 
   function place(b, panel) {
-    var siblings = Array.prototype.slice.call(grid.querySelectorAll('.tile:not([hidden])'));
+    if (panel !== gridPanel) return;
     var last = b;
-    siblings.forEach(function (r) { if (r.offsetTop === b.offsetTop) last = r; });
-    last.parentNode.insertBefore(panel, last.nextSibling);
+    Array.prototype.forEach.call(grid.querySelectorAll('.tile'), function (r) { if (r.offsetTop === b.offsetTop) last = r; });
+    grid.insertBefore(panel, last.nextSibling);
   }
   window.addEventListener('resize', function () { var r = rooms[open]; if (r) place(r.b, r.panel); });
 
@@ -202,7 +236,6 @@
         go.addEventListener('click', function (e) {
           e.preventDefault();
           var r = rooms[row.id];
-          if (r.b.hidden) filters.firstChild.click();
           if (open !== row.id) toggle(r.p, r.b, r.panel);
           r.b.focus();
         });
@@ -237,6 +270,44 @@
     li.appendChild(el('span', null, s[1]));
     sec.appendChild(li);
   });
+
+  // 動態：只在使用者沒有要求減少動態時啟用；內容預設可見，進場只是從輕微位移回到原位
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!calm && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('motion');
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    Array.prototype.forEach.call(document.querySelectorAll('.reveal'), function (n) { io.observe(n); });
+
+    // 首屏截圖：捲動時從傾斜攤平，滑鼠移動時微微朝游標偏
+    var stack = document.getElementById('screens');
+    var shots = Array.prototype.slice.call(document.querySelectorAll('.feature .frame'));
+    if (stack) {
+      var px = 0, ticking = false;
+      var paint = function () {
+        ticking = false;
+        var r = stack.getBoundingClientRect();
+        var t = Math.min(Math.max(1 - (r.top - innerHeight * 0.15) / (innerHeight * 0.75), 0), 1);
+        stack.style.setProperty('--tilt', (22 * (1 - t)).toFixed(2) + 'deg');
+        stack.style.setProperty('--lean', (px * 4).toFixed(2) + 'deg');
+        // 主力作品的畫面：越接近畫面中央越攤平放大
+        shots.forEach(function (f) {
+          var b = f.getBoundingClientRect();
+          if (b.bottom < -200 || b.top > innerHeight + 200) return;
+          var d = Math.min(Math.abs((b.top + b.height / 2) - innerHeight / 2) / (innerHeight * 0.6), 1);
+          f.style.setProperty('--fp', (1 - d).toFixed(3));
+        });
+      };
+      var ask = function () { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
+      window.addEventListener('scroll', ask, { passive: true });
+      window.addEventListener('resize', ask);
+      if (window.matchMedia('(pointer: fine)').matches) {
+        window.addEventListener('pointermove', function (e) { px = e.clientX / innerWidth - 0.5; ask(); }, { passive: true });
+      }
+      paint();
+    }
+  }
 
   console.log('%c會打開 console 的你，多半是同行。\n「義人要發旺如棕樹」· 詩篇 92:12\n想合作／接案：' + D.email, 'font-size:13px;line-height:1.7;');
 })();
