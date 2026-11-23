@@ -98,6 +98,14 @@ window.PORTFOLIO = {
           repoUrl: "https://github.com/windsjp00171-star/pitchpal", liveUrl: "https://winds00171-pitchpal.hf.space/", liveLabel: "立即體驗"
         },
         {
+          id: "ticket-studio", shot: "img/shots/ticket-studio.webp", weight: 2, name: "票券工作室", kind: "列印工具", isPrivate: false,
+          tagline: "免費線上製作摸彩券、號碼牌、入場券、餐券和名牌，排成 PDF 直接列印。",
+          tags: ["瀏覽器內產生 PDF", "資料只存在瀏覽器", "AI 畫背景", "GitHub Pages"],
+          pro: ["放上圖片、填好號碼範圍，自動連號並排成 A4、A3、B4 或 Letter 的 PDF", "「裁好疊起來就連號」排法：整疊一起裁、依序疊好就是連號，不必一張張整理", "省紙模式算好縮放與頁數，例如 250 張從 125 頁降到 63 頁", "沒有圖也能用內建風格或 AI 畫背景當場做一張券，可加存根與姓名欄", "活動當天用「抽獎紀錄」登記抽出的號碼並投影"],
+          faith: "這個工具和信仰沒有直接關係，但做它的人就是基督徒，做事的態度沒有兩樣：免費、不用註冊，圖片和資料只留在使用者自己的瀏覽器。",
+          repoUrl: "https://github.com/windsjp00171-star/CODETOOL", liveUrl: "https://windsjp00171-star.github.io/CODETOOL/ticket-studio/", liveLabel: "開始製作"
+        },
+        {
           id: "secretary", weight: 1, name: "Emmark 小秘書", kind: "LINE Bot", isPrivate: true, repo: "emmask-secret",
           tagline: "用一句話記行程、待辦和帳，到點自動提醒，也能查服事表。",
           tags: ["LINE Messaging API", "Node.js", "Supabase", "Vercel", "Webhook"],
