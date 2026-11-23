@@ -1,37 +1,483 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-13T08:30:00Z",
-  "title": "Design System: EMMARK 總布置圖",
+  "generatedAt": "2026-11-23T00:00:00Z",
+  "title": "Design System: EMMARK 作品集",
   "extensions": {
     "colorMeta": {
-      "oxide": { "role": "neutral", "displayName": "Red-Oxide Primer", "canonical": "#7a2616", "tonalRamp": ["#2a0d07", "#44110a", "#5a190d", "#7a2616", "#9c4430", "#bb6b57", "#d79a8b", "#efd0c8"] },
-      "hull": { "role": "neutral", "displayName": "Hull Red", "canonical": "#5a190d", "tonalRamp": ["#1f0905", "#350f08", "#44110a", "#5a190d", "#7a2616", "#9c4430", "#bb6b57", "#d79a8b"] },
-      "hull-deep": { "role": "neutral", "displayName": "Bilge Red", "canonical": "#44110a", "tonalRamp": ["#170603", "#2a0d07", "#350f08", "#44110a", "#5a190d", "#7a2616", "#9c4430", "#bb6b57"] },
-      "chalk": { "role": "neutral", "displayName": "Chalk", "canonical": "#f6ede1", "tonalRamp": ["#6e6459", "#8f8478", "#b0a498", "#cfc3b6", "#e6dccf", "#f6ede1", "#faf4ea", "#fffaf3"] },
-      "chalk-soft": { "role": "neutral", "displayName": "Soft Chalk", "canonical": "#e6cfbf", "tonalRamp": ["#5e4a3e", "#7e6558", "#9e8374", "#bfa595", "#d3baa9", "#e6cfbf", "#f1e0d4", "#f8ede6"] },
-      "window": { "role": "primary", "displayName": "Window Yellow", "canonical": "#ffc933", "tonalRamp": ["#4d3a00", "#7a5b00", "#a67c00", "#d9a300", "#f0b920", "#ffc933", "#ffd966", "#ffeeb3"] },
-      "ink-on-window": { "role": "neutral", "displayName": "Window Ink", "canonical": "#2a0d07", "tonalRamp": ["#0d0402", "#1a0905", "#2a0d07", "#44190f", "#5b2a14", "#7d4a38", "#a67b6c", "#d0b4aa"] }
+      "accent": {
+        "role": "primary",
+        "displayName": "Palm Green",
+        "canonical": "#0f7a5c",
+        "tonalRamp": [
+          "#04140e",
+          "#0f2a21",
+          "#0b6b50",
+          "#0f7a5c",
+          "#34d399",
+          "#5fe0ae",
+          "#a7efd1",
+          "#e7f4ef"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Palm Green Hover",
+        "canonical": "#0c6a4f",
+        "tonalRamp": [
+          "#04140e",
+          "#0f2a21",
+          "#0b6b50",
+          "#0f7a5c",
+          "#34d399",
+          "#5fe0ae",
+          "#a7efd1",
+          "#e7f4ef"
+        ]
+      },
+      "accent-text": {
+        "role": "primary",
+        "displayName": "Palm Green Text",
+        "canonical": "#0b6b50",
+        "tonalRamp": [
+          "#04140e",
+          "#0f2a21",
+          "#0b6b50",
+          "#0f7a5c",
+          "#34d399",
+          "#5fe0ae",
+          "#a7efd1",
+          "#e7f4ef"
+        ]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Palm Wash",
+        "canonical": "#e7f4ef",
+        "tonalRamp": [
+          "#04140e",
+          "#0f2a21",
+          "#0b6b50",
+          "#0f7a5c",
+          "#34d399",
+          "#5fe0ae",
+          "#a7efd1",
+          "#e7f4ef"
+        ]
+      },
+      "accent-ink": {
+        "role": "neutral",
+        "displayName": "On Green",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "bg-soft": {
+        "role": "neutral",
+        "displayName": "Soft Paper",
+        "canonical": "#f6f7f8",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0b0d10",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Two",
+        "canonical": "#3d434c",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "#5d6470",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e4e6ea",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "#cfd3da",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "accent-dark": {
+        "role": "primary",
+        "displayName": "Palm Green (dark)",
+        "canonical": "#34d399",
+        "tonalRamp": [
+          "#04140e",
+          "#0f2a21",
+          "#0b6b50",
+          "#0f7a5c",
+          "#34d399",
+          "#5fe0ae",
+          "#a7efd1",
+          "#e7f4ef"
+        ]
+      },
+      "accent-hover-dark": {
+        "role": "primary",
+        "displayName": "Palm Green Hover (dark)",
+        "canonical": "#5fe0ae",
+        "tonalRamp": [
+          "#04140e",
+          "#0f2a21",
+          "#0b6b50",
+          "#0f7a5c",
+          "#34d399",
+          "#5fe0ae",
+          "#a7efd1",
+          "#e7f4ef"
+        ]
+      },
+      "accent-text-dark": {
+        "role": "primary",
+        "displayName": "Palm Green Text (dark)",
+        "canonical": "#5fe0ae",
+        "tonalRamp": [
+          "#04140e",
+          "#0f2a21",
+          "#0b6b50",
+          "#0f7a5c",
+          "#34d399",
+          "#5fe0ae",
+          "#a7efd1",
+          "#e7f4ef"
+        ]
+      },
+      "accent-soft-dark": {
+        "role": "primary",
+        "displayName": "Palm Wash (dark)",
+        "canonical": "#0f2a21",
+        "tonalRamp": [
+          "#04140e",
+          "#0f2a21",
+          "#0b6b50",
+          "#0f7a5c",
+          "#34d399",
+          "#5fe0ae",
+          "#a7efd1",
+          "#e7f4ef"
+        ]
+      },
+      "accent-ink-dark": {
+        "role": "neutral",
+        "displayName": "On Green (dark)",
+        "canonical": "#04140e",
+        "tonalRamp": [
+          "#04140e",
+          "#0f2a21",
+          "#0b6b50",
+          "#0f7a5c",
+          "#34d399",
+          "#5fe0ae",
+          "#a7efd1",
+          "#e7f4ef"
+        ]
+      },
+      "bg-dark": {
+        "role": "neutral",
+        "displayName": "Paper (dark)",
+        "canonical": "#0b0d10",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "bg-soft-dark": {
+        "role": "neutral",
+        "displayName": "Soft Paper (dark)",
+        "canonical": "#111418",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "surface-dark": {
+        "role": "neutral",
+        "displayName": "Surface (dark)",
+        "canonical": "#13161b",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Ink (dark)",
+        "canonical": "#eef0f3",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "ink-2-dark": {
+        "role": "neutral",
+        "displayName": "Ink Two (dark)",
+        "canonical": "#c4c9d1",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "muted-dark": {
+        "role": "neutral",
+        "displayName": "Muted (dark)",
+        "canonical": "#949ba6",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "line-dark": {
+        "role": "neutral",
+        "displayName": "Hairline (dark)",
+        "canonical": "#23272e",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      },
+      "line-strong-dark": {
+        "role": "neutral",
+        "displayName": "Hairline Strong (dark)",
+        "canonical": "#343a43",
+        "tonalRamp": [
+          "#0b0d10",
+          "#23272e",
+          "#3d434c",
+          "#5d6470",
+          "#949ba6",
+          "#cfd3da",
+          "#e4e6ea",
+          "#f6f7f8"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Sheet title h1, weight 900." },
-      "headline": { "displayName": "Headline", "purpose": "Section h2, weight 900." },
-      "title": { "displayName": "Title", "purpose": "Compartment names, stepped by weight 1, 2, 3, and panel headings." },
-      "body": { "displayName": "Body", "purpose": "Running text at 18px, 1.75 leading." },
-      "label": { "displayName": "Label", "purpose": "Taglines, tags, title block, table cells." },
-      "wordmark": { "displayName": "Wordmark", "purpose": "Barlow Condensed, top bar EMMARK only." },
-      "measure": { "displayName": "Measure", "purpose": "JetBrains Mono for dimension text and reference marks." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Intro h1 only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2; the closing statement runs larger at 700."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Tile names (1.4rem on weight-3 tiles); panel h4 runs larger."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text at 17px, 1.7 leading, 16px under 600px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, filters, close control."
+      },
+      "numeric": {
+        "displayName": "Numeric",
+        "purpose": "Geist Mono for dates and counts only, tabular figures."
+      }
     },
-    "shadows": [],
+    "shadows": [
+      {
+        "name": "hover-lift",
+        "value": "0 1px 2px rgba(11,13,16,.04), 0 8px 24px -12px rgba(11,13,16,.14)",
+        "purpose": "Tile hover only (light)."
+      },
+      {
+        "name": "hover-lift-dark",
+        "value": "0 1px 2px rgba(0,0,0,.4), 0 12px 32px -16px rgba(0,0,0,.7)",
+        "purpose": "Tile hover only (dark)."
+      },
+      {
+        "name": "open-ring",
+        "value": "0 0 0 1px var(--accent)",
+        "purpose": "Expanded tile, paired with an accent border."
+      },
+      {
+        "name": "live-halo",
+        "value": "0 0 0 3px var(--accent-soft)",
+        "purpose": "Ring around the 8px live-status dot."
+      }
+    ],
     "motion": [
-      { "name": "ease-out", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "All transitions and the authored moments." },
-      { "name": "ark-draw", "value": "280ms linear stroke-dashoffset, window fade 280ms with 100ms delay", "purpose": "One-time draw-in of the hull and lighting of the window." },
-      { "name": "panel-open", "value": "200ms, opacity 0 to 1, translateY(-6px) to 0", "purpose": "Compartment detail panel reveal." },
-      { "name": "fill-change", "value": "180ms to 200ms background-color", "purpose": "Compartment and button hover." }
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "House easing for all transitions."
+      },
+      {
+        "name": "control-state",
+        "value": "150ms to 180ms color, background, border",
+        "purpose": "Buttons, filters, nav links."
+      },
+      {
+        "name": "tile-hover",
+        "value": "200ms border, 250ms shadow and translateY(-2px)",
+        "purpose": "Tile lift."
+      },
+      {
+        "name": "panel-rise",
+        "value": "320ms, opacity 0 to 1, translateY(6px) to 0, reduced-motion gated",
+        "purpose": "Detail row reveal."
+      }
     ],
     "breakpoints": [
-      { "name": "wide-stack", "value": "860px" },
-      { "name": "mobile-elevation", "value": "700px" },
-      { "name": "single-column-rooms", "value": "520px" }
+      {
+        "name": "two-column",
+        "value": "960px"
+      },
+      {
+        "name": "compact",
+        "value": "760px"
+      },
+      {
+        "name": "single-column",
+        "value": "600px"
+      }
     ]
   },
   "components": [
@@ -39,99 +485,111 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Window-yellow action: email and course entry.",
-      "html": "<a class=\"ds-btn\" href=\"#\">寫信給我</a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #ffc933; color: #2a0d07; font-weight: 700; font-size: 17px; text-decoration: none; padding: 14px 18px; min-height: 52px; border-radius: 0; transition: background-color .2s cubic-bezier(.16,1,.3,1); } .ds-btn:hover { background: #ffd966; } .ds-btn:active { background: #f0b920; } .ds-btn:focus-visible { outline: 3px solid #ffc933; outline-offset: 3px; }"
+      "description": "Palm-green action: email, course entry.",
+      "html": "<a class=\"ds-btn\" href=\"#\">寫信給我<svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 7l9 6 9-6\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 18px; background: var(--accent); color: var(--accent-ink); border: 1px solid transparent; border-radius: 10px; font: 500 15px/1 var(--f-sans); text-decoration: none; transition: background-color .18s cubic-bezier(.16,1,.3,1), transform .18s cubic-bezier(.16,1,.3,1); } .ds-btn:hover { background: var(--accent-hover); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-ico { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }"
     },
     {
-      "name": "Secondary Button",
+      "name": "Ghost Button",
       "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "Chalk-filled link inside an open compartment panel.",
-      "html": "<a class=\"ds-btn-2\" href=\"#\">看線上版</a>",
-      "css": ".ds-btn-2 { display: inline-flex; align-items: center; background: #f6ede1; color: #7a2616; font-weight: 700; font-size: 17px; text-decoration: none; padding: 12px 22px; min-height: 52px; border-radius: 0; } .ds-btn-2:hover { background: #fff; } .ds-btn-2:focus-visible { outline: 3px solid #ffc933; outline-offset: 3px; }"
+      "refersTo": "button-ghost",
+      "description": "Secondary action beside a primary, e.g. GitHub.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">GitHub<svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 17L17 7M9 7h8v8\"/></svg></a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; background: transparent; color: var(--ink); border: 1px solid var(--line-strong); border-radius: 10px; font: 500 15px/1 var(--f-sans); text-decoration: none; transition: background-color .18s cubic-bezier(.16,1,.3,1), border-color .18s cubic-bezier(.16,1,.3,1); } .ds-btn-ghost:hover { background: var(--bg-soft); border-color: var(--muted); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-ico { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }"
     },
     {
-      "name": "Nav Course Link",
-      "kind": "nav",
-      "refersTo": "nav-course",
-      "description": "Outlined course entry in the sticky bar.",
-      "html": "<a class=\"ds-nav-course\" href=\"#\">課程</a>",
-      "css": ".ds-nav-course { color: #f6ede1; background: #7a2616; font-weight: 700; font-size: 16px; text-decoration: none; border: 1px solid #f6ede1; padding: 4px 12px; } .ds-nav-course:hover { background: #f6ede1; color: #7a2616; } .ds-nav-course:focus-visible { outline: 3px solid #ffc933; outline-offset: 3px; }"
+      "name": "Category Filter",
+      "kind": "chip",
+      "refersTo": "filter",
+      "description": "Pill filter with a mono count; pressed inverts to ink.",
+      "html": "<div class=\"ds-filters\"><button class=\"ds-filter\" aria-pressed=\"true\">全部 <span class=\"ds-num\">14</span></button><button class=\"ds-filter\" aria-pressed=\"false\">教會事工 <span class=\"ds-num\">8</span></button></div>",
+      "css": ".ds-filters { display: flex; gap: 6px; } .ds-filter { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 14px; font: 500 14px/1 var(--f-sans); color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; transition: color .15s, border-color .15s, background-color .15s; } .ds-filter:hover { color: var(--ink); border-color: var(--line-strong); } .ds-filter[aria-pressed=\"true\"] { color: var(--bg); background: var(--ink); border-color: var(--ink); } .ds-filter:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-num { font-family: var(--f-mono); font-size: .82em; font-variant-numeric: tabular-nums; opacity: .8; }"
     },
     {
-      "name": "Compartment (closed)",
-      "kind": "custom",
-      "refersTo": "room",
-      "description": "Project cell on a deck; size by weight is rank.",
-      "html": "<button class=\"ds-room\" aria-expanded=\"false\"><span class=\"ds-room-name\">天父日記</span><span class=\"ds-room-tag\">提交後鎖定的靈修日記</span></button>",
-      "css": ".ds-room { appearance: none; font: inherit; color: #f6ede1; text-align: left; cursor: pointer; background: #7a2616; border: 0; border-right: 1px solid rgba(246,237,225,.55); border-bottom: 1px solid rgba(246,237,225,.55); padding: 16px 16px 18px; min-height: 120px; width: 260px; display: flex; flex-direction: column; gap: 6px; justify-content: space-between; transition: background-color .18s cubic-bezier(.16,1,.3,1); } .ds-room:hover { background: #5a190d; } .ds-room:focus-visible { outline: 3px solid #ffc933; outline-offset: 3px; } .ds-room-name { font-weight: 900; font-size: 1.45rem; line-height: 1.2; } .ds-room-tag { font-size: 15px; line-height: 1.5; color: #e6cfbf; }"
-    },
-    {
-      "name": "Compartment (open)",
-      "kind": "custom",
-      "refersTo": "room-open",
-      "description": "Active compartment, the one place yellow fills a surface.",
-      "html": "<button class=\"ds-room-open\" aria-expanded=\"true\"><span class=\"ds-room-open-name\">天父日記</span><span class=\"ds-room-open-tag\">提交後鎖定的靈修日記</span></button>",
-      "css": ".ds-room-open { appearance: none; font: inherit; text-align: left; cursor: pointer; background: #ffc933; color: #2a0d07; border: 0; border-right: 1px solid rgba(246,237,225,.55); border-bottom: 1px solid rgba(246,237,225,.55); padding: 16px 16px 18px; min-height: 120px; width: 260px; display: flex; flex-direction: column; gap: 6px; justify-content: space-between; } .ds-room-open:focus-visible { outline: 3px solid #2a0d07; outline-offset: -6px; } .ds-room-open-name { font-weight: 900; font-size: 1.45rem; line-height: 1.2; } .ds-room-open-tag { font-size: 15px; line-height: 1.5; color: #5b2a14; }"
-    },
-    {
-      "name": "Private Compartment",
-      "kind": "custom",
-      "refersTo": "room",
-      "description": "Private project: diagonal chalk hatching, no source link.",
-      "html": "<button class=\"ds-room-private\"><span class=\"ds-room-private-name\">教會財務系統</span></button>",
-      "css": ".ds-room-private { appearance: none; font: inherit; color: #f6ede1; text-align: left; cursor: pointer; background-color: #7a2616; background-image: repeating-linear-gradient(135deg, rgba(246,237,225,.10) 0 1px, transparent 1px 9px); border: 0; border-right: 1px solid rgba(246,237,225,.55); border-bottom: 1px solid rgba(246,237,225,.55); padding: 16px; min-height: 120px; width: 260px; } .ds-room-private:hover { background-color: #5a190d; } .ds-room-private:focus-visible { outline: 3px solid #ffc933; outline-offset: 3px; } .ds-room-private-name { font-weight: 900; font-size: 1.45rem; line-height: 1.2; }"
-    },
-    {
-      "name": "Detail Panel",
+      "name": "Project Tile",
       "kind": "card",
-      "refersTo": "panel",
-      "description": "Opened compartment: professional column and faith column under a yellow top rule.",
-      "html": "<div class=\"ds-panel\"><h4>天父日記</h4><div class=\"ds-cols\"><div><h5>專業</h5><ul><li>提交後鎖定</li></ul></div><div class=\"ds-faith\"><h5>信仰</h5><p>聖經字句不可編輯。</p></div></div></div>",
-      "css": ".ds-panel { background: #44110a; color: #f6ede1; border: 1px solid #f6ede1; border-top: 3px solid #ffc933; padding: 28px; width: 560px; } .ds-panel h4 { font-weight: 900; font-size: 1.8rem; line-height: 1.2; margin: 0; } .ds-cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; margin-top: 24px; } .ds-cols h5 { margin: 0 0 12px; font-size: 1rem; font-weight: 700; color: #e6cfbf; letter-spacing: .08em; padding-bottom: 8px; border-bottom: 1px solid rgba(246,237,225,.55); } .ds-cols ul { list-style: none; padding: 0; margin: 0; } .ds-cols li { padding: 6px 0 6px 18px; position: relative; } .ds-cols li::before { content: ''; position: absolute; left: 0; top: 1.05em; width: 9px; height: 1px; background: #f6ede1; } .ds-faith { background: #7a2616; border: 1px solid rgba(246,237,225,.55); padding: 18px 20px; } .ds-faith h5 { color: #ffc933; border-bottom-color: rgba(255,201,51,.5); } .ds-faith p { margin: 0; }"
+      "refersTo": "tile",
+      "description": "Whole-tile button; flat at rest, lifts on hover, green ring when open.",
+      "html": "<button class=\"ds-tile\" aria-expanded=\"false\"><span class=\"ds-tile-top\"><span class=\"ds-tile-name\">天父日記</span><span class=\"ds-badge\">公開</span></span><span class=\"ds-tile-kind\">靈修 App</span><span class=\"ds-tile-tag\">依讀經進度顯示當日經文，安靜書寫，提交後鎖定。</span><span class=\"ds-tile-meta\"><span>Flask · Supabase</span><span class=\"ds-num\">2026-11-07</span></span></button>",
+      "css": ".ds-tile { display: flex; flex-direction: column; gap: 8px; width: 340px; min-height: 210px; padding: 20px 20px 18px; text-align: left; font: inherit; font-family: var(--f-sans); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); cursor: pointer; transition: border-color .2s cubic-bezier(.16,1,.3,1), box-shadow .25s cubic-bezier(.16,1,.3,1), transform .25s cubic-bezier(.16,1,.3,1); } .ds-tile:hover { border-color: var(--line-strong); box-shadow: var(--shadow); transform: translateY(-2px); } .ds-tile:hover .ds-tile-name { color: var(--accent-text); } .ds-tile[aria-expanded=\"true\"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); transform: none; } .ds-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-tile-top { display: flex; justify-content: space-between; gap: 12px; } .ds-tile-name { font-weight: 600; font-size: 1.2rem; line-height: 1.35; letter-spacing: -.01em; transition: color .2s cubic-bezier(.16,1,.3,1); } .ds-badge { font-size: 12px; line-height: 1; padding: 5px 8px; border-radius: 6px; background: var(--accent-soft); color: var(--accent-text); } .ds-tile-kind { font-size: 13px; color: var(--muted); } .ds-tile-tag { color: var(--ink-2); font-size: 15px; line-height: 1.6; } .ds-tile-meta { margin-top: auto; padding-top: 12px; display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: var(--muted); } .ds-num { font-family: var(--f-mono); font-size: 12px; font-variant-numeric: tabular-nums; }"
     },
     {
-      "name": "Title Block",
+      "name": "Detail Row",
       "kind": "custom",
       "refersTo": "panel",
-      "description": "Drafting-sheet title block with the email action beneath.",
-      "html": "<aside class=\"ds-tb\"><dl><dt>圖名</dt><dd>EMMARK 作品集</dd><dt>修訂</dt><dd>2026-10</dd></dl></aside>",
-      "css": ".ds-tb { border: 1px solid rgba(246,237,225,.55); font-size: 15px; color: #f6ede1; width: 320px; } .ds-tb dl { display: grid; grid-template-columns: auto 1fr; margin: 0; } .ds-tb dt, .ds-tb dd { margin: 0; padding: 9px 12px; border-top: 1px solid rgba(246,237,225,.18); } .ds-tb dt { color: #e6cfbf; border-right: 1px solid rgba(246,237,225,.18); white-space: nowrap; } .ds-tb dl > :nth-child(-n+2) { border-top: 0; }"
+      "description": "Full-width in-place detail: professional list beside the faith box.",
+      "html": "<div class=\"ds-panel\"><h4>天父日記</h4><div class=\"ds-cols\"><div><h5>專業</h5><ul><li>讀經進度在後台直接編輯</li><li>牧者總覽頁一次看完</li></ul></div><div class=\"ds-faith\"><h5>信仰</h5><p>日記提交後永久鎖定，這是刻意不做的功能。</p></div></div></div>",
+      "css": ".ds-panel { width: 640px; background: var(--bg-soft); color: var(--ink); border: 1px solid var(--line); border-radius: var(--r); padding: 32px; font-family: var(--f-sans); } .ds-panel h4 { margin: 0; font-size: 1.9rem; font-weight: 600; line-height: 1.25; letter-spacing: -.02em; } .ds-cols { margin-top: 24px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; } .ds-cols h5 { margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: .04em; color: var(--muted); } .ds-cols ul { list-style: none; padding: 0; margin: 0; } .ds-cols li { position: relative; padding-left: 18px; margin-top: 8px; color: var(--ink-2); font-size: 16px; } .ds-cols li::before { content: ''; position: absolute; left: 2px; top: .78em; width: 6px; height: 6px; border-radius: 50%; background: var(--line-strong); } .ds-faith { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; } .ds-faith h5 { color: var(--accent-text); } .ds-faith p { margin: 0; font-size: 16px; }"
+    },
+    {
+      "name": "Header Bar",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky translucent bar: wordmark, muted links, small course button.",
+      "html": "<header class=\"ds-bar\"><span class=\"ds-wordmark\">EMMARK</span><nav class=\"ds-nav\"><a href=\"#\">作品</a><a href=\"#\">分工</a><a href=\"#\">技術</a></nav><a class=\"ds-btn-sm\" href=\"#\">Vibe Coding 課程</a></header>",
+      "css": ".ds-bar { display: flex; align-items: center; gap: 28px; min-height: 60px; padding: 0 24px; background: color-mix(in srgb, var(--bg) 92%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: saturate(1.4) blur(10px); font-family: var(--f-sans); } .ds-wordmark { font-weight: 700; font-size: 16px; letter-spacing: .06em; color: var(--ink); } .ds-nav { display: flex; gap: 4px; margin-right: auto; font-size: 15px; } .ds-nav a { padding: 6px 10px; border-radius: 8px; color: var(--muted); text-decoration: none; transition: color .15s, background-color .15s; } .ds-nav a:hover { color: var(--ink); background: var(--bg-soft); } .ds-nav a:focus-visible, .ds-btn-sm:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-btn-sm { display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; background: var(--accent); color: var(--accent-ink); border-radius: 8px; font: 500 14px/1 var(--f-sans); text-decoration: none; } .ds-btn-sm:hover { background: var(--accent-hover); }"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Static tech tag inside the detail row.",
+      "html": "<span class=\"ds-tag\">Supabase</span>",
+      "css": ".ds-tag { display: inline-block; font-size: 13px; padding: 4px 10px; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); font-family: var(--f-sans); }"
     }
   ],
   "narrative": {
-    "northStar": "The General Arrangement Drawing",
-    "overview": "The whole page is one drafting sheet pinned to a red-oxide primer ground. Everything is chalk linework: hairline borders, ruled tables, dimension lines with arrowheads, a title block, section hatching, a scale bar. Projects are compartments on the decks of an ark, and a compartment's size is its rank. The tone is steady and plain-spoken: an engineer's sheet that happens to carry church work, with no neon, no cards, no glass.\n\nThe ground is committed, not a section color. Every surface is a step of the same red (oxide, hull, hull-deep), so depth comes from darker or lighter primer and from ruled lines. One accent exists, window yellow, and it is spent on the lit window of the ark, the active compartment, primary actions, and the final line of the closing quote.",
+    "northStar": "The Open Workbench",
+    "overview": "The category standard, played straight. The page is a product-grade index of fourteen live systems: neutral grounds, hairline borders, one palm-green accent, and type that never raises its voice. The work is the page; there is no themed costume and no metaphor between the visitor and the projects. The craft bar is the marketing surface of a careful developer tool: quiet at rest, precise on interaction.\n\nDensity is moderate and even. A three-column tile grid carries the work above the fold; a tile opens in place into a full-width detail row so reading never leaves the grid. Light is the default; dark follows the system preference with its own tuned token set rather than an inversion. Depth is earned by state: surfaces are flat at rest and lift only on hover.",
     "keyCharacteristics": [
-      "Red-oxide ground across the whole page; chalk is the only ink.",
-      "Borders and rules carry structure; there are no shadows and no rounded corners.",
-      "Window yellow is rationed to the places where something is lit, open, or actionable.",
-      "Black-weight (900) Chinese display type against quiet 400 body text; Latin drafting caps only in the wordmark.",
-      "Size is rank: flex-weighted compartments, no badges or numbering."
+      "White (light) or near-black (dark) grounds with one soft grey step for recessed areas.",
+      "One palm-green accent for actions, focus, selection, and the open state.",
+      "1px hairline borders and a 12px radius carry all structure.",
+      "Geist with Noto Sans TC for everything; Geist Mono only for dates and counts.",
+      "Flat at rest; a soft offset shadow and a 2px lift appear only on hover."
     ],
     "rules": [
-      { "name": "The One Light Rule", "body": "Window yellow marks what is lit: the ark's window, the open compartment, the primary action, focus. If two unrelated things on one screen are yellow, one of them is wrong.", "section": "colors" },
-      { "name": "The Primer Rule", "body": "Surfaces are only oxide, hull, or hull-deep. No white, grey, or new hue is introduced; depth is a darker red or a chalk rule.", "section": "colors" },
-      { "name": "The Stencil Rule", "body": "Headings are 900 or nothing; there is no mid-weight heading. Contrast comes from 900 against 400.", "section": "typography" },
-      { "name": "The Drafting-Caps Rule", "body": "Barlow Condensed is reserved for the EMMARK wordmark. Mono is reserved for measurements.", "section": "typography" },
-      { "name": "The Flat Sheet Rule", "body": "No shadows, glows, or blur. A state change is a fill change or a rule change.", "section": "elevation" }
+      {
+        "name": "The One Green Rule",
+        "body": "Palm green is the only hue. It marks what acts, what has focus, and what is open; everything else is a neutral. No second accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paired Token Rule",
+        "body": "Every color is a token with a light and a dark value on `:root`. Components reference tokens, never literals, so dark mode needs no per-component overrides.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono-For-Numbers Rule",
+        "body": "Geist Mono sets dates and counts and nothing else. Words, labels, and tech names stay in Geist.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two-Weight Rule",
+        "body": "Headings are 600, text is 400, controls are 500. Bold (700) is reserved for the wordmark and the closing statement.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hover-Only Shadow Rule",
+        "body": "Nothing casts a shadow at rest. A shadow is a response to the pointer, soft and offset downward, and it disappears when the element is opened.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "Do keep the whole page on oxide, hull, or hull-deep with chalk ink (#f6ede1).",
-      "Do spend window yellow (#ffc933) only on lit or actionable things, with window ink (#2a0d07) text on it.",
-      "Do build structure from 1px chalk rules at 55% opacity and 2px full-chalk header rules.",
-      "Do carry rank with compartment size alone, via the data weight.",
-      "Do keep corners square (0 radius) and surfaces flat (no shadows).",
-      "Do set headings at weight 900 and body at 400, with 17 to 18px body and 1.75 leading.",
-      "Do gate all motion behind `prefers-reduced-motion: no-preference`, and keep targets clickable while it plays."
+      "Do take every color from the paired `:root` tokens so light and dark stay in step.",
+      "Do spend palm green only on actions, focus, selection, the open state, and the few marked green texts (faith heading, security icons, closing line).",
+      "Do use accent-text, not the fill accent, whenever green is used as text.",
+      "Do build structure from 1px hairlines and the 12px container radius.",
+      "Do keep surfaces flat at rest; use the hover-lift shadow and 2px rise only on pointer hover, gated with transitions on the house ease (cubic-bezier(.16, 1, .3, 1)).",
+      "Do set Geist Mono only on dates and counts, with tabular figures.",
+      "Do open project detail in place as a full-width grid row, keeping the grid visible."
     ],
     "donts": [
-      "Don't use a card grid, rounded containers, glass, or neon dark-mode developer styling.",
-      "Don't add badges, numbers, or ranking labels to compartments.",
-      "Don't introduce a new hue or a white/grey surface to the primer palette.",
-      "Don't use Barlow Condensed or JetBrains Mono for running text.",
-      "Don't hide required information behind hover or flip states."
+      "Don't add a second accent hue or tint sections with color.",
+      "Don't put shadows on resting surfaces or use hard, unblurred offset shadows.",
+      "Don't set words, labels, or tech names in mono.",
+      "Don't use uppercase tracked labels above headings; small headings stay sentence case.",
+      "Don't reintroduce the retired ark metaphor or its red-oxide palette."
     ]
   }
 }

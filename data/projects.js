@@ -1,5 +1,6 @@
-/* 作品資料檔：新增作品只需在 decks 對應甲板加一筆，不必動版面。
-   weight：3 = 大艙（主力作品）、2 = 中艙、1 = 小艙。大小即重要性。
+/* 作品資料檔：新增作品只需在 decks 對應類別加一筆，不必動版面。
+   decks 是作品類別（label 會顯示成篩選按鈕）。
+   weight：3 = 主力作品（大卡片）、2 = 中、1 = 小。卡片大小即重要性。
    pro = 專業做法；faith = 因信仰而做的取捨（誠實寫，沒有就寫沒有）。
    isPrivate：true 時不顯示原始碼連結。
    repo：這個作品對應的 GitHub repo 名稱。每小時自動抓它的 commit 數與最近更新日期，
@@ -12,7 +13,6 @@ window.PORTFOLIO = {
   decks: [
     {
       id: "ministry",
-      name: "上層甲板",
       label: "教會事工系統",
       projects: [
         {
@@ -78,7 +78,6 @@ window.PORTFOLIO = {
     },
     {
       id: "tools",
-      name: "中層甲板",
       label: "工具與教學",
       projects: [
         {
@@ -108,7 +107,6 @@ window.PORTFOLIO = {
     },
     {
       id: "play",
-      name: "下層甲板",
       label: "互動與遊戲",
       projects: [
         {
