@@ -90,7 +90,7 @@ window.PORTFOLIO = {
           repoUrl: "https://github.com/windsjp00171-star/vibe-coding-course", liveUrl: "https://windsjp00171-star.github.io/vibe-coding-course/", liveLabel: "進入課程"
         },
         {
-          id: "pitchpal", weight: 2, name: "PitchPal 音樂 Key 工具", kind: "音樂工具", isPrivate: false, repo: "pitchpal",
+          id: "pitchpal", shot: "img/shots/pitchpal.webp", weight: 2, name: "PitchPal 音樂 Key 工具", kind: "音樂工具", isPrivate: false, repo: "pitchpal",
           tagline: "為敬拜帶領者偵測歌曲 Key 並移調。",
           tags: ["Python", "librosa", "FastAPI", "React", "HF Spaces"],
           pro: ["Krumhansl–Schmuckler 音調輪廓法偵測 Key", "正負十二個半音滑桿移調、簡譜轉錄（旋律度數加和弦名稱）", "六種音色試音，草稿存在瀏覽器"],
