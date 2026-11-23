@@ -83,10 +83,10 @@ window.PORTFOLIO = {
       projects: [
         {
           id: "course", shot: "img/shots/course-lesson.webp", weight: 3, name: "Vibe Coding 實戰課", kind: "線上課程", isPrivate: false, repo: "vibe-coding-course",
-          tagline: "我開的課：帶非工程師用 Claude Code 做出自己的網站。",
+          tagline: "給沒有技術背景的上班族：用 Claude Code 做出能上線的網站與工具，也學會不被 AI 詐騙。",
           tags: ["Vanilla JS", "Supabase", "Google OAuth", "GitHub Pages", "node:test"],
-          pro: ["二十多個單元，從 AI 基礎、安裝、Git、上線，一路到資料庫、LINE 登入、推播、交接與成本", "每單元有互動練習：Git 存檔點模擬器、個資遮罩、程式碼體檢", "學員、講師雙模式與投影模式，一鍵印出紙本學習單", "Google 登入、班級加入碼、講師後台看全班進度", "網頁是教材唯一來源，簡報與 Kahoot 題庫由程式自動產生；講師內容放在另一個私有 repo，不進公開站"],
-          faith: "我把自己真實踩過的二十多個坑寫成踩坑圖鑑，讓學員不必再踩一次。",
+          pro: ["兩條路：個人或企業內訓（四個半天），結業時手上有一個有登入、同事能一起用的線上小系統；或半日「AI 資安意識」全員內訓，不用電腦", "23 個單元（必修 11 個），翻轉教室：課前在網站上自學，課中全程動手；單元 0、1、4、7、19 免費試看", "免費、不用登入的「防 AI 詐騙」公益講座與「金鑰體檢站」：把程式貼進來，30 秒檢查有沒有寫死的密碼與金鑰，只在瀏覽器裡檢查", "每單元有互動練習：Git 存檔點模擬器、個資遮罩、程式碼體檢", "學員、講師雙模式與投影模式，一鍵印出紙本學習單；Google 登入、班級加入碼、講師後台看全班進度", "網頁是教材唯一來源，簡報與 Kahoot 題庫由程式自動產生；講師內容放在另一個私有 repo，不進公開站"],
+          faith: "我把自己真實踩過的 27 個坑寫成踩坑圖鑑，讓學員不必再踩一次。",
           repoUrl: "https://github.com/windsjp00171-star/vibe-coding-course", liveUrl: "https://windsjp00171-star.github.io/vibe-coding-course/", liveLabel: "進入課程"
         },
         {
@@ -96,6 +96,14 @@ window.PORTFOLIO = {
           pro: ["Krumhansl–Schmuckler 音調輪廓法偵測 Key", "正負十二個半音滑桿移調、簡譜轉錄（旋律度數加和弦名稱）", "六種音色試音，草稿存在瀏覽器"],
           faith: "為敬拜團隊而做，公開免費使用。",
           repoUrl: "https://github.com/windsjp00171-star/pitchpal", liveUrl: "https://winds00171-pitchpal.hf.space/", liveLabel: "立即體驗"
+        },
+        {
+          id: "ticket-studio", shot: "img/shots/ticket-studio.webp", weight: 2, name: "票券工作室", kind: "列印工具", isPrivate: false,
+          tagline: "免費線上製作摸彩券、號碼牌、入場券、餐券和名牌，排成 PDF 直接列印。",
+          tags: ["瀏覽器內產生 PDF", "資料只存在瀏覽器", "AI 畫背景", "GitHub Pages"],
+          pro: ["放上圖片、填好號碼範圍，自動連號並排成 A4、A3、B4 或 Letter 的 PDF", "「裁好疊起來就連號」排法：整疊一起裁、依序疊好就是連號，不必一張張整理", "省紙模式算好縮放與頁數，例如 250 張從 125 頁降到 63 頁", "沒有圖也能用內建風格或 AI 畫背景當場做一張券，可加存根與姓名欄", "活動當天用「抽獎紀錄」登記抽出的號碼並投影"],
+          faith: "這個工具和信仰沒有直接關係，但做它的人就是基督徒，做事的態度沒有兩樣：免費、不用註冊，圖片和資料只留在使用者自己的瀏覽器。",
+          repoUrl: "https://github.com/windsjp00171-star/CODETOOL", liveUrl: "https://windsjp00171-star.github.io/CODETOOL/ticket-studio/", liveLabel: "開始製作"
         },
         {
           id: "secretary", weight: 1, name: "Emmark 小秘書", kind: "LINE Bot", isPrivate: true, repo: "emmask-secret",
