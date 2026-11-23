@@ -34,46 +34,64 @@
   var EXT = 'M7 17L17 7M9 7h8v8';
   var X = 'M6 6l12 12M18 6L6 18';
   function link(href, text, cls) {
-    var a = el('a', { href: href, target: '_blank', rel: 'noopener' }, text + ' ');
+    var a = el('a', { href: href, target: '_blank', rel: 'noopener' }, text);
     a.appendChild(icon(EXT));
     if (cls) a.className = cls;
     return a;
   }
 
-  var root = document.getElementById('decks-root');
+  var grid = document.getElementById('grid');
+  var panel = el('div', { 'class': 'panel', role: 'region', id: 'detail', hidden: '' });
   var rooms = {};
   var open = null;
-
+  var all = [];
   D.decks.forEach(function (deck) {
-    var sec = el('div', { 'class': 'deck', 'data-deck': deck.id });
-    var title = el('div', { 'class': 'deck-title' });
-    title.appendChild(el('h3', null, deck.name + ' · ' + deck.label));
-    title.appendChild(el('span', { 'class': 'measure' }, deck.projects.length + ' 艙'));
-    sec.appendChild(title);
+    deck.projects.forEach(function (p, i) { all.push({ p: p, deck: deck, i: all.length }); });
+  });
+  // 卡片大小即重要性：主力作品排前面，同級照資料檔順序
+  all.sort(function (a, b) { return (b.p.weight - a.p.weight) || (a.i - b.i); });
 
-    var grid = el('div', { 'class': 'deck-grid' });
-    var panel = el('div', { 'class': 'panel', role: 'region', hidden: '' });
-    panel.id = 'panel-' + deck.id;
+  all.forEach(function (row) {
+    var p = row.p;
+    var b = el('button', { type: 'button', 'class': 'tile', 'data-deck': row.deck.id, 'data-w': p.weight, 'aria-expanded': 'false', 'aria-controls': 'detail' });
+    var top = el('span', { 'class': 'tile-top' });
+    top.appendChild(el('span', { 'class': 'tile-name' }, p.name));
+    top.appendChild(el('span', { 'class': 'badge' + (p.isPrivate ? '' : ' is-public') }, p.isPrivate ? '私有' : '公開'));
+    b.appendChild(top);
+    b.appendChild(el('span', { 'class': 'tile-kind' }, p.kind));
+    b.appendChild(el('span', { 'class': 'tile-tag' }, p.tagline));
+    if (p.weight === 3 && p.pro && p.pro[0]) b.appendChild(el('span', { 'class': 'tile-pro' }, p.pro[0]));
+    var meta = el('span', { 'class': 'tile-meta' });
+    meta.appendChild(el('span', { 'class': 'tile-tech' }, p.tags.slice(0, 3).join(' · ')));
+    var lv = live(p.id);
+    if (lv && lv.updated) meta.appendChild(el('span', { 'class': 'num' }, lv.updated));
+    b.appendChild(meta);
+    b.addEventListener('click', function () { toggle(p, b, panel); });
+    rooms[p.id] = { p: p, b: b, panel: panel };
+    grid.appendChild(b);
+  });
+  grid.appendChild(panel);
 
-    deck.projects.forEach(function (p) {
-      var b = el('button', { type: 'button', 'class': 'room', 'data-w': p.weight, 'aria-expanded': 'false', 'aria-controls': panel.id });
-      if (p.isPrivate) b.classList.add('private');
-      b.appendChild(el('span', { 'class': 'room-name' }, p.name));
-      b.appendChild(el('span', { 'class': 'room-tag' }, p.tagline));
-      var lv = live(p.id);
-      if (lv && lv.updated) b.appendChild(el('span', { 'class': 'room-live measure' }, '最近更新 ' + lv.updated));
-      b.addEventListener('click', function () { toggle(p, b, panel); });
-      rooms[p.id] = { p: p, b: b, panel: panel };
-      grid.appendChild(b);
+  // 篩選：全部 + 每個類別
+  var filters = document.getElementById('filters');
+  var cats = [{ id: 'all', label: '全部', n: all.length }].concat(D.decks.map(function (d) { return { id: d.id, label: d.label, n: d.projects.length }; }));
+  cats.forEach(function (c) {
+    var f = el('button', { type: 'button', 'class': 'filter', 'aria-pressed': c.id === 'all' ? 'true' : 'false' });
+    f.appendChild(document.createTextNode(c.label));
+    f.appendChild(el('span', { 'class': 'num' }, String(c.n)));
+    f.addEventListener('click', function () {
+      if (open) { close(open); open = null; history.replaceState(null, '', location.pathname + location.search); }
+      Array.prototype.forEach.call(filters.children, function (x) { x.setAttribute('aria-pressed', x === f ? 'true' : 'false'); });
+      Object.keys(rooms).forEach(function (id) {
+        var t = rooms[id].b;
+        t.hidden = c.id !== 'all' && t.getAttribute('data-deck') !== c.id;
+      });
     });
-
-    grid.appendChild(panel);
-    sec.appendChild(grid);
-    root.appendChild(sec);
+    filters.appendChild(f);
   });
 
   function place(b, panel) {
-    var siblings = Array.prototype.slice.call(b.parentNode.querySelectorAll('.room'));
+    var siblings = Array.prototype.slice.call(grid.querySelectorAll('.tile:not([hidden])'));
     var last = b;
     siblings.forEach(function (r) { if (r.offsetTop === b.offsetTop) last = r; });
     last.parentNode.insertBefore(panel, last.nextSibling);
@@ -88,7 +106,7 @@
     t.appendChild(el('h4', null, p.name));
     t.appendChild(el('p', { 'class': 'tagline' }, p.tagline));
     head.appendChild(t);
-    var close = el('button', { type: 'button', 'class': 'panel-close' }, '收起 ');
+    var close = el('button', { type: 'button', 'class': 'panel-close', 'aria-label': '收起 ' + p.name }, '收起 ');
     close.appendChild(icon(X));
     close.addEventListener('click', function () { var r = rooms[open]; if (r) toggle(r.p, r.b, r.panel); r && r.b.focus(); });
     head.appendChild(close);
@@ -112,9 +130,12 @@
     var lv = live(p.id);
     if (lv) {
       var box = el('div', { 'class': 'live' });
-      var facts = '開發紀錄：' + num(lv.commits) + ' 次 commit';
-      if (lv.updated) facts += ' · 最近一次 ' + lv.updated;
-      box.appendChild(el('p', { 'class': 'measure' }, facts));
+      var facts = el('p');
+      facts.appendChild(document.createTextNode('開發紀錄 '));
+      facts.appendChild(el('span', { 'class': 'num' }, num(lv.commits)));
+      facts.appendChild(document.createTextNode(' 次 commit'));
+      if (lv.updated) { facts.appendChild(document.createTextNode('，最近一次 ')); facts.appendChild(el('span', { 'class': 'num' }, lv.updated)); }
+      box.appendChild(facts);
       if (lv.notes && lv.notes.length) {
         box.appendChild(el('h5', null, '最近的更新' + (lv.notesDate ? '（' + lv.notesDate + '）' : '')));
         box.appendChild(list(lv.notes));
@@ -123,9 +144,9 @@
     }
 
     var links = el('div', { 'class': 'links' });
-    if (p.liveUrl) links.appendChild(link(p.liveUrl, p.liveLabel || '立即體驗 ↗', 'btn'));
-    if (p.repoUrl) links.appendChild(link(p.repoUrl, '看原始碼 ↗', 'plain'));
-    if (p.demoUrl) links.appendChild(link(p.demoUrl, p.demoLabel || '看 Demo ↗', 'plain'));
+    if (p.liveUrl) links.appendChild(link(p.liveUrl, p.liveLabel || '立即體驗', 'btn'));
+    if (p.repoUrl) links.appendChild(link(p.repoUrl, '看原始碼', 'btn btn-ghost'));
+    if (p.demoUrl) links.appendChild(link(p.demoUrl, p.demoLabel || '看 Demo', 'btn btn-ghost'));
     if (p.isPrivate) links.appendChild(el('span', { 'class': 'note' }, '私有專案：不提供原始碼，內容為功能與技術摘要。'));
     panel.appendChild(links);
   }
@@ -163,12 +184,12 @@
   if (L) {
     if (L.generatedAt) {
       var rev = document.getElementById('rev-date');
-      try { rev.textContent = new Date(L.generatedAt.replace('Z', ':00Z')).toLocaleDateString('sv-SE', { timeZone: 'Asia/Taipei' }) + '（自動更新）'; } catch (e) {}
+      try { rev.textContent = new Date(L.generatedAt.replace('Z', ':00Z')).toLocaleDateString('sv-SE', { timeZone: 'Asia/Taipei' }) + ' 自動更新'; } catch (e) {}
     }
     if (L.totals) {
       document.getElementById('rev-commits').textContent = num(L.totals.commits) + ' 次 commits（' + L.totals.repos + ' 個 repo）';
     }
-    // 航行日誌：依最近更新排，點名稱打開那個艙室
+    // 最近的更新：依日期排，點名稱打開那個作品
     var rows = [];
     Object.keys(rooms).forEach(function (id) { var x = live(id); if (x && x.updated) rows.push({ id: id, x: x }); });
     rows.sort(function (a, b) { return a.x.updated < b.x.updated ? 1 : a.x.updated > b.x.updated ? -1 : 0; });
@@ -176,11 +197,12 @@
     if (rows.length && logRoot) {
       rows.slice(0, 8).forEach(function (row) {
         var li = el('li');
-        li.appendChild(el('span', { 'class': 'measure' }, row.x.updated));
+        li.appendChild(el('span', { 'class': 'num' }, row.x.updated));
         var go = el('a', { href: '#' + row.id }, rooms[row.id].p.name);
         go.addEventListener('click', function (e) {
           e.preventDefault();
           var r = rooms[row.id];
+          if (r.b.hidden) filters.firstChild.click();
           if (open !== row.id) toggle(r.p, r.b, r.panel);
           r.b.focus();
         });
@@ -209,7 +231,9 @@
   var sec = document.getElementById('sec-root');
   D.security.forEach(function (s) {
     var li = el('li');
-    li.appendChild(el('b', null, s[0]));
+    var h = el('b', null, s[0]);
+    h.insertBefore(icon('M5 12.5l4.5 4.5L19 7.5'), h.firstChild);
+    li.appendChild(h);
     li.appendChild(el('span', null, s[1]));
     sec.appendChild(li);
   });

@@ -5,7 +5,9 @@
   <title>EMMARK · 專業 × 信仰落實</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="EMMARK 作品集：14 個真正上線的教會事工系統、工具與遊戲，看一位全端 × AI 協作開發者如何把信仰落實在專業判斷裡。義人要發旺如棕樹（詩篇 92:12）。">
-  <meta name="theme-color" content="#7a2616">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
   <link rel="canonical" href="https://windsjp00171-star.github.io/CLAUDE-DESIGN/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="EMMARK">
@@ -21,214 +23,118 @@
   <meta name="twitter:title" content="EMMARK · 專業 × 信仰落實">
   <meta name="twitter:description" content="14 個真正上線的教會事工系統、工具與遊戲，看專業判斷裡的信仰如何落實。">
   <meta name="twitter:image" content="https://windsjp00171-star.github.io/CLAUDE-DESIGN/og-image.png">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56'%3E%3Crect width='56' height='56' fill='%237a2616'/%3E%3Cpath d='M8 30h40l-6 12H14z' fill='none' stroke='%23f6ede1' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M14 30V20l14-6 14 6v10' fill='none' stroke='%23f6ede1' stroke-width='3' stroke-linejoin='round'/%3E%3Crect x='25' y='17' width='6' height='5' fill='%23ffc933'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0d10'/%3E%3Cpath d='M10 9h12M10 16h9M10 23h12M10 9v14' stroke='%2334d399' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@500&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="top">
+  <a class="skip" href="#work">跳到作品</a>
   <header class="bar">
-    <div class="wrap">
-      <a class="wordmark" href="#top">EMMARK</a>
+    <div class="wrap bar-in">
+      <a class="wordmark" href="#top" aria-label="EMMARK 回到頁首"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M11 9h11M11 16h8M11 23h11M11 9v14"/></svg>EMMARK</a>
       <nav aria-label="頁面導覽">
-        <a href="#decks">總布置圖</a>
-        <a href="#bridge">艦橋</a>
-        <a href="#equipment">裝備表</a>
-        <a href="#hold">水線以下</a>
-        <a href="#bow">航向</a>
-        <a class="course" href="https://windsjp00171-star.github.io/vibe-coding-course/" target="_blank" rel="noopener">課程 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="#work">作品</a>
+        <a href="#how">分工</a>
+        <a href="#stack">技術</a>
+        <a href="#security">資安</a>
+        <a href="#contact">聯絡</a>
       </nav>
+      <a class="btn btn-sm" href="https://windsjp00171-star.github.io/vibe-coding-course/" target="_blank" rel="noopener">Vibe Coding 課程<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
     </div>
   </header>
 
   <main>
-    <div class="wrap sheet">
-      <div class="sheet-head">
-        <div>
-          <h1>EMMARK 總布置圖</h1>
-          <p class="lede">一艘安靜的方舟，承載<span data-count>十四</span>件真正上線的作品，多數是教會事工系統。我是 <strong>全端 × AI 協作</strong> 開發者，這張圖要讓你看見：專業判斷怎麼做，信仰就落在哪一個判斷裡。</p>
+    <section class="intro wrap" aria-labelledby="intro-h">
+      <h1 id="intro-h"><span class="nb"><span data-count>十四</span>個真正上線的作品，</span><br class="br-wide"><span class="nb">多數服務教會事工。</span></h1>
+      <p class="lede">我是 EMMARK，<strong>全端 × AI 協作</strong>開發者。每個作品都寫出兩件事：專業上怎麼做，以及信仰落在哪一個判斷裡。</p>
+      <div class="intro-actions">
+        <a class="btn" href="mailto:emmark19890901@gmail.com">寫信給我<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <a class="btn btn-ghost" href="https://github.com/windsjp00171-star" target="_blank" rel="noopener">GitHub<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <p class="pulse"><span class="dot" aria-hidden="true"></span><span id="rev-commits">近 2,000 次 commits</span><span class="sep" aria-hidden="true">·</span><span id="rev-date">2026-11 更新</span></p>
+      </div>
+    </section>
+
+    <section id="work" class="wrap" aria-labelledby="work-h">
+      <div class="work-head">
+        <h2 id="work-h" class="sr-only">作品</h2>
+        <div class="filters" role="group" aria-label="依類別篩選作品" id="filters"></div>
+      </div>
+      <noscript><p class="muted">此頁的作品清單需要 JavaScript。作品：教會整合管理系統、教會入口與活動報名、天父日記、教會帳務系統、小組回報系統、教會資料交換中心、聖經互動全書、群體共讀靈修 GROUP、Vibe Coding 實戰課、PitchPal、Emmark 小秘書、宣教之路、互動故事裝置、美食獵人。聯絡：emmark19890901@gmail.com</p></noscript>
+      <div class="grid" id="grid"></div>
+      <p class="muted grid-note">點任何一個作品，看專業做了什麼、信仰在哪裡。標示「私有」的作品只提供功能與技術摘要，不放原始碼。</p>
+    </section>
+
+    <section id="log" class="wrap" aria-labelledby="log-h" hidden>
+      <div class="sec-head">
+        <h2 id="log-h">最近的更新</h2>
+        <p class="muted">每小時自動從 GitHub 抓一次。公開專案附上更新日誌的第一條；私有專案只公開日期。</p>
+      </div>
+      <ol class="log" id="log-root"></ol>
+    </section>
+
+    <section id="how" class="wrap" aria-labelledby="how-h">
+      <div class="sec-head">
+        <h2 id="how-h">我怎麼和 AI 分工</h2>
+      </div>
+      <div class="how">
+        <div class="prose">
+          <p class="big">老實說，這裡每一個專案都是我與 AI 協作完成的，程式碼大量交給 AI 實作。</p>
+          <p>我把自己當成產品負責人，AI 是速度很快的工程師夥伴；從需求、架構到上線把關，每個產品判斷都是我的，包括「這個功能不做」的決定。</p>
+          <p>EMMARK 是<b>以馬內利</b>（神與我們同在）× <b>方舟</b>。我是基督徒，這不是某幾個專案的標籤，是我做每一件事的底色，包括那些看起來和信仰沒有關係的作品。</p>
+          <p>好的工具應該是安靜的：它不搶戲，只是讓同工少一點行政重擔，多一點時間陪伴人。</p>
         </div>
-        <aside class="titleblock" aria-label="圖面資訊">
-          <dl>
-            <dt>圖名</dt><dd>EMMARK 作品集</dd>
-            <dt>作者</dt><dd>EMMARK（以馬內利 × 方舟）</dd>
-            <dt>修訂</dt><dd id="rev-date">2026-11</dd>
-            <dt>比例</dt><dd>艙室大小 = 重要性</dd>
-            <dt>紀錄</dt><dd id="rev-commits">近 2,000 次 commits</dd>
-          </dl>
-          <a class="btn" id="mail" href="mailto:emmark19890901@gmail.com">寫信給我 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg></a>
-        </aside>
-      </div>
-
-      <div class="ark-wrap">
-        <svg class="ark ark-d" viewBox="0 0 1200 460" role="img" aria-labelledby="ark-t ark-d">
-          <title id="ark-t">方舟側面圖</title>
-          <desc id="ark-d">一艘長 300 肘、高 30 肘的方舟側面圖，三層甲板，上方有一扇亮著的窗。</desc>
-          <defs>
-            <pattern id="hatch2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="7" height="7" fill="#5a190d"/><line x1="0" y1="0" x2="0" y2="7" stroke="#ffc933" stroke-width="1.6"/></pattern>
-            <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <line x1="0" y1="0" x2="0" y2="9" stroke="rgba(208,138,74,.55)" stroke-width="1.2"/>
-            </pattern>
-            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
-              <path d="M0 1 L10 5 L0 9" fill="none" stroke="#f6ede1" stroke-width="1.4"/>
-            </marker>
-          </defs>
-          <path class="line draw" d="M70 235 L1130 235 L1085 330 L115 330 Z"/>
-          <path d="M70 235 L1130 235 L1085 330 L115 330 Z" fill="url(#hatch)"/>
-          <path class="line draw" d="M180 235 V140 L600 96 L1020 140 V235"/>
-          <line class="line" x1="180" y1="188" x2="1020" y2="188"/>
-          <line class="thin" x1="180" y1="212" x2="1020" y2="212"/>
-          <rect class="line" x="880" y="160" width="40" height="75"/>
-          <rect class="win" x="580" y="101" width="40" height="18"/>
-          <path class="water" d="M20 300 q20 -8 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
-          <a href="https://windsjp00171-star.github.io/vibe-coding-course/" target="_blank" rel="noopener" class="hatch-link" aria-label="進入 Vibe Coding 實戰課">
-            <rect x="868" y="250" width="190" height="62" fill="url(#hatch2)" stroke="#ffc933" stroke-width="2"/>
-            <text x="963" y="287" text-anchor="middle" class="hatch-text">Vibe Coding 實戰課</text>
-          </a>
-          <g class="label">
-            <rect class="sw-t" x="180" y="166" width="10" height="12"/><text x="196" y="178">上層甲板 教會事工</text>
-            <rect class="sw-v" x="180" y="193" width="10" height="12"/><text x="196" y="205">中層甲板 工具與教學</text>
-            <rect class="sw-s" x="180" y="218" width="10" height="12"/><text x="196" y="230">下層甲板 互動與遊戲</text>
-            <text x="632" y="92">一肘寬的窗</text>
-            <text x="936" y="152">門在旁邊</text>
-          </g>
-          <g class="dim">
-            <line x1="70" y1="388" x2="1130" y2="388" stroke="#f6ede1" stroke-width="1.2" marker-start="url(#arr)" marker-end="url(#arr)"/>
-            <line x1="70" y1="340" x2="70" y2="396" stroke="#f6ede1" stroke-width="1"/>
-            <line x1="1130" y1="340" x2="1130" y2="396" stroke="#f6ede1" stroke-width="1"/>
-            <rect x="508" y="376" width="184" height="24" fill="#7a2616"/>
-            <text x="600" y="393" text-anchor="middle">長 300 肘 · 寬 50 肘</text>
-            <line x1="1168" y1="96" x2="1168" y2="330" stroke="#f6ede1" stroke-width="1.2" marker-start="url(#arr)" marker-end="url(#arr)"/>
-            <line x1="1020" y1="96" x2="1176" y2="96" stroke="#f6ede1" stroke-width="1"/>
-            <line x1="1085" y1="330" x2="1176" y2="330" stroke="#f6ede1" stroke-width="1"/>
-            <text x="1160" y="218" text-anchor="middle" transform="rotate(-90 1160 218)">高 30 肘</text>
-          </g>
-          <g class="dim">
-            <line x1="70" y1="438" x2="370" y2="438" stroke="#f6ede1" stroke-width="2"/>
-            <line x1="70" y1="430" x2="70" y2="446" stroke="#f6ede1" stroke-width="1.5"/>
-            <line x1="170" y1="432" x2="170" y2="444" stroke="#f6ede1" stroke-width="1.5"/>
-            <line x1="270" y1="430" x2="270" y2="446" stroke="#f6ede1" stroke-width="1.5"/>
-            <line x1="370" y1="430" x2="370" y2="446" stroke="#f6ede1" stroke-width="1.5"/>
-            <text x="70" y="426" text-anchor="middle">0</text><text x="270" y="426" text-anchor="middle">100</text><text x="388" y="443">肘</text>
-          </g>
-        </svg>
-        <svg class="ark ark-m" viewBox="0 0 420 330" role="img" aria-label="方舟側面圖，長 300 肘、高 30 肘，三層甲板，上方一扇亮著的窗">
-          <defs>
-            <pattern id="hatchm" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="rgba(246,237,225,.28)" stroke-width="1"/></pattern>
-            <pattern id="hatchm2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="7" height="7" fill="#5a190d"/><line x1="0" y1="0" x2="0" y2="7" stroke="#ffc933" stroke-width="1.6"/></pattern>
-          </defs>
-          <path class="line" d="M20 200 L400 200 L378 262 L42 262 Z"/>
-          <path d="M20 200 L400 200 L378 262 L42 262 Z" fill="url(#hatchm)"/>
-          <path class="line" d="M60 200 V120 L210 92 L360 120 V200"/>
-          <line class="line" x1="60" y1="150" x2="360" y2="150"/>
-          <line class="thin" x1="60" y1="175" x2="360" y2="175"/>
-          <rect class="win" x="188" y="95" width="44" height="18"/>
-          <rect class="line" x="318" y="160" width="26" height="40"/>
-          <path class="water" d="M0 238 q14 -7 28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0"/>
-          <g class="label m"><rect class="sw-t" x="62" y="132" width="6" height="12"/><text x="72" y="143">上層 教會事工</text><rect class="sw-v" x="62" y="157" width="6" height="12"/><text x="72" y="168">中層 工具與教學</text><rect class="sw-s" x="62" y="182" width="6" height="12"/><text x="72" y="193">下層 互動與遊戲</text></g>
-          <a href="https://windsjp00171-star.github.io/vibe-coding-course/" target="_blank" rel="noopener" class="hatch-link" aria-label="進入 Vibe Coding 實戰課">
-            <rect x="248" y="206" width="124" height="48" fill="url(#hatchm2)" stroke="#ffc933" stroke-width="2"/>
-            <text x="310" y="236" text-anchor="middle" class="hatch-text m">實戰課</text>
-          </a>
-          <g class="dim m">
-            <line x1="20" y1="294" x2="400" y2="294" stroke="#f6ede1" stroke-width="1.2"/>
-            <line x1="20" y1="276" x2="20" y2="302" stroke="#f6ede1"/><line x1="400" y1="276" x2="400" y2="302" stroke="#f6ede1"/>
-            <rect x="96" y="281" width="228" height="26" fill="#7a2616"/>
-            <text x="210" y="300" text-anchor="middle">長 300 肘 · 寬 50 肘 · 高 30 肘</text>
-            <line x1="20" y1="322" x2="120" y2="322" stroke="#f6ede1" stroke-width="2"/><line x1="20" y1="316" x2="20" y2="328" stroke="#f6ede1"/><line x1="120" y1="316" x2="120" y2="328" stroke="#f6ede1"/>
-            <text x="130" y="327">100 肘</text>
-          </g>
-        </svg>
-        <p class="ark-note"><span class="measure">創世記 6:15–16</span><span>點下方任何一個艙室，看專業做了什麼、信仰在哪裡。</span></p>
-      </div>
-    </div>
-
-    <section id="decks" aria-labelledby="decks-h">
-      <div class="wrap">
-        <h2 id="decks-h"><span data-count>十四</span>個艙室</h2>
-        <p class="sec-lede">艙室越大，越是我最想你看的作品。每個艙室打開都有兩欄：左邊是專業，右邊是信仰。有些作品和信仰沒有直接關係，但做它的人始終是基督徒，我照實寫。斜線底的艙室是私有專案，只提供功能與技術摘要。</p>
-        <noscript><p class="sec-lede">此頁的作品清單需要 JavaScript。作品：教會整合管理系統、教會入口與活動報名、天父日記、教會帳務系統、小組回報系統、教會資料交換中心、聖經互動全書、群體共讀靈修 GROUP、Vibe Coding 實戰課、PitchPal、Emmark 小秘書、宣教之路、互動故事裝置、美食獵人。聯絡：emmark19890901@gmail.com</p></noscript>
-        <div id="decks-root"></div>
-      </div>
-    </section>
-
-    <section id="log" aria-labelledby="log-h" hidden>
-      <div class="wrap">
-        <h2 id="log-h">航行日誌</h2>
-        <p class="sec-lede">每小時自動從 GitHub 抓一次：哪艘艙室最近有動工。公開專案附上更新日誌的第一條；私有專案只公開日期。</p>
-        <ol class="log" id="log-root"></ol>
-      </div>
-    </section>
-
-    <section id="bridge" aria-labelledby="bridge-h">
-      <div class="wrap">
-        <h2 id="bridge-h">艦橋：誰在掌舵</h2>
-        <div class="bridge">
-          <div>
-            <p class="big">EMMARK 是 <b>以馬內利</b>（神與我們同在）× <b>方舟</b>。我想做的是一艘安靜的方舟：承載、守護，把對的人安然帶到對的地方。</p>
-            <p>老實說，這裡每一個專案都是我與 AI 協作完成的，程式碼大量交給 AI 實作。我把自己當成產品負責人，AI 是速度很快的工程師夥伴；從需求、架構到上線把關，每個產品判斷都是我的，包括「這個功能不做」的決定。</p>
-            <p>我是基督徒。這不是某幾個專案的標籤，是我做每一件事的底色，包括那些看起來和信仰沒有關係的作品。</p>
-            <p>好的工具應該是安靜的：它不搶戲，只是讓同工少一點行政重擔，多一點時間陪伴人。</p>
-          </div>
-          <div class="split" aria-label="分工">
-            <div><h3>我負責</h3><ul id="owner-list"></ul></div>
-            <div><h3>AI 負責</h3><ul id="ai-list"></ul></div>
-          </div>
+        <div class="split" aria-label="分工">
+          <div class="split-col"><h3>我負責</h3><ul id="owner-list"></ul></div>
+          <div class="split-col"><h3>AI 負責</h3><ul id="ai-list"></ul></div>
         </div>
       </div>
     </section>
 
-    <section id="equipment" aria-labelledby="equip-h">
-      <div class="wrap">
-        <h2 id="equip-h">裝備表</h2>
-        <p class="sec-lede">用到的技術，每一項附上白話說明。</p>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th scope="col">類別</th><th scope="col">白話說明</th><th scope="col">項目</th></tr></thead>
-            <tbody id="stack-root"></tbody>
-          </table>
-        </div>
+    <section id="stack" class="wrap" aria-labelledby="stack-h">
+      <div class="sec-head">
+        <h2 id="stack-h">用到的技術</h2>
+        <p class="muted">每一項附上白話說明。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">類別</th><th scope="col">白話說明</th><th scope="col">項目</th></tr></thead>
+          <tbody id="stack-root"></tbody>
+        </table>
       </div>
     </section>
 
-    <div class="hold" id="hold">
-      <section aria-labelledby="hold-h">
-        <div class="wrap">
-          <h2 id="hold-h">水線以下：資安與隱私</h2>
-          <p class="sec-lede">船身最重要的部分在水面下，看不見。處理的是教會與會友的敏感資料，所以從第一行程式碼就把資安與隱私當成預設，而不是事後補丁。</p>
-          <ul class="sec-grid" id="sec-root"></ul>
-        </div>
-      </section>
-    </div>
-
-    <section class="bow" id="bow" aria-labelledby="bow-h">
+    <section id="security" aria-labelledby="sec-h">
       <div class="wrap">
-        <h2 id="bow-h">航向</h2>
-        <p class="sec-lede">船不是為了停在港裡。這張圖上所有的專業，最後都指向同一個目的地。</p>
-        <div class="bow-quote">
-          <p class="final"><span>傳神的榮耀國度</span><span>傳神美好的見證</span></p>
-          <p class="verse">「你們往普天下去，傳福音給萬民聽。」<span class="measure"> 馬可福音 16:15</span></p>
+        <div class="sec-head">
+          <h2 id="sec-h">資安與隱私</h2>
+          <p class="muted">處理的是教會與會友的敏感資料，所以從第一行程式碼就把資安與隱私當成預設，而不是事後補丁。</p>
         </div>
-        <ul class="bow-list">
+        <ul class="sec-grid" id="sec-root"></ul>
+      </div>
+    </section>
+
+    <section id="contact" class="wrap" aria-labelledby="end-h">
+      <div class="end">
+        <h2 id="end-h" class="final"><span>傳神的榮耀國度</span><span>傳神美好的見證</span></h2>
+        <p class="verse">「你們往普天下去，傳福音給萬民聽。」<cite>馬可福音 16:15</cite></p>
+        <ul class="facts">
           <li><b>福音探索</b><span>整合管理系統裡有專門的模組，記錄新朋友的詢問並安排跟進。</span></li>
           <li><b>外部朋友報名</b><span>沒有 LINE 的朋友填姓名就能報名活動，不讓門檻擋住新朋友。</span></li>
           <li><b>慕道友也讀得懂</b><span>聖經互動全書的地名解釋，有兒童、慕道友、小組長三種程度。</span></li>
         </ul>
         <div class="contact">
-          <a class="btn" href="mailto:emmark19890901@gmail.com">emmark19890901@gmail.com <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg></a>
-          <span class="note">合作、技術交流，或想看 demo 都歡迎。</span>
-          <a class="plain" href="https://github.com/windsjp00171-star" target="_blank" rel="noopener">GitHub <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <a class="btn btn-lg" href="mailto:emmark19890901@gmail.com">emmark19890901@gmail.com<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          <p class="muted">合作、技術交流，或想看 demo 都歡迎。</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <span>「義人要發旺如棕樹，生長如黎巴嫩的香柏樹。」詩篇 92:12</span>
-      <span>© 2026 EMMARK · 以馬內利 × 方舟 · 手寫 HTML / CSS / JS，無框架</span>
-    </div>
+  <footer class="wrap foot">
+    <span>「義人要發旺如棕樹，生長如黎巴嫩的香柏樹。」詩篇 92:12</span>
+    <span>© 2026 EMMARK · 以馬內利 × 方舟 · 手寫 HTML / CSS / JS，無框架 · <a href="resume.html">履歷</a></span>
   </footer>
 
   <script src="data/projects.js"></script>
