@@ -1,82 +1,172 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-23T00:00:00Z",
+  "generatedAt": "2026-11-23T06:43:38.838Z",
   "title": "Design System: EMMARK 作品集",
   "extensions": {
     "colorMeta": {
+      "stage": {
+        "role": "secondary",
+        "displayName": "Deep Ink Stage",
+        "canonical": "#070a12",
+        "tonalRamp": [
+          "#151f37",
+          "#25355f",
+          "#354b88",
+          "#4562b0",
+          "#6c85c6",
+          "#95a6d6",
+          "#c1cbe7",
+          "#edf0f8"
+        ]
+      },
+      "stage-ink": {
+        "role": "secondary",
+        "displayName": "Stage Ink",
+        "canonical": "#f4f6fb",
+        "tonalRamp": [
+          "#141f38",
+          "#233561",
+          "#324b8a",
+          "#4162b4",
+          "#6985c9",
+          "#93a6d8",
+          "#bfcbe8",
+          "#ecf0f8"
+        ]
+      },
+      "stage-ink-2": {
+        "role": "secondary",
+        "displayName": "Stage Mist",
+        "canonical": "#aab2c5",
+        "tonalRamp": [
+          "#1f232d",
+          "#363d4f",
+          "#4d5770",
+          "#637192",
+          "#8691ac",
+          "#a7afc3",
+          "#cbd0dc",
+          "#f0f1f5"
+        ]
+      },
+      "aurora-emerald": {
+        "role": "tertiary",
+        "displayName": "Aurora Emerald",
+        "canonical": "#10b981",
+        "tonalRamp": [
+          "#064631",
+          "#0b7a55",
+          "#0fae79",
+          "#13e19d",
+          "#43efb6",
+          "#77f3ca",
+          "#aff8e0",
+          "#e8fdf6"
+        ]
+      },
+      "aurora-cyan": {
+        "role": "tertiary",
+        "displayName": "Aurora Cyan",
+        "canonical": "#22d3ee",
+        "tonalRamp": [
+          "#053e47",
+          "#096c7b",
+          "#0d9aaf",
+          "#11c8e3",
+          "#42d9f0",
+          "#76e4f4",
+          "#aeeff9",
+          "#e7fafd"
+        ]
+      },
+      "aurora-violet": {
+        "role": "tertiary",
+        "displayName": "Aurora Violet",
+        "canonical": "#8b5cf6",
+        "tonalRamp": [
+          "#190448",
+          "#2b077e",
+          "#3d0ab3",
+          "#500de8",
+          "#753ef4",
+          "#9b73f7",
+          "#c5adfa",
+          "#eee7fe"
+        ]
+      },
       "accent": {
         "role": "primary",
         "displayName": "Palm Green",
         "canonical": "#0f7a5c",
         "tonalRamp": [
-          "#04140e",
-          "#0f2a21",
-          "#0b6b50",
-          "#0f7a5c",
-          "#34d399",
-          "#5fe0ae",
-          "#a7efd1",
-          "#e7f4ef"
+          "#084433",
+          "#0f7659",
+          "#15a87f",
+          "#1bdaa4",
+          "#49e9bc",
+          "#7befce",
+          "#b2f6e3",
+          "#e8fcf7"
         ]
       },
-      "accent-hover": {
+      "accent-dark": {
         "role": "primary",
-        "displayName": "Palm Green Hover",
-        "canonical": "#0c6a4f",
+        "displayName": "Palm Green (dark theme)",
+        "canonical": "#34d399",
         "tonalRamp": [
-          "#04140e",
-          "#0f2a21",
-          "#0b6b50",
-          "#0f7a5c",
-          "#34d399",
-          "#5fe0ae",
-          "#a7efd1",
-          "#e7f4ef"
+          "#0e3f2d",
+          "#186d4e",
+          "#229b6f",
+          "#2cc990",
+          "#57dbab",
+          "#85e5c2",
+          "#b8f0db",
+          "#eafaf4"
         ]
       },
-      "accent-text": {
-        "role": "primary",
-        "displayName": "Palm Green Text",
-        "canonical": "#0b6b50",
+      "cat-ministry": {
+        "role": "tertiary",
+        "displayName": "Ministry Emerald",
+        "canonical": "#10b981",
         "tonalRamp": [
-          "#04140e",
-          "#0f2a21",
-          "#0b6b50",
-          "#0f7a5c",
-          "#34d399",
-          "#5fe0ae",
-          "#a7efd1",
-          "#e7f4ef"
+          "#064631",
+          "#0b7a55",
+          "#0fae79",
+          "#13e19d",
+          "#43efb6",
+          "#77f3ca",
+          "#aff8e0",
+          "#e8fdf6"
         ]
       },
-      "accent-soft": {
-        "role": "primary",
-        "displayName": "Palm Wash",
-        "canonical": "#e7f4ef",
+      "cat-tools": {
+        "role": "tertiary",
+        "displayName": "Tools Violet",
+        "canonical": "#8b5cf6",
         "tonalRamp": [
-          "#04140e",
-          "#0f2a21",
-          "#0b6b50",
-          "#0f7a5c",
-          "#34d399",
-          "#5fe0ae",
-          "#a7efd1",
-          "#e7f4ef"
+          "#190448",
+          "#2b077e",
+          "#3d0ab3",
+          "#500de8",
+          "#753ef4",
+          "#9b73f7",
+          "#c5adfa",
+          "#eee7fe"
         ]
       },
-      "accent-ink": {
-        "role": "neutral",
-        "displayName": "On Green",
-        "canonical": "#ffffff",
+      "cat-play": {
+        "role": "tertiary",
+        "displayName": "Play Amber",
+        "canonical": "#f59e0b",
         "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
+          "#492f03",
+          "#7f5205",
+          "#b57507",
+          "#eb970a",
+          "#f7b13b",
+          "#f9c771",
+          "#fcdeac",
+          "#fef5e7"
         ]
       },
       "bg": {
@@ -84,390 +174,225 @@
         "displayName": "Paper",
         "canonical": "#ffffff",
         "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
+          "#262626",
+          "#424242",
+          "#5e5e5e",
+          "#7a7a7a",
+          "#999999",
+          "#b5b5b5",
+          "#d4d4d4",
+          "#f2f2f2"
         ]
       },
       "bg-soft": {
         "role": "neutral",
         "displayName": "Soft Paper",
-        "canonical": "#f6f7f8",
+        "canonical": "#f5f6f8",
         "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
-        ]
-      },
-      "surface": {
-        "role": "neutral",
-        "displayName": "Surface",
-        "canonical": "#ffffff",
-        "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
+          "#20242d",
+          "#373e4e",
+          "#4e596f",
+          "#657390",
+          "#8793ab",
+          "#a8b1c2",
+          "#ccd1db",
+          "#f0f2f4"
         ]
       },
       "ink": {
         "role": "neutral",
         "displayName": "Ink",
-        "canonical": "#0b0d10",
+        "canonical": "#0a0d14",
         "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
+          "#1a2133",
+          "#2c3958",
+          "#3f527e",
+          "#526aa3",
+          "#778bbb",
+          "#9cabce",
+          "#c5cee2",
+          "#eef1f7"
         ]
       },
       "ink-2": {
         "role": "neutral",
-        "displayName": "Ink Two",
-        "canonical": "#3d434c",
+        "displayName": "Ink 2",
+        "canonical": "#3b4250",
         "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
+          "#20242c",
+          "#383f4c",
+          "#505a6d",
+          "#68748d",
+          "#8a94a8",
+          "#aab1c0",
+          "#cdd1da",
+          "#f0f2f4"
         ]
       },
       "muted": {
         "role": "neutral",
         "displayName": "Muted",
-        "canonical": "#5d6470",
+        "canonical": "#5b6373",
         "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
+          "#22252b",
+          "#3b404a",
+          "#535b69",
+          "#6c7689",
+          "#8d95a5",
+          "#acb2be",
+          "#cfd2d9",
+          "#f1f2f4"
         ]
       },
       "line": {
         "role": "neutral",
         "displayName": "Hairline",
-        "canonical": "#e4e6ea",
+        "canonical": "#e3e6eb",
         "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
+          "#20252d",
+          "#37404d",
+          "#4f5a6e",
+          "#66758f",
+          "#8895aa",
+          "#a9b2c1",
+          "#ccd2db",
+          "#f0f2f4"
         ]
       },
       "line-strong": {
         "role": "neutral",
-        "displayName": "Hairline Strong",
-        "canonical": "#cfd3da",
+        "displayName": "Strong Hairline",
+        "canonical": "#cdd2da",
         "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
-        ]
-      },
-      "accent-dark": {
-        "role": "primary",
-        "displayName": "Palm Green (dark)",
-        "canonical": "#34d399",
-        "tonalRamp": [
-          "#04140e",
-          "#0f2a21",
-          "#0b6b50",
-          "#0f7a5c",
-          "#34d399",
-          "#5fe0ae",
-          "#a7efd1",
-          "#e7f4ef"
-        ]
-      },
-      "accent-hover-dark": {
-        "role": "primary",
-        "displayName": "Palm Green Hover (dark)",
-        "canonical": "#5fe0ae",
-        "tonalRamp": [
-          "#04140e",
-          "#0f2a21",
-          "#0b6b50",
-          "#0f7a5c",
-          "#34d399",
-          "#5fe0ae",
-          "#a7efd1",
-          "#e7f4ef"
-        ]
-      },
-      "accent-text-dark": {
-        "role": "primary",
-        "displayName": "Palm Green Text (dark)",
-        "canonical": "#5fe0ae",
-        "tonalRamp": [
-          "#04140e",
-          "#0f2a21",
-          "#0b6b50",
-          "#0f7a5c",
-          "#34d399",
-          "#5fe0ae",
-          "#a7efd1",
-          "#e7f4ef"
-        ]
-      },
-      "accent-soft-dark": {
-        "role": "primary",
-        "displayName": "Palm Wash (dark)",
-        "canonical": "#0f2a21",
-        "tonalRamp": [
-          "#04140e",
-          "#0f2a21",
-          "#0b6b50",
-          "#0f7a5c",
-          "#34d399",
-          "#5fe0ae",
-          "#a7efd1",
-          "#e7f4ef"
-        ]
-      },
-      "accent-ink-dark": {
-        "role": "neutral",
-        "displayName": "On Green (dark)",
-        "canonical": "#04140e",
-        "tonalRamp": [
-          "#04140e",
-          "#0f2a21",
-          "#0b6b50",
-          "#0f7a5c",
-          "#34d399",
-          "#5fe0ae",
-          "#a7efd1",
-          "#e7f4ef"
+          "#21252c",
+          "#38404c",
+          "#505b6c",
+          "#68768d",
+          "#8a95a8",
+          "#aab2c0",
+          "#cdd2da",
+          "#f0f2f4"
         ]
       },
       "bg-dark": {
         "role": "neutral",
-        "displayName": "Paper (dark)",
-        "canonical": "#0b0d10",
+        "displayName": "Night Paper",
+        "canonical": "#0a0d14",
         "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
-        ]
-      },
-      "bg-soft-dark": {
-        "role": "neutral",
-        "displayName": "Soft Paper (dark)",
-        "canonical": "#111418",
-        "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
+          "#1a2133",
+          "#2c3958",
+          "#3f527e",
+          "#526aa3",
+          "#778bbb",
+          "#9cabce",
+          "#c5cee2",
+          "#eef1f7"
         ]
       },
       "surface-dark": {
         "role": "neutral",
-        "displayName": "Surface (dark)",
-        "canonical": "#13161b",
+        "displayName": "Night Surface",
+        "canonical": "#121722",
         "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
+          "#1a2232",
+          "#2e3b57",
+          "#41537b",
+          "#556ca0",
+          "#7a8db8",
+          "#9eadcc",
+          "#c6cfe1",
+          "#eef1f6"
         ]
       },
-      "ink-dark": {
-        "role": "neutral",
-        "displayName": "Ink (dark)",
-        "canonical": "#eef0f3",
-        "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
-        ]
-      },
-      "ink-2-dark": {
-        "role": "neutral",
-        "displayName": "Ink Two (dark)",
-        "canonical": "#c4c9d1",
-        "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
-        ]
-      },
-      "muted-dark": {
-        "role": "neutral",
-        "displayName": "Muted (dark)",
-        "canonical": "#949ba6",
-        "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
-        ]
-      },
-      "line-dark": {
-        "role": "neutral",
-        "displayName": "Hairline (dark)",
-        "canonical": "#23272e",
-        "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
-        ]
-      },
-      "line-strong-dark": {
-        "role": "neutral",
-        "displayName": "Hairline Strong (dark)",
-        "canonical": "#343a43",
-        "tonalRamp": [
-          "#0b0d10",
-          "#23272e",
-          "#3d434c",
-          "#5d6470",
-          "#949ba6",
-          "#cfd3da",
-          "#e4e6ea",
-          "#f6f7f8"
-        ]
+      "stage-line": {
+        "role": "secondary",
+        "displayName": "Stage Hairline",
+        "canonical": "rgba(255, 255, 255, .12)"
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Intro h1 only."
+        "purpose": "Hero headline on the stage and, larger, the closing line."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section h2; the closing statement runs larger at 700."
+        "purpose": "Section heads."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Tile names (1.4rem on weight-3 tiles); panel h4 runs larger."
+        "purpose": "Featured project names; panels and tiles step down."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Running text at 17px, 1.7 leading, 16px under 600px."
+        "purpose": "Reading copy, 16px under 600px."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Buttons, filters, close control."
+        "purpose": "Category kind, meta, table heads."
       },
-      "numeric": {
-        "displayName": "Numeric",
-        "purpose": "Geist Mono for dates and counts only, tabular figures."
+      "number": {
+        "displayName": "Number",
+        "purpose": "Figures and dates only."
       }
     },
     "shadows": [
       {
-        "name": "hover-lift",
-        "value": "0 1px 2px rgba(11,13,16,.04), 0 8px 24px -12px rgba(11,13,16,.14)",
-        "purpose": "Tile hover only (light)."
+        "name": "soft-lift",
+        "value": "0 1px 2px rgba(10, 13, 20, .05), 0 18px 40px -20px rgba(10, 13, 20, .22)",
+        "purpose": "Tile hover and open panels (dark: 0 1px 2px rgba(0,0,0,.4), 0 18px 44px -20px rgba(0,0,0,.8))."
       },
       {
-        "name": "hover-lift-dark",
-        "value": "0 1px 2px rgba(0,0,0,.4), 0 12px 32px -16px rgba(0,0,0,.7)",
-        "purpose": "Tile hover only (dark)."
+        "name": "stage-frame",
+        "value": "0 50px 100px -30px rgba(0, 0, 0, .75), 0 0 0 1px rgba(0, 0, 0, .3)",
+        "purpose": "Hero screenshot frames on the stage."
       },
       {
-        "name": "open-ring",
-        "value": "0 0 0 1px var(--accent)",
-        "purpose": "Expanded tile, paired with an accent border."
+        "name": "category-glow",
+        "value": "0 40px 80px -30px color-mix(in srgb, var(--cat) 55%, transparent), 0 0 0 1px rgba(0, 0, 0, .06)",
+        "purpose": "Featured screens, tinted by category."
       },
       {
-        "name": "live-halo",
-        "value": "0 0 0 3px var(--accent-soft)",
-        "purpose": "Ring around the 8px live-status dot."
+        "name": "light-halo",
+        "value": "0 0 0 4px rgba(255, 255, 255, .12)",
+        "purpose": "Light button hover on the stage."
       }
     ],
     "motion": [
       {
         "name": "ease",
         "value": "cubic-bezier(.16, 1, .3, 1)",
-        "purpose": "House easing for all transitions."
+        "purpose": "All transitions and reveals."
       },
       {
-        "name": "control-state",
-        "value": "150ms to 180ms color, background, border",
-        "purpose": "Buttons, filters, nav links."
+        "name": "reveal",
+        "value": "opacity .9s, translateY(32px) to 0",
+        "purpose": "Section and tile entry under .motion; staggered .08s across grid columns."
       },
       {
-        "name": "tile-hover",
-        "value": "200ms border, 250ms shadow and translateY(-2px)",
-        "purpose": "Tile lift."
+        "name": "stack-tilt",
+        "value": "rotateX 22deg to 0 with scroll; rotateY up to 4deg toward pointer (fine pointers only)",
+        "purpose": "Hero screenshot stack, under .motion."
+      },
+      {
+        "name": "feature-settle",
+        "value": "rotateY 10deg to 0, scale .94 to 1 as the frame nears viewport centre",
+        "purpose": "Featured screens, under .motion, off below 960px."
+      },
+      {
+        "name": "aurora-drift",
+        "value": "18s / 22s / 26s ease-in-out infinite alternate, translate(6%, -8%) scale(1.12)",
+        "purpose": "Stage light, only with prefers-reduced-motion: no-preference."
       },
       {
         "name": "panel-rise",
-        "value": "320ms, opacity 0 to 1, translateY(6px) to 0, reduced-motion gated",
-        "purpose": "Detail row reveal."
+        "value": ".4s, translateY(8px) to 0",
+        "purpose": "Detail panel open."
       }
     ],
     "breakpoints": [
       {
-        "name": "two-column",
+        "name": "stack",
         "value": "960px"
       },
       {
@@ -475,7 +400,7 @@
         "value": "760px"
       },
       {
-        "name": "single-column",
+        "name": "single",
         "value": "600px"
       }
     ]
@@ -485,111 +410,124 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Palm-green action: email, course entry.",
-      "html": "<a class=\"ds-btn\" href=\"#\">寫信給我<svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 7l9 6 9-6\"/></svg></a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 18px; background: var(--accent); color: var(--accent-ink); border: 1px solid transparent; border-radius: 10px; font: 500 15px/1 var(--f-sans); text-decoration: none; transition: background-color .18s cubic-bezier(.16,1,.3,1), transform .18s cubic-bezier(.16,1,.3,1); } .ds-btn:hover { background: var(--accent-hover); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-ico { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }"
+      "description": "Filled palm-green pill for the main action inside the reading body.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">立即體驗</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 20px;border:1px solid transparent;border-radius:999px;font:500 15px/1 var(--f-sans, Geist, \"Noto Sans TC\", sans-serif);text-decoration:none;cursor:pointer;transition:background-color .2s cubic-bezier(.16,1,.3,1),border-color .2s,transform .2s}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:2px solid #10b981;outline-offset:3px}.ds-btn-primary{background:var(--accent, #0f7a5c);color:var(--accent-ink, #fff)}.ds-btn-primary:hover{background:var(--accent-hover, #0c6a4f)}"
+    },
+    {
+      "name": "Light Button (stage)",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "White pill on the dark stage; the hero email action and header course link.",
+      "html": "<div class=\"ds-stage\"><a class=\"ds-btn ds-btn-light\" href=\"#\">寫信給我</a></div>",
+      "css": ".ds-stage{background:#070a12;padding:24px}.ds-btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border:1px solid transparent;border-radius:999px;font:500 15px/1 Geist,\"Noto Sans TC\",sans-serif;text-decoration:none;transition:background-color .2s,box-shadow .2s}.ds-btn:focus-visible{outline:2px solid #10b981;outline-offset:3px}.ds-btn-light{background:#fff;color:#070a12}.ds-btn-light:hover{background:#e9edf5;box-shadow:0 0 0 4px rgba(255,255,255,.12)}"
+    },
+    {
+      "name": "Glass Button (stage)",
+      "kind": "button",
+      "refersTo": "button-glass",
+      "description": "Secondary action on the stage.",
+      "html": "<div class=\"ds-stage\"><a class=\"ds-btn ds-btn-glass\" href=\"#\">GitHub</a></div>",
+      "css": ".ds-stage{background:#070a12;padding:24px}.ds-btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border:1px solid transparent;border-radius:999px;font:500 15px/1 Geist,\"Noto Sans TC\",sans-serif;text-decoration:none;transition:background-color .2s}.ds-btn:focus-visible{outline:2px solid #10b981;outline-offset:3px}.ds-btn-glass{background:rgba(255,255,255,.06);color:#f4f6fb;border-color:rgba(255,255,255,.12)}.ds-btn-glass:hover{background:rgba(255,255,255,.12)}"
     },
     {
       "name": "Ghost Button",
       "kind": "button",
       "refersTo": "button-ghost",
-      "description": "Secondary action beside a primary, e.g. GitHub.",
-      "html": "<a class=\"ds-btn-ghost\" href=\"#\">GitHub<svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 17L17 7M9 7h8v8\"/></svg></a>",
-      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; background: transparent; color: var(--ink); border: 1px solid var(--line-strong); border-radius: 10px; font: 500 15px/1 var(--f-sans); text-decoration: none; transition: background-color .18s cubic-bezier(.16,1,.3,1), border-color .18s cubic-bezier(.16,1,.3,1); } .ds-btn-ghost:hover { background: var(--bg-soft); border-color: var(--muted); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-ico { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }"
+      "description": "Hairline pill that opens a detail panel; takes the category tone when expanded.",
+      "html": "<button class=\"ds-btn ds-btn-ghost\" aria-expanded=\"false\" style=\"--cat-t:#047857\">看完整介紹</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border:1px solid transparent;border-radius:999px;font:500 15px/1 Geist,\"Noto Sans TC\",sans-serif;cursor:pointer;transition:background-color .2s,border-color .2s}.ds-btn:focus-visible{outline:2px solid #10b981;outline-offset:3px}.ds-btn-ghost{background:transparent;color:var(--ink, #0a0d14);border-color:var(--line-strong, #cdd2da)}.ds-btn-ghost:hover{background:var(--bg-soft, #f5f6f8);border-color:var(--muted, #5b6373)}.ds-btn-ghost[aria-expanded=\"true\"]{border-color:var(--cat-t);color:var(--cat-t)}"
     },
     {
-      "name": "Category Filter",
+      "name": "Header",
+      "kind": "nav",
+      "description": "Sticky dark glass bar in every theme with pill links and the course button.",
+      "html": "<header class=\"ds-bar\"><b class=\"ds-word\">EMMARK</b><nav class=\"ds-nav\"><a href=\"#\">作品</a><a href=\"#\">分工</a><a href=\"#\">聯絡</a></nav></header>",
+      "css": ".ds-bar{display:flex;align-items:center;gap:28px;min-height:60px;padding:0 24px;background:rgba(7,10,18,.86);backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(255,255,255,.12);color:#f4f6fb;font-family:Geist,\"Noto Sans TC\",sans-serif}.ds-word{font-weight:700;letter-spacing:.06em}.ds-nav{display:flex;gap:2px;font-size:15px}.ds-nav a{padding:6px 12px;border-radius:999px;color:#aab2c5;text-decoration:none;transition:color .15s,background-color .15s}.ds-nav a:hover{color:#fff;background:rgba(255,255,255,.08)}.ds-nav a:focus-visible{outline:2px solid #10b981;outline-offset:3px}"
+    },
+    {
+      "name": "Category Badge and Chip",
       "kind": "chip",
-      "refersTo": "filter",
-      "description": "Pill filter with a mono count; pressed inverts to ink.",
-      "html": "<div class=\"ds-filters\"><button class=\"ds-filter\" aria-pressed=\"true\">全部 <span class=\"ds-num\">14</span></button><button class=\"ds-filter\" aria-pressed=\"false\">教會事工 <span class=\"ds-num\">8</span></button></div>",
-      "css": ".ds-filters { display: flex; gap: 6px; } .ds-filter { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 14px; font: 500 14px/1 var(--f-sans); color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; transition: color .15s, border-color .15s, background-color .15s; } .ds-filter:hover { color: var(--ink); border-color: var(--line-strong); } .ds-filter[aria-pressed=\"true\"] { color: var(--bg); background: var(--ink); border-color: var(--ink); } .ds-filter:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-num { font-family: var(--f-mono); font-size: .82em; font-variant-numeric: tabular-nums; opacity: .8; }"
+      "refersTo": "badge",
+      "description": "Category dot label plus a public/private pill.",
+      "html": "<div class=\"ds-chip\" style=\"--cat:#10b981;--cat-t:#047857\"><span>教會事工 · 整合平台</span><span class=\"ds-badge\">私有</span><span class=\"ds-badge is-public\">開源</span></div>",
+      "css": ".ds-chip{display:flex;align-items:center;gap:10px;font:500 14px Geist,\"Noto Sans TC\",sans-serif;color:var(--cat-t)}.ds-chip>span:first-child::before{content:\"\";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--cat);margin-right:8px}.ds-badge{font-size:12px;line-height:1;padding:5px 9px;border-radius:999px;background:var(--bg-soft, #f5f6f8);color:var(--muted, #5b6373);border:1px solid var(--line, #e3e6eb)}.ds-badge.is-public{background:rgba(16,185,129,.14);color:#047857;border-color:transparent}"
     },
     {
       "name": "Project Tile",
       "kind": "card",
       "refersTo": "tile",
-      "description": "Whole-tile button; flat at rest, lifts on hover, green ring when open.",
-      "html": "<button class=\"ds-tile\" aria-expanded=\"false\"><span class=\"ds-tile-top\"><span class=\"ds-tile-name\">天父日記</span><span class=\"ds-badge\">公開</span></span><span class=\"ds-tile-kind\">靈修 App</span><span class=\"ds-tile-tag\">依讀經進度顯示當日經文，安靜書寫，提交後鎖定。</span><span class=\"ds-tile-meta\"><span>Flask · Supabase</span><span class=\"ds-num\">2026-11-07</span></span></button>",
-      "css": ".ds-tile { display: flex; flex-direction: column; gap: 8px; width: 340px; min-height: 210px; padding: 20px 20px 18px; text-align: left; font: inherit; font-family: var(--f-sans); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); cursor: pointer; transition: border-color .2s cubic-bezier(.16,1,.3,1), box-shadow .25s cubic-bezier(.16,1,.3,1), transform .25s cubic-bezier(.16,1,.3,1); } .ds-tile:hover { border-color: var(--line-strong); box-shadow: var(--shadow); transform: translateY(-2px); } .ds-tile:hover .ds-tile-name { color: var(--accent-text); } .ds-tile[aria-expanded=\"true\"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); transform: none; } .ds-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-tile-top { display: flex; justify-content: space-between; gap: 12px; } .ds-tile-name { font-weight: 600; font-size: 1.2rem; line-height: 1.35; letter-spacing: -.01em; transition: color .2s cubic-bezier(.16,1,.3,1); } .ds-badge { font-size: 12px; line-height: 1; padding: 5px 8px; border-radius: 6px; background: var(--accent-soft); color: var(--accent-text); } .ds-tile-kind { font-size: 13px; color: var(--muted); } .ds-tile-tag { color: var(--ink-2); font-size: 15px; line-height: 1.6; } .ds-tile-meta { margin-top: auto; padding-top: 12px; display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: var(--muted); } .ds-num { font-family: var(--f-mono); font-size: 12px; font-variant-numeric: tabular-nums; }"
+      "description": "More-work grid card; lifts on hover, rings in category when open.",
+      "html": "<button class=\"ds-tile\" style=\"--cat:#8b5cf6;--cat-t:#6d28d9\"><b>PitchPal 音樂 Key 工具</b><span class=\"ds-kind\">工具與教學 · 音樂工具</span><span class=\"ds-tag\">上傳一段音樂，自動判斷調性。</span></button>",
+      "css": ".ds-tile{display:flex;flex-direction:column;gap:8px;width:320px;padding:20px 20px 18px;text-align:left;font:inherit;font-family:Geist,\"Noto Sans TC\",sans-serif;color:var(--ink, #0a0d14);background:var(--surface, #fff);border:1px solid var(--line, #e3e6eb);border-radius:16px;cursor:pointer;position:relative;overflow:hidden;transition:border-color .25s cubic-bezier(.16,1,.3,1),box-shadow .3s,transform .3s}.ds-tile::before{content:\"\";position:absolute;left:20px;right:20px;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--cat),transparent)}.ds-tile b{font-weight:600;font-size:1.2rem}.ds-kind{font-size:13px;font-weight:500;color:var(--cat-t)}.ds-tag{font-size:15px;color:var(--ink-2, #3b4250)}.ds-tile:hover{border-color:color-mix(in srgb,var(--cat) 45%,#e3e6eb);box-shadow:0 1px 2px rgba(10,13,20,.05),0 18px 40px -20px rgba(10,13,20,.22);transform:translateY(-3px)}.ds-tile:focus-visible{outline:2px solid #10b981;outline-offset:3px}"
     },
     {
-      "name": "Detail Row",
+      "name": "Browser Frame",
       "kind": "custom",
-      "refersTo": "panel",
-      "description": "Full-width in-place detail: professional list beside the faith box.",
-      "html": "<div class=\"ds-panel\"><h4>天父日記</h4><div class=\"ds-cols\"><div><h5>專業</h5><ul><li>讀經進度在後台直接編輯</li><li>牧者總覽頁一次看完</li></ul></div><div class=\"ds-faith\"><h5>信仰</h5><p>日記提交後永久鎖定，這是刻意不做的功能。</p></div></div></div>",
-      "css": ".ds-panel { width: 640px; background: var(--bg-soft); color: var(--ink); border: 1px solid var(--line); border-radius: var(--r); padding: 32px; font-family: var(--f-sans); } .ds-panel h4 { margin: 0; font-size: 1.9rem; font-weight: 600; line-height: 1.25; letter-spacing: -.02em; } .ds-cols { margin-top: 24px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; } .ds-cols h5 { margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: .04em; color: var(--muted); } .ds-cols ul { list-style: none; padding: 0; margin: 0; } .ds-cols li { position: relative; padding-left: 18px; margin-top: 8px; color: var(--ink-2); font-size: 16px; } .ds-cols li::before { content: ''; position: absolute; left: 2px; top: .78em; width: 6px; height: 6px; border-radius: 50%; background: var(--line-strong); } .ds-faith { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; } .ds-faith h5 { color: var(--accent-text); } .ds-faith p { margin: 0; font-size: 16px; }"
+      "description": "Thin browser chrome around every real screenshot.",
+      "html": "<figure class=\"ds-frame\"><div class=\"ds-frame-bar\"><i></i><i></i><i></i></div><div class=\"ds-shot\"></div></figure>",
+      "css": ".ds-frame{margin:0;width:360px;border-radius:14px;overflow:hidden;background:#0f1420;border:1px solid rgba(255,255,255,.12);box-shadow:0 50px 100px -30px rgba(0,0,0,.75),0 0 0 1px rgba(0,0,0,.3)}.ds-frame-bar{display:flex;gap:6px;align-items:center;height:28px;padding:0 12px;background:#161c2b;border-bottom:1px solid rgba(255,255,255,.08)}.ds-frame-bar i{width:9px;height:9px;border-radius:50%;background:#2d3547}.ds-shot{aspect-ratio:16/10;background:#f5f6f8}"
     },
     {
-      "name": "Header Bar",
-      "kind": "nav",
-      "refersTo": "nav-link",
-      "description": "Sticky translucent bar: wordmark, muted links, small course button.",
-      "html": "<header class=\"ds-bar\"><span class=\"ds-wordmark\">EMMARK</span><nav class=\"ds-nav\"><a href=\"#\">作品</a><a href=\"#\">分工</a><a href=\"#\">技術</a></nav><a class=\"ds-btn-sm\" href=\"#\">Vibe Coding 課程</a></header>",
-      "css": ".ds-bar { display: flex; align-items: center; gap: 28px; min-height: 60px; padding: 0 24px; background: color-mix(in srgb, var(--bg) 92%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: saturate(1.4) blur(10px); font-family: var(--f-sans); } .ds-wordmark { font-weight: 700; font-size: 16px; letter-spacing: .06em; color: var(--ink); } .ds-nav { display: flex; gap: 4px; margin-right: auto; font-size: 15px; } .ds-nav a { padding: 6px 10px; border-radius: 8px; color: var(--muted); text-decoration: none; transition: color .15s, background-color .15s; } .ds-nav a:hover { color: var(--ink); background: var(--bg-soft); } .ds-nav a:focus-visible, .ds-btn-sm:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-btn-sm { display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; background: var(--accent); color: var(--accent-ink); border-radius: 8px; font: 500 14px/1 var(--f-sans); text-decoration: none; } .ds-btn-sm:hover { background: var(--accent-hover); }"
-    },
-    {
-      "name": "Tag",
-      "kind": "chip",
-      "refersTo": "tag",
-      "description": "Static tech tag inside the detail row.",
-      "html": "<span class=\"ds-tag\">Supabase</span>",
-      "css": ".ds-tag { display: inline-block; font-size: 13px; padding: 4px 10px; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); font-family: var(--f-sans); }"
+      "name": "Faith-Decision Card",
+      "kind": "custom",
+      "description": "Stands in for a screenshot when a private system has no shareable screen.",
+      "html": "<div class=\"ds-noshot\" style=\"--cat:#10b981\"><div><svg viewBox=\"0 0 24 24\" width=\"40\" height=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 11h12v9H6zM9 11V8a3 3 0 0 1 6 0v3\"/></svg><p>日記提交後鎖定，不能事後修改。</p><span>私有系統，不公開畫面</span></div></div>",
+      "css": ".ds-noshot{width:420px;aspect-ratio:16/10.45;display:grid;place-items:center;padding:32px;text-align:center;border-radius:14px;background:radial-gradient(120% 90% at 30% 20%,color-mix(in srgb,var(--cat) 45%,#070a12),#070a12 70%);color:#fff;font-family:Geist,\"Noto Sans TC\",sans-serif}.ds-noshot svg{display:block;margin:0 auto 18px;color:color-mix(in srgb,var(--cat) 60%,#fff)}.ds-noshot p{margin:0;font-size:1.4rem;line-height:1.5;font-weight:600}.ds-noshot span{display:block;margin-top:16px;font-size:13px;color:#aab2c5}"
     }
   ],
   "narrative": {
-    "northStar": "The Open Workbench",
-    "overview": "The category standard, played straight. The page is a product-grade index of fourteen live systems: neutral grounds, hairline borders, one palm-green accent, and type that never raises its voice. The work is the page; there is no themed costume and no metaphor between the visitor and the projects. The craft bar is the marketing surface of a careful developer tool: quiet at rest, precise on interaction.\n\nDensity is moderate and even. A three-column tile grid carries the work above the fold; a tile opens in place into a full-width detail row so reading never leaves the grid. Light is the default; dark follows the system preference with its own tuned token set rather than an inversion. Depth is earned by state: surfaces are flat at rest and lift only on hover.",
+    "northStar": "The Launch Stage",
+    "overview": "The work is staged the way a launch page stages one product: real screens of real systems, lit from behind on a deep ink stage, tilted in perspective at first and settling flat as the visitor scrolls. The stage opens the page and closes it; between them the reading body steps out of the dark and follows the visitor's system theme on quiet neutral grounds, so long reading happens in comfortable light or dark rather than inside a spotlight.\n\nThe system is product-grade and calm. Hairline borders, soft long shadows, pill buttons, and generous radii carry structure; color is spent in two places only: the aurora glow on the stage and one hue per project category. Every image is a sourced screenshot of a live system with a provenance sidecar. Where a private system has no shareable screen, the visual slot becomes a faith-decision card instead of a mock.\n\nNeither a plain list portfolio nor a themed metaphor (no arks, palms, or parchment as decoration). The brand mark and the closing line carry the identity; the screens carry the proof.",
     "keyCharacteristics": [
-      "White (light) or near-black (dark) grounds with one soft grey step for recessed areas.",
-      "One palm-green accent for actions, focus, selection, and the open state.",
-      "1px hairline borders and a 12px radius carry all structure.",
-      "Geist with Noto Sans TC for everything; Geist Mono only for dates and counts.",
-      "Flat at rest; a soft offset shadow and a 2px lift appear only on hover."
+      "A fixed dark stage (#070a12) for hero, the 分工 band, and the close, independent of theme.",
+      "Soft emerald, cyan and violet aurora blurs plus a fading 64px hairline grid on every stage.",
+      "Reading body on neutral grounds that follow `prefers-color-scheme` and a `[data-theme]` override.",
+      "Real screenshots in thin browser frames are the only imagery.",
+      "One color per category: emerald 教會事工, violet 工具與教學, amber 互動與遊戲.",
+      "Geist with Noto Sans TC; Geist Mono only for numbers and dates."
     ],
     "rules": [
       {
-        "name": "The One Green Rule",
-        "body": "Palm green is the only hue. It marks what acts, what has focus, and what is open; everything else is a neutral. No second accent.",
+        "name": "The Light Not Paint Rule",
+        "body": "Aurora colors appear only as blurred light on the stage, never as flat fills, gradients on text, or backgrounds in the reading body.",
         "section": "colors"
       },
       {
-        "name": "The Paired Token Rule",
-        "body": "Every color is a token with a light and a dark value on `:root`. Components reference tokens, never literals, so dark mode needs no per-component overrides.",
+        "name": "The One Hue Per Category Rule",
+        "body": "A project's color comes from its category through `data-deck` (`--cat`, `--cat-t`); never assign a color per project.",
         "section": "colors"
       },
       {
-        "name": "The Mono-For-Numbers Rule",
-        "body": "Geist Mono sets dates and counts and nothing else. Words, labels, and tech names stay in Geist.",
+        "name": "The Fixed Stage Rule",
+        "body": "Stage tokens do not change with the theme. The bookends stay dark in light mode; the body follows the system.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Means Number Rule",
+        "body": "Geist Mono appears only on figures and dates (`.num`), never for labels or decoration.",
         "section": "typography"
       },
       {
-        "name": "The Two-Weight Rule",
-        "body": "Headings are 600, text is 400, controls are 500. Bold (700) is reserved for the wordmark and the closing statement.",
-        "section": "typography"
-      },
-      {
-        "name": "The Hover-Only Shadow Rule",
-        "body": "Nothing casts a shadow at rest. A shadow is a response to the pointer, soft and offset downward, and it disappears when the element is opened.",
+        "name": "The Hover Lifts Rule",
+        "body": "Tiles are flat until hovered; hover raises 3px with the soft lift and a category-tinted border. An open tile drops the lift and takes a 1px category ring.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do take every color from the paired `:root` tokens so light and dark stay in step.",
-      "Do spend palm green only on actions, focus, selection, the open state, and the few marked green texts (faith heading, security icons, closing line).",
-      "Do use accent-text, not the fill accent, whenever green is used as text.",
-      "Do build structure from 1px hairlines and the 12px container radius.",
-      "Do keep surfaces flat at rest; use the hover-lift shadow and 2px rise only on pointer hover, gated with transitions on the house ease (cubic-bezier(.16, 1, .3, 1)).",
-      "Do set Geist Mono only on dates and counts, with tabular figures.",
-      "Do open project detail in place as a full-width grid row, keeping the grid visible."
+      "**Do** use only real, sourced screenshots of live or public demo systems (1280x800, WebP) and ship each with a `.webp.json` provenance sidecar stating how and when it was captured.",
+      "**Do** use the faith-decision card for private systems with no shareable screen, and keep member and church identifying data out of every screenshot.",
+      "**Do** keep the hero, 分工 band and close on the fixed stage with aurora and the fading grid, whatever the theme.",
+      "**Do** color a project only through its category (`data-deck`), using the darker text tone for any colored text.",
+      "**Do** gate every scroll or pointer transform behind `.motion` and keep content fully visible without it.",
+      "**Do** set numbers and dates in Geist Mono with tabular figures."
     ],
     "donts": [
-      "Don't add a second accent hue or tint sections with color.",
-      "Don't put shadows on resting surfaces or use hard, unblurred offset shadows.",
-      "Don't set words, labels, or tech names in mono.",
-      "Don't use uppercase tracked labels above headings; small headings stay sentence case.",
-      "Don't reintroduce the retired ark metaphor or its red-oxide palette."
+      "**Don't** use generated, illustrated, stock or mocked-up imagery in place of a screen.",
+      "**Don't** use aurora colors as flat fills or gradient text in the reading body.",
+      "**Don't** theme the stage to light mode or let the reading body go permanently dark.",
+      "**Don't** add per-project colors beyond the three categories.",
+      "**Don't** hide project facts behind hover, flips or animation; hover only lifts."
     ]
   }
 }

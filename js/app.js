@@ -290,7 +290,6 @@
         var r = stack.getBoundingClientRect();
         var t = Math.min(Math.max(1 - (r.top - innerHeight * 0.15) / (innerHeight * 0.75), 0), 1);
         stack.style.setProperty('--tilt', (22 * (1 - t)).toFixed(2) + 'deg');
-        stack.style.setProperty('--spread', t.toFixed(3));
         stack.style.setProperty('--lean', (px * 4).toFixed(2) + 'deg');
         // 主力作品的畫面：越接近畫面中央越攤平放大
         shots.forEach(function (f) {
