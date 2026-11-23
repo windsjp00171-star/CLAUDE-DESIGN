@@ -106,6 +106,14 @@ window.PORTFOLIO = {
           repoUrl: "https://github.com/windsjp00171-star/CODETOOL", liveUrl: "https://windsjp00171-star.github.io/CODETOOL/ticket-studio/", liveLabel: "開始製作"
         },
         {
+          id: "repodoctor", shot: "img/shots/repodoctor.webp", weight: 2, name: "RepoDoctor 程式健檢", kind: "資安健檢工具", isPrivate: true, repo: "repodoctor",
+          tagline: "連上 GitHub，用中文白話告訴你 AI 寫的程式哪裡有危險，附可以直接貼給 Claude Code 的修復指令。",
+          tags: ["GitHub 登入（唯讀）", "暫存即刪", "AI 修復指令", "Vercel"],
+          pro: ["抓出金鑰外洩、資料表沒上鎖、頁面沒登入也能進這類問題，用中文白話說明", "每個問題附一段可以直接貼給 Claude Code 的修復指令", "GitHub 登入只讀公開資料；健檢只要唯讀權限、只看使用者勾選的 repo，不能改程式、不會開 PR", "健檢時把程式下載到暫存資料夾，掃完立刻刪除，不保存程式碼", "找到的金鑰只記前 4 碼和位置，完整的值不存、也不送給 AI"],
+          faith: "這個工具和信仰沒有直接關係，但做它的人就是基督徒，做事的態度沒有兩樣：別人的程式碼不保存，找到的金鑰不交給 AI。",
+          liveUrl: "https://repodoctor-psi.vercel.app/", liveLabel: "開始健檢"
+        },
+        {
           id: "secretary", weight: 1, name: "Emmark 小秘書", kind: "LINE Bot", isPrivate: true, repo: "emmask-secret",
           tagline: "用一句話記行程、待辦和帳，到點自動提醒，也能查服事表。",
           tags: ["LINE Messaging API", "Node.js", "Supabase", "Vercel", "Webhook"],

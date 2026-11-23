@@ -59,4 +59,4 @@
 ## 尚待確認
 
 - commit 總數設好 `PORTFOLIO_TOKEN` 後由程式自動算；沒設時顯示手寫的「近 2,000 次」（2026-10 重算：13 個 repo 加總 1,944）。程式碼行數因專案間可能重複計算，先不寫。
-- 履歷 `resume.html`／PDF 與 `linkedin-profile.md` 寫 13 個專案，網站是 15 個（加了宣教之路、票券工作室）。2026-11-23 使用者決定履歷與 LinkedIn 不跟著更新。
+- 履歷 `resume.html`／PDF 與 `linkedin-profile.md` 寫 13 個專案，網站是 16 個（加了宣教之路、票券工作室、RepoDoctor 程式健檢）。2026-11-23 使用者決定履歷與 LinkedIn 不跟著更新。
