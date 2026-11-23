@@ -83,10 +83,10 @@ window.PORTFOLIO = {
       projects: [
         {
           id: "course", shot: "img/shots/course-lesson.webp", weight: 3, name: "Vibe Coding 實戰課", kind: "線上課程", isPrivate: false, repo: "vibe-coding-course",
-          tagline: "我開的課：帶非工程師用 Claude Code 做出自己的網站。",
+          tagline: "給沒有技術背景的上班族：用 Claude Code 做出能上線的網站與工具，也學會不被 AI 詐騙。",
           tags: ["Vanilla JS", "Supabase", "Google OAuth", "GitHub Pages", "node:test"],
-          pro: ["二十多個單元，從 AI 基礎、安裝、Git、上線，一路到資料庫、LINE 登入、推播、交接與成本", "每單元有互動練習：Git 存檔點模擬器、個資遮罩、程式碼體檢", "學員、講師雙模式與投影模式，一鍵印出紙本學習單", "Google 登入、班級加入碼、講師後台看全班進度", "網頁是教材唯一來源，簡報與 Kahoot 題庫由程式自動產生；講師內容放在另一個私有 repo，不進公開站"],
-          faith: "我把自己真實踩過的二十多個坑寫成踩坑圖鑑，讓學員不必再踩一次。",
+          pro: ["兩條路：個人或企業內訓（四個半天），結業時手上有一個有登入、同事能一起用的線上小系統；或半日「AI 資安意識」全員內訓，不用電腦", "23 個單元（必修 11 個），翻轉教室：課前在網站上自學，課中全程動手；單元 0、1、4、7、19 免費試看", "免費、不用登入的「防 AI 詐騙」公益講座與「金鑰體檢站」：把程式貼進來，30 秒檢查有沒有寫死的密碼與金鑰，只在瀏覽器裡檢查", "每單元有互動練習：Git 存檔點模擬器、個資遮罩、程式碼體檢", "學員、講師雙模式與投影模式，一鍵印出紙本學習單；Google 登入、班級加入碼、講師後台看全班進度", "網頁是教材唯一來源，簡報與 Kahoot 題庫由程式自動產生；講師內容放在另一個私有 repo，不進公開站"],
+          faith: "我把自己真實踩過的 27 個坑寫成踩坑圖鑑，讓學員不必再踩一次。",
           repoUrl: "https://github.com/windsjp00171-star/vibe-coding-course", liveUrl: "https://windsjp00171-star.github.io/vibe-coding-course/", liveLabel: "進入課程"
         },
         {
