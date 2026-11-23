@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+### 修正
+- 作品數的說法統一成「收錄 16 件」，不再寫「16 個真正上線」：課程網站寫的是收進作品集的件數，兩邊放在一起才不會像互相矛盾
+
 ### 新增
 - `llms.txt`：給 AI 讀的完整作品清單（網頁的作品要跑 JavaScript 才看得到，大多數 AI 爬蟲不跑）。每小時的排程從 `data/projects.js` 重新產生，改作品不用另外維護。
 - 首頁加上 `ProfilePage`／`Person` 結構化資料，讓搜尋引擎與 AI 知道 EMMARK 是誰；加上 Google Search Console 驗證標記。
