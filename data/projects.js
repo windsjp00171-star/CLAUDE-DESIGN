@@ -106,12 +106,12 @@ window.PORTFOLIO = {
           repoUrl: "https://github.com/windsjp00171-star/CODETOOL", liveUrl: "https://windsjp00171-star.github.io/CODETOOL/ticket-studio/", liveLabel: "開始製作"
         },
         {
-          id: "repodoctor", shot: "img/shots/repodoctor.webp", weight: 2, name: "RepoDoctor 程式健檢", kind: "資安健檢工具", isPrivate: true, repo: "repodoctor",
-          tagline: "連上 GitHub，用中文白話告訴你 AI 寫的程式哪裡有危險，附可以直接貼給 Claude Code 的修復指令。",
-          tags: ["GitHub 登入（唯讀）", "暫存即刪", "AI 修復指令", "Vercel"],
-          pro: ["抓出金鑰外洩、資料表沒上鎖、頁面沒登入也能進這類問題，用中文白話說明", "每個問題附一段可以直接貼給 Claude Code 的修復指令", "GitHub 登入只讀公開資料；健檢只要唯讀權限、只看使用者勾選的 repo，不能改程式、不會開 PR", "健檢時把程式下載到暫存資料夾，掃完立刻刪除，不保存程式碼", "找到的金鑰只記前 4 碼和位置，完整的值不存、也不送給 AI"],
+          id: "repodoctor", shot: "img/shots/repodoctor.webp", weight: 3, name: "RepoDoctor 程式健檢", kind: "程式健檢服務", isPrivate: true, repo: "repodoctor",
+          tagline: "給 vibe coder 的程式健檢醫生：連上 GitHub，用中文白話告訴你專案哪裡有危險，附可以直接貼給 Claude Code 的修復指令。",
+          tags: ["Next.js", "TypeScript", "Supabase RLS / Realtime", "Python", "Claude API", "GitHub App"],
+          pro: ["先用規則掃描抓出確定的問題（金鑰外洩、Supabase 資料表沒開 RLS、專案衛生），需要理解程式的部分才交給 Claude 分析，兼顧準確度與 AI 成本", "每個問題附白話說明與寫好的修復指令：要改哪裡、不能動什麼、怎麼驗證，一鍵複製交給 AI", "重新健檢時顯示上次以來修好了哪些，並依最弱的類別給出可以寫進 CLAUDE.md 的規則，讓 AI 不再犯同樣的錯", "GitHub App 只申請唯讀權限、只看勾選的專案；程式碼健檢完立刻刪除；金鑰只留前 4 碼，送給 AI 前先遮罩、送出前再檢查一次", "每張資料表都開 Row Level Security，並用測試驗證越權存取會被擋下；使用者可以一鍵刪除自己的所有資料", "用自己的 16 個實際專案驗證健檢準確度；從按下按鈕到出報告約 1 分鐘，開啟 AI 分析時每次約台幣 1–7 元"],
           faith: "這個工具和信仰沒有直接關係，但做它的人就是基督徒，做事的態度沒有兩樣：別人的程式碼不保存，找到的金鑰不交給 AI。",
-          liveUrl: "https://repodoctor-psi.vercel.app/", liveLabel: "開始健檢"
+          liveUrl: "https://repodoctor-psi.vercel.app/", liveLabel: "免費健檢我的專案"
         },
         {
           id: "secretary", weight: 1, name: "Emmark 小秘書", kind: "LINE Bot", isPrivate: true, repo: "emmask-secret",
@@ -158,7 +158,7 @@ window.PORTFOLIO = {
   ai: ["程式碼實作（約八成）", "邊界案例偵測與資安檢查", "跨專案知識複用", "Debug 根因分析", "文件與測試生成"],
   stack: [
     ["後端框架", "網站的大腦，處理運算與資料流動。", "Flask · Django · FastAPI · Node.js"],
-    ["前端介面", "使用者看到、點到的畫面。", "React · TypeScript · Tailwind CSS · Jinja2"],
+    ["前端介面", "使用者看到、點到的畫面。", "React · Next.js · TypeScript · Tailwind CSS · Jinja2"],
     ["資料庫", "把會員、報名、紀錄安全存起來。", "Supabase PostgreSQL · SQLite"],
     ["雲端檔案儲存", "存圖片、音檔、文件，不佔伺服器空間。", "Cloudflare R2"],
     ["登入身分", "用 LINE 一鍵登入，不必再記密碼；各系統之間免重複登入。", "LINE Login OAuth2 · 簽章 token 單一登入"],
