@@ -211,7 +211,41 @@ def write(data):
                    json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True) + ';\n', encoding='utf-8')
 
 
+LLMS = ROOT / 'llms.txt'
+SITE = 'https://windsjp00171-star.github.io/CLAUDE-DESIGN/'
+_STR = r'"((?:[^"\\]|\\.)*)"'
+
+
+def _s(block, key):
+    m = re.search(rf'\b{key}:\s*{_STR}', block)
+    return json.loads(f'"{m.group(1)}"') if m else ''
+
+
+def build_llms(src):
+    """projects.js → llms.txt。只用網頁上已經公開的文字；私有 repo 不放原始碼連結（同網頁的 isPrivate）。"""
+    out = ['# EMMARK 作品集', '',
+           '> 全端 × AI 協作開發者 EMMARK（以馬內利 × 方舟）的作品：真實上線、服務教會的系統與工具。'
+           '程式大量由 AI 實作，作者負責需求、UX、架構、驗收與「不做什麼」的決定。', '',
+           f'- 作品集：{SITE}', f'- 履歷：{SITE}resume.html', f'- Vibe Coding 實戰課：{_s(src, "course")}',
+           f'- GitHub：{_s(src, "github")}', f'- 聯絡：{_s(src, "email")}']
+    for m in re.finditer(rf'\blabel:\s*{_STR}|\{{[^{{}}]*\}}', src):
+        if m.group(1) is not None:
+            out += ['', f'## {json.loads(chr(34) + m.group(1) + chr(34))}']
+            continue
+        b = m.group(0)
+        if not _s(b, 'name'):
+            continue
+        pro = '；'.join(json.loads(f'"{x}"') for x in re.findall(_STR, (re.search(r'\bpro:\s*\[(.*?)\]', b, re.S) or [None, ''])[1]))
+        out += ['', f'### {_s(b, "name")}（{_s(b, "kind")}）', _s(b, 'tagline')]
+        out += [f'- 專業做法：{pro}'] if pro else []
+        out += [f'- 信仰上的取捨：{_s(b, "faith")}'] if _s(b, 'faith') else []
+        out += [f'- {_s(b, "demoLabel") or "連結"}：{_s(b, "demoUrl")}'] if _s(b, 'demoUrl') else []
+        out += ['- 私有專案：只公開功能摘要'] if re.search(r'\bisPrivate:\s*true', b) else []
+    return '\n'.join(out) + '\n'
+
+
 def main():
+    LLMS.write_text(build_llms(PROJECTS.read_text(encoding='utf-8')), encoding='utf-8', newline='\n')  # 不靠 API，先寫
     http = Http(os.environ.get('GH_TOKEN') or None)
     data = build(http, PROJECTS.read_text(encoding='utf-8'))
     if not data['projects']:

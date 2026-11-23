@@ -141,5 +141,32 @@ class HelpersTest(unittest.TestCase):
         self.assertTrue(cur is None or 'projects' in cur)
 
 
+class LlmsTest(unittest.TestCase):
+    """llms.txt：給 AI 讀的作品清單。網頁的作品要跑 JavaScript 才看得到，大多數 AI 爬蟲不跑。"""
+
+    SRC = U.PROJECTS.read_text(encoding='utf-8')
+
+    def test_every_project_on_the_page_is_listed(self):
+        text = U.build_llms(self.SRC)
+        names = U.re.findall(r'\bname:\s*"([^"]+)"', self.SRC)
+        self.assertGreater(len(names), 10)
+        for n in names:
+            self.assertIn(n, text)
+
+    def test_private_projects_never_get_a_source_link(self):
+        src = 'decks: [{ id: "d", label: "類別", projects: [\n{ id: "a", name: "私有作品", kind: "系統", isPrivate: true, repo: "secret-repo", tagline: "一句話", pro: ["做法一", "做法二"], faith: "取捨" },\n{ id: "b", name: "公開作品", kind: "工具", repo: "open", tagline: "說明 \\"引號\\"", demoUrl: "https://x.test/" }\n] }]'
+        text = U.build_llms(src)
+        self.assertNotIn('secret-repo', text)
+        self.assertIn('私有作品', text)
+        self.assertIn('做法一；做法二', text)
+        self.assertIn('說明 "引號"', text)
+        self.assertIn('https://x.test/', text)
+        self.assertIn('## 類別', text)
+
+    def test_file_on_disk_is_current(self):
+        # 改了 projects.js 卻沒重跑，AI 讀到的就是舊作品
+        self.assertEqual((U.ROOT / 'llms.txt').read_text(encoding='utf-8'), U.build_llms(self.SRC))
+
+
 if __name__ == '__main__':
     unittest.main()

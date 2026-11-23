@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### 新增
+- `llms.txt`：給 AI 讀的完整作品清單（網頁的作品要跑 JavaScript 才看得到，大多數 AI 爬蟲不跑）。每小時的排程從 `data/projects.js` 重新產生，改作品不用另外維護。
+- 首頁加上 `ProfilePage`／`Person` 結構化資料，讓搜尋引擎與 AI 知道 EMMARK 是誰；加上 Google Search Console 驗證標記。
+
 ### 修正
 - 頁首的 repo 總數不再算進空的 repo（開了但沒有任何 commit 的）。
 
