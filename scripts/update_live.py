@@ -184,8 +184,9 @@ def build(http, src):
         projects[pid] = entry
 
     data = {'generatedAt': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%MZ'), 'projects': projects}
-    if sees_private and counts:
-        data['totals'] = {'repos': len(counts), 'commits': sum(c for c, _ in counts.values())}
+    used = [c for c, _ in counts.values() if c > 0]   # 空 repo 不算（開了但沒寫任何東西）
+    if sees_private and used:
+        data['totals'] = {'repos': len(used), 'commits': sum(used)}
     return data
 
 

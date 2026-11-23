@@ -64,7 +64,8 @@ CHANGELOG = '''# Changelog
 
 def routes(private_changelog=True):
     r = {
-        '/user/repos': (200, {}, json.dumps([repo('pub-repo', False), repo('priv-repo', True),
+        f'/repos/{OWNER}/empty-repo/commits': (409, {}, ''),
+        '/user/repos': (200, {}, json.dumps([repo('pub-repo', False), repo('priv-repo', True), repo('empty-repo', True),
                                              dict(repo('forked', False), fork=True)])),
         f'/users/{OWNER}/repos': (200, {}, json.dumps([repo('pub-repo', False)])),
         f'/repos/{OWNER}/pub-repo/commits?per_page=1&path=': commits('2026-11-20'),
@@ -83,7 +84,7 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(d['projects']['pub']['commits'], 120)
         self.assertEqual(d['projects']['pub']['updated'], '2026-11-21')
         self.assertEqual(d['projects']['priv']['commits'], 900)
-        self.assertEqual(d['totals'], {'repos': 2, 'commits': 1020})   # fork 不算
+        self.assertEqual(d['totals'], {'repos': 2, 'commits': 1020})   # fork 與空 repo 不算
 
     def test_private_repo_never_publishes_text(self):
         http = FakeHttp(routes())
