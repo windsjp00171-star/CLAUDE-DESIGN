@@ -8,9 +8,9 @@
 
 **要改作品內容**：只編輯 `data/projects.js`，用記事本就能開。
 - 每個作品是一塊 `{ ... }`：名稱 `name`、一句話 `tagline`、專業做法 `pro`、信仰取捨 `faith`。
-- `weight` 是艙室大小：3 最大、2 中、1 小，大小代表重要性。
+- `weight` 是重要性：3 是主力作品（排在最前面，卡片多一行重點），2 中，1 小。
 - `isPrivate: true` 的作品不會顯示原始碼連結。
-- 新增作品：複製一塊現有的、改文字、放進對應甲板（`decks`）。
+- 新增作品：複製一塊現有的、改文字、放進對應類別（`decks`，類別名稱會顯示成篩選按鈕）。
 - 存檔後重新整理網頁就能看到。
 
 **要發布**：把檔案推到 GitHub 的 `main` 分支，GitHub Pages 會自動更新。
@@ -44,9 +44,9 @@
 
 | 檔案 | 用途 |
 |---|---|
-| `index.html` | 頁面結構與文案（艦橋、航向等） |
+| `index.html` | 頁面結構與文案（介紹、分工、資安、結尾等） |
 | `css/style.css` | 版面與配色 |
-| `js/app.js` | 艙室點開、載入資料 |
+| `js/app.js` | 作品卡片、類別篩選、點開詳細內容、載入資料 |
 | `data/projects.js` | 所有作品、技術、資安資料（人寫的） |
 | `data/live.js` | commit 數、更新日期、公開專案的更新日誌（自動產生，不要手改） |
 | `scripts/update_live.py`、`.github/workflows/live-data.yml` | 每小時產生 `data/live.js` |
