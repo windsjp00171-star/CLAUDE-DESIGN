@@ -1,7 +1,7 @@
 /* 自動產生，請不要手改：scripts/update_live.py 每小時由 GitHub Actions 更新。
    沒有這個檔、或內容是 null 時，網頁照樣顯示 data/projects.js 的內容。 */
 window.PORTFOLIO_LIVE = {
- "generatedAt": "2026-11-24T02:11Z",
+ "generatedAt": "2026-11-24T12:26Z",
  "projects": {
   "acts-survivors": {
    "commits": 202,
@@ -26,9 +26,9 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-10-31"
   },
   "cell-reporter": {
-   "commits": 121,
+   "commits": 150,
    "public": false,
-   "updated": "2026-11-01"
+   "updated": "2026-11-24"
   },
   "church-ms": {
    "commits": 321,
@@ -63,9 +63,9 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-11-21"
   },
   "finance": {
-   "commits": 204,
+   "commits": 205,
    "public": false,
-   "updated": "2026-11-22"
+   "updated": "2026-11-24"
   },
   "fooding-hunter": {
    "commits": 48,
@@ -95,15 +95,15 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-10-31"
   },
   "repodoctor": {
-   "commits": 12,
+   "commits": 17,
    "notes": [
-    "準備開源：採用 AGPL-3.0（LICENSE），網站頁尾加上原始碼連結；改寫 README；規格書（含定價）移出這…",
-    "隱私權政策（/privacy，依個資法第 8 條告知事項）與使用條款（/terms）；全站頁尾連結，登入頁說明登入即同意",
-    "健檢細節保存 90 天"
+    "到 GitHub 調整 repo 回來後，「我的專案」會顯示「正在從 GitHub 更新」並自動重新整理，同步好就停（…",
+    "免登入的範例報告（/demo）",
+    "首頁「檢查什麼、支援什麼」"
    ],
-   "notesDate": "2026-11-23",
+   "notesDate": "2026-11-24",
    "public": true,
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   },
   "secretary": {
    "commits": 31,
@@ -128,7 +128,7 @@ window.PORTFOLIO_LIVE = {
   }
  },
  "totals": {
-  "commits": 3074,
+  "commits": 3120,
   "repos": 26
  }
 };
