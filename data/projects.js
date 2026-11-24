@@ -22,6 +22,7 @@ window.PORTFOLIO = {
           tags: ["Flask", "Supabase", "Cloudflare R2", "Groq / Gemini", "LINE Login"],
           pro: ["二十個可選模組：活動報名與簽到、門訓學程、聚會點名、小組回報、天父日記、聖經速讀、主日信息、代禱牆、福音探索、留名單、週報、行事曆、檔案分享、同工差勤、禱讀本訂購等", "超管在後台開關模組：關掉的整塊消失（網址、首頁、權限欄位一起），資料照常保留與備份", "後台權限矩陣：權限一份判定，降權或封鎖五分鐘內生效，不必等對方重新登入", "聚會點名的修改紀錄只許追加；場次鎖定後的修改必須附原因", "新教會部署精靈與給非技術同工的交接文件"],
           faith: "模組名稱都來自事工現場：代禱牆、福音探索、留名單。每間教會用自己的資料庫與登入頻道，我只維護程式碼，不接觸會友資料；要開哪些事工，由教會自己決定。",
+          liveUrl: "https://windsjp00171-star.github.io/church-admin/", liveLabel: "看系統介紹",
           demoUrl: "https://github.com/windsjp00171-star/Church-Management-System-demo", demoLabel: "看公開 Demo 原始碼"
         },
         {
