@@ -33,7 +33,7 @@ window.PORTFOLIO = {
           faith: "沒有 LINE 的外部朋友填姓名就能報名，不讓新朋友被門檻擋在外面。系統不主動催繳費用、讀經不顯示「落後幾天」：紙本不會罵人，系統也不該。授權條款寫明教會有永久、無償、不可撤銷的使用權。"
         },
         {
-          id: "tianfu-diary", weight: 3, name: "天父日記", kind: "靈修 App", isPrivate: true, repo: "tianfu-diary",
+          id: "tianfu-diary", shot: "img/shots/tianfu-diary.webp", weight: 3, name: "天父日記", kind: "靈修 App", isPrivate: true, repo: "tianfu-diary",
           tagline: "依讀經進度顯示當日經文，安靜書寫，提交後鎖定。",
           tags: ["Flask", "Supabase", "Groq llama-3.3-70b", "LINE Login", "PWA"],
           pro: ["讀經進度在後台用像 Excel 的表格直接編輯，書卷簡稱與章節範圍即時檢查", "AI 依當日經文產生反思問題與段落背景", "串接聖經互動全書的標註引擎，專名與地名可點開", "牧者總覽頁一次看所有授權組員的當日日記與當月完成狀況", "後台一鍵匯出全部資料，壓縮檔內附免網路的離線閱讀器與給非工程師的交接說明"],
