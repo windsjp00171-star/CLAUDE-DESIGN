@@ -194,6 +194,22 @@ class StaticProjectsTest(unittest.TestCase):
         evil = 'decks: [{ id: "d", label: "類別", projects: [\n{ id: "a", name: "</script><b>", kind: "系統", tagline: "一句" }\n] }]'
         self.assertEqual(U.build_ld(evil).count('</script>'), 1)
 
+    def test_faq_visible_and_schema_match(self):
+        # Google 規定 FAQPage 的問答必須在頁面上看得到；兩邊不一致會被當成垃圾結構化資料
+        faq = [{'q': '問<b>', 'a': '答 </script>'}]
+        html = U.build_faq(faq)
+        self.assertIn('問&lt;b&gt;', html)
+        self.assertNotIn('</script>', html)
+        ld = U.json.loads(U.build_faq_ld(faq).split('\n', 1)[1].rsplit('\n', 1)[0])
+        self.assertEqual(ld['mainEntity'][0]['acceptedAnswer']['text'], '答 </script>')
+        self.assertEqual(U.build_faq_ld(faq).count('</script>'), 1)
+
+    def test_faq_on_disk_has_every_question(self):
+        html = U.INDEX.read_text(encoding='utf-8')
+        for f in U.json.loads(U.FAQ.read_text(encoding='utf-8')):
+            self.assertIn(U.escape(f['q']), html)
+            self.assertIn(U.escape(f['a']), html)
+
     def test_missing_markers_fail_loud(self):
         with self.assertRaises(ValueError):
             U.render_index('<html></html>', self.SRC)

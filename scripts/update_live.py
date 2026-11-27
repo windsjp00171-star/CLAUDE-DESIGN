@@ -286,16 +286,37 @@ def build_ld(src):
               '@type': 'CreativeWork', 'name': e['name'], 'genre': e['kind'], 'description': e['tagline'],
               'creator': {'@id': f'{SITE}#person'}} | ({'url': e['demoUrl']} if e['demoUrl'] else {})}
               for i, e in enumerate(items, 1)]}
+    return _ld_script(ld)
+
+
+def _ld_script(ld):
     # 文字裡若有 </script> 會提早結束 script 標籤
     body = json.dumps(ld, ensure_ascii=False, indent=1).replace('</', '<\\/')
     return f'<script type="application/ld+json">\n{body}\n</script>'
 
 
-def render_index(html, src):
-    for mark, build_fn in ((_MARK, build_static), (_LD_MARK, build_ld)):
+FAQ = ROOT / 'data' / 'faq.json'
+_FAQ_MARK = re.compile(r'(<!-- faq:start -->).*?(<!-- faq:end -->)', re.S)
+_FAQ_LD_MARK = re.compile(r'(<!-- faq-ld:start -->).*?(<!-- faq-ld:end -->)', re.S)
+
+
+def build_faq(faq):
+    """faq.json → 頁面上看得到的問答。Google 規定 FAQPage 的內容必須在頁面上看得到，所以兩者同源。"""
+    return '\n'.join(f'<div class="faq-item"><dt>{escape(f["q"])}</dt><dd>{escape(f["a"])}</dd></div>' for f in faq)
+
+
+def build_faq_ld(faq):
+    return _ld_script({'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
+        {'@type': 'Question', 'name': f['q'], 'acceptedAnswer': {'@type': 'Answer', 'text': f['a']}} for f in faq]})
+
+
+def render_index(html, src, faq=None):
+    faq = json.loads(FAQ.read_text(encoding='utf-8')) if faq is None else faq
+    for mark, body in ((_MARK, lambda: build_static(src)), (_LD_MARK, lambda: build_ld(src)),
+                       (_FAQ_MARK, lambda: build_faq(faq)), (_FAQ_LD_MARK, lambda: build_faq_ld(faq))):
         if not mark.search(html):
-            raise ValueError(f'index.html 找不到 {build_fn.__name__} 的標記')
-        html = mark.sub(lambda m: f'{m.group(1)}\n{build_fn(src)}\n{m.group(2)}', html, count=1)
+            raise ValueError(f'index.html 找不到 {mark.pattern[6:mark.pattern.index(":")]} 標記')
+        html = mark.sub(lambda m: f'{m.group(1)}\n{body()}\n{m.group(2)}', html, count=1)
     return html
 
 

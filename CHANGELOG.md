@@ -11,6 +11,7 @@
 - 首頁 Person 的 `sameAs` 加上 itch.io、Vibe Coding 課程網站與 LinkedIn。
 - 首頁加上作品的 `ItemList` 結構化資料，由 `scripts/update_live.py` 從 `data/projects.js` 自動產生，AI 能直接列出 EMMARK 做過哪些作品。
 - 首頁開頭加一句可直接引用的自我介紹（台灣、教會事工系統），Person 加上國家 `TW`。
+- 首頁新增「常見問答」區塊與 `FAQPage` 結構化資料，8 則問答都來自作品集已公開的內容；問答寫在 `data/faq.json`，看得到的文字和結構化資料由同一份檔案產生。
 
 ### 變更
 - 首頁與履歷的 `<title>` 改成含「教會事工系統」「全端」「AI 協作」等會被搜尋的詞。

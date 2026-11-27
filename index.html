@@ -272,6 +272,80 @@
 }
 </script>
 <!-- projects-ld:end -->
+  <!-- 由 scripts/update_live.py 從 data/faq.json 產生，別手改 --><!-- faq-ld:start -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "EMMARK 是誰？做什麼？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "EMMARK（以馬內利 × 方舟）是台灣的全端 × AI 協作開發者，專做教會事工系統：LINE 登入的教會整合管理、活動報名、靈修日記與帳務。程式大量由 AI 實作，EMMARK 負責需求、UX、架構、驗收，以及「不做什麼」的決定。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "教會整合管理系統有哪些功能？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "這是一套 LINE 登入的教會行政系統，有二十個可選模組，包括活動報名與簽到、門訓學程、聚會點名、小組回報、天父日記、聖經速讀、主日信息、代禱牆、週報、行事曆、檔案分享與同工差勤。每間教會自己決定要開哪些模組，各自獨立部署。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "會友資料放在哪裡？開發者看得到嗎？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "每間教會使用自己的資料庫與 LINE 登入頻道，EMMARK 只維護程式碼，不持有、也不接觸會友資料。教會帳務系統更在資料庫層擋住維運角色，看不到逐筆明細與奉獻資料，奉獻者姓名也會中間打碼。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "沒有 LINE 的新朋友可以報名教會活動嗎？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "可以。教會入口與活動報名系統讓沒有 LINE 的外部朋友填姓名就能報名，不讓新朋友被門檻擋在外面。報名名額由伺服器重算，不會超收，活動當天可以用 QR Code 電子簽到。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "關掉不用的模組，資料會不見嗎？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "不會。超級管理員在後台關掉模組後，該模組的網址、首頁入口與權限欄位會一起隱藏，但資料照常保留與備份，之後重新打開就能繼續使用。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "天父日記寫完可以修改嗎？牧者看得到嗎？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "日記提交後會永久鎖定，不能事後修改，這是刻意的設計，讓記錄保持誠實。牧者要看會友的日記，必須先取得會友授權，會友也可以隨時撤銷。系統不替日記打分，不算字數。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "不會寫程式，也能學會用 AI 做網站嗎？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "可以。Vibe Coding 實戰課是給沒有技術背景的上班族的課程，用 Claude Code 做出能上線的網站與工具，也教怎麼不被 AI 詐騙。課程共 23 個單元，單元 0、1、4、7、19 可以免費試看。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "想詢問系統或課程，要怎麼聯絡？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "寫信到 emmark19890901@gmail.com。作品集、履歷與 GitHub 上的公開作品，也都可以先看過再聯絡。"
+   }
+  }
+ ]
+}
+</script>
+<!-- faq-ld:end -->
 </head>
 <body id="top">
   <a class="skip" href="#featured">跳到作品</a>
@@ -283,6 +357,7 @@
         <a href="#how">分工</a>
         <a href="#stack">技術</a>
         <a href="#security">資安</a>
+        <a href="#faq">問答</a>
         <a href="#contact">聯絡</a>
       </nav>
       <a class="btn btn-sm btn-light" href="https://windsjp00171-star.github.io/vibe-coding-course/" target="_blank" rel="noopener">Vibe Coding 課程<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
@@ -446,6 +521,24 @@
         <p class="muted">處理的是教會與會友的敏感資料，所以從第一行程式碼就把資安與隱私當成預設，而不是事後補丁。</p>
       </div>
       <ul class="sec-grid" id="sec-root"></ul>
+    </section>
+
+    <section id="faq" class="wrap" aria-labelledby="faq-h">
+      <div class="sec-head">
+        <h2 id="faq-h">常見問答</h2>
+        <p class="muted">教會同工與想學 AI 做網站的人最常問的幾件事。</p>
+      </div>
+      <!-- 由 scripts/update_live.py 從 data/faq.json 產生，別手改 -->
+      <dl class="faq"><!-- faq:start -->
+<div class="faq-item"><dt>EMMARK 是誰？做什麼？</dt><dd>EMMARK（以馬內利 × 方舟）是台灣的全端 × AI 協作開發者，專做教會事工系統：LINE 登入的教會整合管理、活動報名、靈修日記與帳務。程式大量由 AI 實作，EMMARK 負責需求、UX、架構、驗收，以及「不做什麼」的決定。</dd></div>
+<div class="faq-item"><dt>教會整合管理系統有哪些功能？</dt><dd>這是一套 LINE 登入的教會行政系統，有二十個可選模組，包括活動報名與簽到、門訓學程、聚會點名、小組回報、天父日記、聖經速讀、主日信息、代禱牆、週報、行事曆、檔案分享與同工差勤。每間教會自己決定要開哪些模組，各自獨立部署。</dd></div>
+<div class="faq-item"><dt>會友資料放在哪裡？開發者看得到嗎？</dt><dd>每間教會使用自己的資料庫與 LINE 登入頻道，EMMARK 只維護程式碼，不持有、也不接觸會友資料。教會帳務系統更在資料庫層擋住維運角色，看不到逐筆明細與奉獻資料，奉獻者姓名也會中間打碼。</dd></div>
+<div class="faq-item"><dt>沒有 LINE 的新朋友可以報名教會活動嗎？</dt><dd>可以。教會入口與活動報名系統讓沒有 LINE 的外部朋友填姓名就能報名，不讓新朋友被門檻擋在外面。報名名額由伺服器重算，不會超收，活動當天可以用 QR Code 電子簽到。</dd></div>
+<div class="faq-item"><dt>關掉不用的模組，資料會不見嗎？</dt><dd>不會。超級管理員在後台關掉模組後，該模組的網址、首頁入口與權限欄位會一起隱藏，但資料照常保留與備份，之後重新打開就能繼續使用。</dd></div>
+<div class="faq-item"><dt>天父日記寫完可以修改嗎？牧者看得到嗎？</dt><dd>日記提交後會永久鎖定，不能事後修改，這是刻意的設計，讓記錄保持誠實。牧者要看會友的日記，必須先取得會友授權，會友也可以隨時撤銷。系統不替日記打分，不算字數。</dd></div>
+<div class="faq-item"><dt>不會寫程式，也能學會用 AI 做網站嗎？</dt><dd>可以。Vibe Coding 實戰課是給沒有技術背景的上班族的課程，用 Claude Code 做出能上線的網站與工具，也教怎麼不被 AI 詐騙。課程共 23 個單元，單元 0、1、4、7、19 可以免費試看。</dd></div>
+<div class="faq-item"><dt>想詢問系統或課程，要怎麼聯絡？</dt><dd>寫信到 emmark19890901@gmail.com。作品集、履歷與 GitHub 上的公開作品，也都可以先看過再聯絡。</dd></div>
+<!-- faq:end --></dl>
     </section>
 
     <section id="contact" class="stage end-stage" aria-labelledby="end-h">

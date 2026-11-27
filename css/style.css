@@ -282,6 +282,10 @@ td:last-child { color: var(--ink); }
 .sec-grid b { display: flex; align-items: center; gap: 10px; font-size: 16px; color: var(--ink); }
 .sec-grid b .ico { width: 18px; height: 18px; color: var(--t-ministry); stroke-width: 2.4; }
 .sec-grid span { display: block; margin-top: 6px; padding-left: 28px; font-size: 15px; color: var(--ink-2); text-wrap: pretty; }
+.faq { max-width: 52em; border-top: 1px solid var(--line); }
+.faq-item { padding: 20px 0 22px; border-bottom: 1px solid var(--line); }
+.faq dt { font-size: 17px; font-weight: 600; color: var(--ink); }
+.faq dd { margin: 8px 0 0; font-size: 15px; line-height: 1.75; color: var(--ink-2); text-wrap: pretty; }
 
 /* 分工 on a stage band */
 .band { margin-top: clamp(96px, 12vw, 160px); padding-block: clamp(80px, 10vw, 136px); }
