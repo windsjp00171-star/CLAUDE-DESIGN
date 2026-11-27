@@ -6,7 +6,7 @@
 
 ### 新增
 - 履歷頁補上 canonical、分享預覽（Open Graph）與結構化資料，名字改成 `<h1>`；首頁與履歷的 Person 用同一個 `@id`，搜尋引擎與 AI 會認成同一個人。
-- 首頁 Person 的 `sameAs` 加上 itch.io 與 Vibe Coding 課程網站。
+- 首頁 Person 的 `sameAs` 加上 itch.io、Vibe Coding 課程網站與 LinkedIn。
 
 ### 變更
 - 首頁與履歷的 `<title>` 改成含「教會事工系統」「全端」「AI 協作」等會被搜尋的詞。
