@@ -1,18 +1,18 @@
 /* 自動產生，請不要手改：scripts/update_live.py 每小時由 GitHub Actions 更新。
    沒有這個檔、或內容是 null 時，網頁照樣顯示 data/projects.js 的內容。 */
 window.PORTFOLIO_LIVE = {
- "generatedAt": "2026-11-26T19:37Z",
+ "generatedAt": "2026-11-27T02:50Z",
  "projects": {
   "acts-survivors": {
-   "commits": 202,
+   "commits": 203,
    "notes": [
-    "分頭行動的條件式支援",
-    "醫療把受傷的主角也當傷患，而且優先補主角",
-    "測試：tests/unit/roam 新增「主角快死全員回來」「醫療先補主角」，舊程式跑會失敗"
+    "會合合擊（分頭行動）",
+    "搭檔合擊（同行合擊）要兩人在 90 以內才發動（bond_rules.near），分頭行動時不會隔空合擊",
+    "敵人被驅散時的消散效果畫成整張走路圖（四個方向、每格都畫），畫面上冒出一整片半透明的蝙蝠、蜘蛛殘影，也拖慢畫面；改成只…"
    ],
-   "notesDate": "2026-11-24",
+   "notesDate": "2026-11-27",
    "public": true,
-   "updated": "2026-11-24"
+   "updated": "2026-11-27"
   },
   "bible-book": {
    "commits": 256,
@@ -63,9 +63,9 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-11-21"
   },
   "finance": {
-   "commits": 205,
+   "commits": 206,
    "public": false,
-   "updated": "2026-11-24"
+   "updated": "2026-11-26"
   },
   "fooding-hunter": {
    "commits": 48,
@@ -128,7 +128,7 @@ window.PORTFOLIO_LIVE = {
   }
  },
  "totals": {
-  "commits": 3127,
+  "commits": 3132,
   "repos": 26
  }
 };
