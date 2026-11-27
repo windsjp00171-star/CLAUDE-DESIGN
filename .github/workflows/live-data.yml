@@ -29,9 +29,9 @@ jobs:
         run: python scripts/update_live.py
       - name: 有變化才 commit
         run: |
-          if git diff --quiet -- data/live.js llms.txt; then echo "沒有變化"; exit 0; fi
+          if git diff --quiet -- data/live.js llms.txt index.html; then echo "沒有變化"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/live.js llms.txt
+          git add data/live.js llms.txt index.html
           git commit -m "chore: 自動更新作品集即時數字"
           git push

@@ -168,5 +168,28 @@ class LlmsTest(unittest.TestCase):
         self.assertEqual((U.ROOT / 'llms.txt').read_text(encoding='utf-8'), U.build_llms(self.SRC))
 
 
+class StaticProjectsTest(unittest.TestCase):
+    """index.html 的 noscript 純文字作品：Google 以外的搜尋引擎與 AI 爬蟲不跑 JavaScript，沒這段就只看到空網格。"""
+
+    SRC = LlmsTest.SRC
+
+    def test_index_on_disk_has_every_project(self):
+        html = U.INDEX.read_text(encoding='utf-8')
+        self.assertEqual(html, U.render_index(html, self.SRC))  # 改了 projects.js 沒重跑就會失敗
+        for n in U.re.findall(r'\bname:\s*"([^"]+)"', self.SRC):
+            self.assertIn(U.escape(n), html)
+
+    def test_text_is_escaped_and_private_repo_not_leaked(self):
+        src = 'decks: [{ id: "d", label: "類別", projects: [\n{ id: "a", name: "<b>壞</b>", kind: "系統", isPrivate: true, repo: "secret-repo", tagline: "一句", pro: ["做法"] }\n] }]'
+        out = U.build_static(src)
+        self.assertNotIn('<b>壞</b>', out)
+        self.assertIn('&lt;b&gt;', out)
+        self.assertNotIn('secret-repo', out)
+
+    def test_missing_markers_fail_loud(self):
+        with self.assertRaises(ValueError):
+            U.render_index('<html></html>', self.SRC)
+
+
 if __name__ == '__main__':
     unittest.main()

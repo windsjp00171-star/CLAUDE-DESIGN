@@ -23,6 +23,7 @@ import sys
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
+from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -221,6 +222,20 @@ def _s(block, key):
     return json.loads(f'"{m.group(1)}"') if m else ''
 
 
+def _entries(src):
+    """projects.js 依序吐出類別名稱（str）或作品（dict）。只取網頁上已公開的欄位。"""
+    for m in re.finditer(rf'\blabel:\s*{_STR}|\{{[^{{}}]*\}}', src):
+        if m.group(1) is not None:
+            yield json.loads(f'"{m.group(1)}"')
+            continue
+        b = m.group(0)
+        if not _s(b, 'name'):
+            continue
+        pro = [json.loads(f'"{x}"') for x in re.findall(_STR, (re.search(r'\bpro:\s*\[(.*?)\]', b, re.S) or [None, ''])[1])]
+        yield {k: _s(b, k) for k in ('id', 'name', 'kind', 'tagline', 'faith', 'demoUrl', 'demoLabel')} | {
+            'pro': pro, 'private': bool(re.search(r'\bisPrivate:\s*true', b))}
+
+
 def build_llms(src):
     """projects.js → llms.txt。只用網頁上已經公開的文字；私有 repo 不放原始碼連結（同網頁的 isPrivate）。"""
     out = ['# EMMARK 作品集', '',
@@ -228,24 +243,48 @@ def build_llms(src):
            '程式大量由 AI 實作，作者負責需求、UX、架構、驗收與「不做什麼」的決定。', '',
            f'- 作品集：{SITE}', f'- 履歷：{SITE}resume.html', f'- Vibe Coding 實戰課：{_s(src, "course")}',
            f'- GitHub：{_s(src, "github")}', f'- 聯絡：{_s(src, "email")}']
-    for m in re.finditer(rf'\blabel:\s*{_STR}|\{{[^{{}}]*\}}', src):
-        if m.group(1) is not None:
-            out += ['', f'## {json.loads(chr(34) + m.group(1) + chr(34))}']
+    for e in _entries(src):
+        if isinstance(e, str):
+            out += ['', f'## {e}']
             continue
-        b = m.group(0)
-        if not _s(b, 'name'):
-            continue
-        pro = '；'.join(json.loads(f'"{x}"') for x in re.findall(_STR, (re.search(r'\bpro:\s*\[(.*?)\]', b, re.S) or [None, ''])[1]))
-        out += ['', f'### {_s(b, "name")}（{_s(b, "kind")}）', _s(b, 'tagline')]
-        out += [f'- 專業做法：{pro}'] if pro else []
-        out += [f'- 信仰上的取捨：{_s(b, "faith")}'] if _s(b, 'faith') else []
-        out += [f'- {_s(b, "demoLabel") or "連結"}：{_s(b, "demoUrl")}'] if _s(b, 'demoUrl') else []
-        out += ['- 私有專案：只公開功能摘要'] if re.search(r'\bisPrivate:\s*true', b) else []
+        out += ['', f'### {e["name"]}（{e["kind"]}）', e['tagline']]
+        out += [f'- 專業做法：{"；".join(e["pro"])}'] if e['pro'] else []
+        out += [f'- 信仰上的取捨：{e["faith"]}'] if e['faith'] else []
+        out += [f'- {e["demoLabel"] or "連結"}：{e["demoUrl"]}'] if e['demoUrl'] else []
+        out += ['- 私有專案：只公開功能摘要'] if e['private'] else []
     return '\n'.join(out) + '\n'
+
+
+INDEX = ROOT / 'index.html'
+_MARK = re.compile(r'(<!-- static-projects:start -->).*?(<!-- static-projects:end -->)', re.S)
+
+
+def build_static(src):
+    """projects.js → 給不跑 JavaScript 的爬蟲（搜尋引擎、AI）看的作品 HTML，放在 index.html 的 noscript 裡。"""
+    out = ['<p class="muted">此頁的互動作品清單需要 JavaScript，以下是純文字版。</p>']
+    for e in _entries(src):
+        if isinstance(e, str):
+            out.append(f'<h3>{escape(e)}</h3>')
+            continue
+        out.append(f'<article id="static-{escape(e["id"])}"><h4>{escape(e["name"])}（{escape(e["kind"])}）</h4>'
+                   f'<p>{escape(e["tagline"])}</p>')
+        out += [f'<p>專業做法：{escape("；".join(e["pro"]))}</p>'] if e['pro'] else []
+        out += [f'<p>信仰上的取捨：{escape(e["faith"])}</p>'] if e['faith'] else []
+        out += [f'<p><a href="{escape(e["demoUrl"])}">{escape(e["demoLabel"] or "連結")}</a></p>'] if e['demoUrl'] else []
+        out.append('</article>')
+    return '\n'.join(out)
+
+
+def render_index(html, src):
+    if not _MARK.search(html):
+        raise ValueError('index.html 找不到 static-projects 標記')
+    return _MARK.sub(lambda m: f'{m.group(1)}\n{build_static(src)}\n{m.group(2)}', html, count=1)
 
 
 def main():
     LLMS.write_text(build_llms(PROJECTS.read_text(encoding='utf-8')), encoding='utf-8', newline='\n')  # 不靠 API，先寫
+    INDEX.write_text(render_index(INDEX.read_text(encoding='utf-8'), PROJECTS.read_text(encoding='utf-8')),
+                     encoding='utf-8', newline='')
     http = Http(os.environ.get('GH_TOKEN') or None)
     data = build(http, PROJECTS.read_text(encoding='utf-8'))
     if not data['projects']:
