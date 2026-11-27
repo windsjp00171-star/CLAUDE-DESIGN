@@ -1,7 +1,7 @@
 /* 自動產生，請不要手改：scripts/update_live.py 每小時由 GitHub Actions 更新。
    沒有這個檔、或內容是 null 時，網頁照樣顯示 data/projects.js 的內容。 */
 window.PORTFOLIO_LIVE = {
- "generatedAt": "2026-11-27T02:50Z",
+ "generatedAt": "2026-11-27T12:12Z",
  "projects": {
   "acts-survivors": {
    "commits": 203,
@@ -58,14 +58,14 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-11-01"
   },
   "event-portal": {
-   "commits": 689,
+   "commits": 691,
    "public": false,
-   "updated": "2026-11-21"
+   "updated": "2026-11-27"
   },
   "finance": {
-   "commits": 206,
+   "commits": 207,
    "public": false,
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   },
   "fooding-hunter": {
    "commits": 48,
@@ -95,15 +95,15 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-10-31"
   },
   "repodoctor": {
-   "commits": 17,
+   "commits": 18,
    "notes": [
-    "到 GitHub 調整 repo 回來後，「我的專案」會顯示「正在從 GitHub 更新」並自動重新整理，同步好就停（…",
-    "免登入的範例報告（/demo）",
-    "首頁「檢查什麼、支援什麼」"
+    "AI 分析可以同時串兩家",
+    "Groq 撞到每分鐘上限時會等一下再試；這兩項單次送出壓在約 12,000 字以符合免費額度，送不下的規範會在報告上寫明",
+    "隱私權政策、隱私與安全頁補上 Groq 與各項檢查送去哪一家"
    ],
-   "notesDate": "2026-11-24",
+   "notesDate": "2026-11-27",
    "public": true,
-   "updated": "2026-11-24"
+   "updated": "2026-11-27"
   },
   "secretary": {
    "commits": 31,
@@ -128,7 +128,7 @@ window.PORTFOLIO_LIVE = {
   }
  },
  "totals": {
-  "commits": 3132,
-  "repos": 26
+  "commits": 3145,
+  "repos": 27
  }
 };
