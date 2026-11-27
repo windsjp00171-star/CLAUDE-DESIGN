@@ -5,6 +5,8 @@
 ## [Unreleased]
 
 ### 新增
+- 首頁 `<head>` 加上指向 `llms.txt` 的 `<link rel="alternate">`，AI 工具比較容易找到作品摘要。
+- `sitemap.xml` 每個網址加上 `<lastmod>`，讓搜尋引擎與 AI 判斷內容新舊。
 - 履歷頁補上 canonical、分享預覽（Open Graph）與結構化資料，名字改成 `<h1>`；首頁與履歷的 Person 用同一個 `@id`，搜尋引擎與 AI 會認成同一個人。
 - 首頁 Person 的 `sameAs` 加上 itch.io、Vibe Coding 課程網站與 LinkedIn。
 
