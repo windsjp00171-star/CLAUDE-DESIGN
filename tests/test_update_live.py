@@ -186,6 +186,14 @@ class StaticProjectsTest(unittest.TestCase):
         self.assertIn('&lt;b&gt;', out)
         self.assertNotIn('secret-repo', out)
 
+    def test_itemlist_has_every_project_and_cannot_break_out_of_script(self):
+        # AI 靠 ItemList 判斷哪些是作品；少一件就等於沒做過那件
+        ld = U.json.loads(U.build_ld(self.SRC).split('\n', 1)[1].rsplit('\n', 1)[0])
+        names = U.re.findall(r'\bname:\s*"([^"]+)"', self.SRC)
+        self.assertEqual([i['item']['name'] for i in ld['itemListElement']], names)
+        evil = 'decks: [{ id: "d", label: "類別", projects: [\n{ id: "a", name: "</script><b>", kind: "系統", tagline: "一句" }\n] }]'
+        self.assertEqual(U.build_ld(evil).count('</script>'), 1)
+
     def test_missing_markers_fail_loud(self):
         with self.assertRaises(ValueError):
             U.render_index('<html></html>', self.SRC)

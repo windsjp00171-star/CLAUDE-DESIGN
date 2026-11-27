@@ -275,10 +275,28 @@ def build_static(src):
     return '\n'.join(out)
 
 
+_LD_MARK = re.compile(r'(<!-- projects-ld:start -->).*?(<!-- projects-ld:end -->)', re.S)
+
+
+def build_ld(src):
+    """projects.js → ItemList JSON-LD，讓搜尋引擎與 AI 知道哪些是 EMMARK 的作品。"""
+    items = [e for e in _entries(src) if isinstance(e, dict)]
+    ld = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': 'EMMARK 作品集',
+          'itemListElement': [{'@type': 'ListItem', 'position': i, 'item': {
+              '@type': 'CreativeWork', 'name': e['name'], 'genre': e['kind'], 'description': e['tagline'],
+              'creator': {'@id': f'{SITE}#person'}} | ({'url': e['demoUrl']} if e['demoUrl'] else {})}
+              for i, e in enumerate(items, 1)]}
+    # 文字裡若有 </script> 會提早結束 script 標籤
+    body = json.dumps(ld, ensure_ascii=False, indent=1).replace('</', '<\\/')
+    return f'<script type="application/ld+json">\n{body}\n</script>'
+
+
 def render_index(html, src):
-    if not _MARK.search(html):
-        raise ValueError('index.html 找不到 static-projects 標記')
-    return _MARK.sub(lambda m: f'{m.group(1)}\n{build_static(src)}\n{m.group(2)}', html, count=1)
+    for mark, build_fn in ((_MARK, build_static), (_LD_MARK, build_ld)):
+        if not mark.search(html):
+            raise ValueError(f'index.html 找不到 {build_fn.__name__} 的標記')
+        html = mark.sub(lambda m: f'{m.group(1)}\n{build_fn(src)}\n{m.group(2)}', html, count=1)
+    return html
 
 
 def main():
