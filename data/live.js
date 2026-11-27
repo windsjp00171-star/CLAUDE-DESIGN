@@ -1,7 +1,7 @@
 /* 自動產生，請不要手改：scripts/update_live.py 每小時由 GitHub Actions 更新。
    沒有這個檔、或內容是 null 時，網頁照樣顯示 data/projects.js 的內容。 */
 window.PORTFOLIO_LIVE = {
- "generatedAt": "2026-11-27T12:12Z",
+ "generatedAt": "2026-11-27T21:14Z",
  "projects": {
   "acts-survivors": {
    "commits": 203,
@@ -128,7 +128,7 @@ window.PORTFOLIO_LIVE = {
   }
  },
  "totals": {
-  "commits": 3145,
+  "commits": 3147,
   "repos": 27
  }
 };
