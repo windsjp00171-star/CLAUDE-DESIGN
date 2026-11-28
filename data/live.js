@@ -1,10 +1,10 @@
 /* 自動產生，請不要手改：scripts/update_live.py 每小時由 GitHub Actions 更新。
    沒有這個檔、或內容是 null 時，網頁照樣顯示 data/projects.js 的內容。 */
 window.PORTFOLIO_LIVE = {
- "generatedAt": "2026-11-27T21:14Z",
+ "generatedAt": "2026-11-28T03:19Z",
  "projects": {
   "acts-survivors": {
-   "commits": 203,
+   "commits": 204,
    "notes": [
     "會合合擊（分頭行動）",
     "搭檔合擊（同行合擊）要兩人在 90 以內才發動（bond_rules.near），分頭行動時不會隔空合擊",
@@ -15,7 +15,7 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-11-27"
   },
   "bible-book": {
-   "commits": 256,
+   "commits": 257,
    "notes": [
     "詞條庫新增約 900 個詞條，涵蓋創世記到啟示錄",
     "tools/sparks_diff.py",
@@ -23,15 +23,15 @@ window.PORTFOLIO_LIVE = {
    ],
    "notesDate": "2026-10-31",
    "public": true,
-   "updated": "2026-10-31"
+   "updated": "2026-11-27"
   },
   "cell-reporter": {
-   "commits": 150,
+   "commits": 152,
    "public": false,
-   "updated": "2026-11-24"
+   "updated": "2026-11-28"
   },
   "church-ms": {
-   "commits": 321,
+   "commits": 322,
    "notes": [
     "牧者、小組長用 LINE 登入後不能查閱日記",
     "查閱日記頁的成員頭像太大、排成一直排",
@@ -39,10 +39,10 @@ window.PORTFOLIO_LIVE = {
    ],
    "notesDate": "2026-11-22",
    "public": true,
-   "updated": "2026-11-22"
+   "updated": "2026-11-27"
   },
   "course": {
-   "commits": 137,
+   "commits": 138,
    "notes": [
     "講師作品數跟作品集一致",
     "課程地圖的「17 個講師真實專案」改為 19；首頁「為什麼是我來教」的統計格 13 改為 14",
@@ -50,7 +50,7 @@ window.PORTFOLIO_LIVE = {
    ],
    "notesDate": "2026-11-23",
    "public": true,
-   "updated": "2026-11-23"
+   "updated": "2026-11-27"
   },
   "data-hub": {
    "commits": 46,
@@ -58,22 +58,22 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-11-01"
   },
   "event-portal": {
-   "commits": 691,
+   "commits": 692,
    "public": false,
    "updated": "2026-11-27"
   },
   "finance": {
-   "commits": 207,
+   "commits": 208,
    "public": false,
    "updated": "2026-11-27"
   },
   "fooding-hunter": {
-   "commits": 48,
+   "commits": 49,
    "public": true,
-   "updated": "2026-06-27"
+   "updated": "2026-11-27"
   },
   "group": {
-   "commits": 65,
+   "commits": 66,
    "notes": [
     "自動化測試套件（pytest，tests/）",
     "關鍵設計：tests/conftest.py 在 import app 之前清空 SUPABASE_URL，強制整套跑在",
@@ -81,10 +81,10 @@ window.PORTFOLIO_LIVE = {
    ],
    "notesDate": "2026-07-19",
    "public": true,
-   "updated": "2026-07-28"
+   "updated": "2026-11-27"
   },
   "pitchpal": {
-   "commits": 64,
+   "commits": 65,
    "notes": [
     "BPM 加入敬拜歌的「慢拍先驗」",
     "代價：在電子舞曲（本來就 110 以上）上嚴格命中從 85.5% 降到約 20%；真實是快歌的敬拜歌（約 110–14…",
@@ -92,10 +92,10 @@ window.PORTFOLIO_LIVE = {
    ],
    "notesDate": "2026-10-31",
    "public": true,
-   "updated": "2026-10-31"
+   "updated": "2026-11-27"
   },
   "repodoctor": {
-   "commits": 18,
+   "commits": 19,
    "notes": [
     "AI 分析可以同時串兩家",
     "Groq 撞到每分鐘上限時會等一下再試；這兩項單次送出壓在約 12,000 字以符合免費額度，送不下的規範會在報告上寫明",
@@ -106,7 +106,7 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-11-27"
   },
   "secretary": {
-   "commits": 31,
+   "commits": 32,
    "notes": [
     "Dashboard 與服事表全面改版為「LINE 對話原生」風格",
     "Dashboard 新增改成底部的聊天式輸入列，可直接打字送出；時間與專案可以展開填寫",
@@ -114,7 +114,7 @@ window.PORTFOLIO_LIVE = {
    ],
    "notesDate": "2026-10-01",
    "public": true,
-   "updated": "2026-10-01"
+   "updated": "2026-11-27"
   },
   "tianfu-diary": {
    "commits": 216,
@@ -122,13 +122,13 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-11-07"
   },
   "zone-games": {
-   "commits": 75,
+   "commits": 76,
    "public": true,
-   "updated": "2026-06-03"
+   "updated": "2026-11-27"
   }
  },
  "totals": {
-  "commits": 3147,
+  "commits": 3171,
   "repos": 27
  }
 };
