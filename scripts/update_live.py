@@ -310,10 +310,27 @@ def build_faq_ld(faq):
         {'@type': 'Question', 'name': f['q'], 'acceptedAnswer': {'@type': 'Answer', 'text': f['a']}} for f in faq]})
 
 
-def render_index(html, src, faq=None):
+_LOG_MARK = re.compile(r'(<!-- static-log:start -->).*?(<!-- static-log:end -->)', re.S)
+
+
+def build_log(src, live):
+    """live.js → 「最近的更新」純文字版，規則同 js/app.js：只列網頁上的作品、新到舊、最多 8 筆。"""
+    names = {e['id']: e['name'] for e in _entries(src) if isinstance(e, dict)}
+    rows = sorted(((k, v) for k, v in ((live or {}).get('projects') or {}).items() if k in names and v.get('updated')),
+                  key=lambda r: r[1]['updated'], reverse=True)[:8]
+    if not rows:
+        return ''
+    note = lambda v: (v.get('notes') or [''])[0] if v.get('public') else '私有專案，只公開更新日期'
+    li = [f'<li>{escape(v["updated"])} {escape(names[k])}{"：" + escape(note(v)) if note(v) else ""}</li>' for k, v in rows]
+    return '<h2>最近的更新</h2>\n<ol>\n' + '\n'.join(li) + '\n</ol>'
+
+
+def render_index(html, src, faq=None, live=None):
     faq = json.loads(FAQ.read_text(encoding='utf-8')) if faq is None else faq
+    live = read_current() if live is None else live
     for mark, body in ((_MARK, lambda: build_static(src)), (_LD_MARK, lambda: build_ld(src)),
-                       (_FAQ_MARK, lambda: build_faq(faq)), (_FAQ_LD_MARK, lambda: build_faq_ld(faq))):
+                       (_FAQ_MARK, lambda: build_faq(faq)), (_FAQ_LD_MARK, lambda: build_faq_ld(faq)),
+                       (_LOG_MARK, lambda: build_log(src, live))):
         if not mark.search(html):
             raise ValueError(f'index.html 找不到 {mark.pattern[6:mark.pattern.index(":")]} 標記')
         html = mark.sub(lambda m: f'{m.group(1)}\n{body()}\n{m.group(2)}', html, count=1)
@@ -334,6 +351,8 @@ def main():
         print('沒有變化')
         return 0
     write(data)
+    INDEX.write_text(render_index(INDEX.read_text(encoding='utf-8'), PROJECTS.read_text(encoding='utf-8'), live=data),
+                     encoding='utf-8', newline='')  # 「最近的更新」跟著新數字走
     print(f'已更新：{len(data["projects"])} 個作品', '，含全部 repo 加總' if 'totals' in data else '（token 看不到私有 repo，不算總數）')
     return 0
 

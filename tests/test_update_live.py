@@ -210,6 +210,20 @@ class StaticProjectsTest(unittest.TestCase):
             self.assertIn(U.escape(f['q']), html)
             self.assertIn(U.escape(f['a']), html)
 
+    def test_static_log_matches_what_the_page_shows(self):
+        # 「最近的更新」原本只靠 JS 填，爬蟲看到空白；純文字版必須和網頁同規則：新到舊、最多 8 筆、私有不露文字
+        src = 'decks: [{ id: "d", label: "類別", projects: [\n' + '\n'.join(
+            f'{{ id: "p{i}", name: "作品{i}", kind: "系統", tagline: "一句" }}' for i in range(10)) + '\n] }]'
+        live = {'projects': {f'p{i}': {'updated': f'2026-11-{10 + i:02d}', 'public': True, 'notes': [f'<b>改{i}</b>']}
+                             for i in range(10)} | {'ghost': {'updated': '2026-12-31', 'public': True}}}
+        live['projects']['p9'] = {'updated': '2026-11-19', 'public': False}
+        out = U.build_log(src, live)
+        self.assertEqual(U.re.findall(r'作品(\d)', out), ['9', '8', '7', '6', '5', '4', '3', '2'])
+        self.assertNotIn('ghost', out)  # 網頁上沒有的作品不列
+        self.assertIn('私有專案，只公開更新日期', out)
+        self.assertIn('&lt;b&gt;改8', out)
+        self.assertEqual(U.build_log(src, None), '')
+
     def test_missing_markers_fail_loud(self):
         with self.assertRaises(ValueError):
             U.render_index('<html></html>', self.SRC)

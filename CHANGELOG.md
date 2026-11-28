@@ -5,6 +5,7 @@
 ## [Unreleased]
 
 ### 新增
+- 首頁「最近的更新」加上純文字版（noscript），不跑 JavaScript 的搜尋引擎與 AI 爬蟲也看得到最近 8 筆更新；由 `scripts/update_live.py` 從 `data/live.js` 產生，規則和網頁一致，私有專案只公開日期。
 - 首頁 `<head>` 加上指向 `llms.txt` 的 `<link rel="alternate">`，AI 工具比較容易找到作品摘要。
 - `sitemap.xml` 每個網址加上 `<lastmod>`，讓搜尋引擎與 AI 判斷內容新舊。
 - 履歷頁補上 canonical、分享預覽（Open Graph）與結構化資料，名字改成 `<h1>`；首頁與履歷的 Person 用同一個 `@id`，搜尋引擎與 AI 會認成同一個人。
