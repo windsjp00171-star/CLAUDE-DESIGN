@@ -223,6 +223,9 @@ class StaticProjectsTest(unittest.TestCase):
         self.assertIn('私有專案，只公開更新日期', out)
         self.assertIn('&lt;b&gt;改8', out)
         self.assertEqual(U.build_log(src, None), '')
+        # 同一天照頁面順序；live 的鍵順序（剛抓的 vs 讀回 live.js 的字母序）不能影響結果，否則每次都產生不同的 index.html
+        tie = {'projects': {k: {'updated': '2026-11-01', 'public': False} for k in ('p2', 'p0', 'p1')}}
+        self.assertEqual(U.re.findall(r'作品(\d)', U.build_log(src, tie)), ['0', '1', '2'])
 
     def test_missing_markers_fail_loud(self):
         with self.assertRaises(ValueError):

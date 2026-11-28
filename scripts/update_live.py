@@ -316,7 +316,9 @@ _LOG_MARK = re.compile(r'(<!-- static-log:start -->).*?(<!-- static-log:end -->)
 def build_log(src, live):
     """live.js → 「最近的更新」純文字版，規則同 js/app.js：只列網頁上的作品、新到舊、最多 8 筆。"""
     names = {e['id']: e['name'] for e in _entries(src) if isinstance(e, dict)}
-    rows = sorted(((k, v) for k, v in ((live or {}).get('projects') or {}).items() if k in names and v.get('updated')),
+    got = (live or {}).get('projects') or {}
+    # 同一天的照頁面順序（同 app.js 的穩定排序），不能照 live 的鍵順序：剛抓的與讀回的 live.js 鍵順序不同
+    rows = sorted(((k, got[k]) for k in names if got.get(k, {}).get('updated')),
                   key=lambda r: r[1]['updated'], reverse=True)[:8]
     if not rows:
         return ''
