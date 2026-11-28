@@ -1,7 +1,7 @@
 /* 自動產生，請不要手改：scripts/update_live.py 每小時由 GitHub Actions 更新。
    沒有這個檔、或內容是 null 時，網頁照樣顯示 data/projects.js 的內容。 */
 window.PORTFOLIO_LIVE = {
- "generatedAt": "2026-11-28T04:34Z",
+ "generatedAt": "2026-11-28T12:58Z",
  "projects": {
   "acts-survivors": {
    "commits": 204,
@@ -31,26 +31,26 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-11-28"
   },
   "church-ms": {
-   "commits": 322,
+   "commits": 324,
    "notes": [
+    "行事曆的行程標題、說明可以夾帶惡意腳本（XSS）",
     "牧者、小組長用 LINE 登入後不能查閱日記",
-    "查閱日記頁的成員頭像太大、排成一直排",
-    "教材庫存永遠是 0、登記銷售永遠「庫存不足」"
+    "查閱日記頁的成員頭像太大、排成一直排"
    ],
-   "notesDate": "2026-11-22",
+   "notesDate": "2026-11-28",
    "public": true,
-   "updated": "2026-11-27"
+   "updated": "2026-11-28"
   },
   "course": {
-   "commits": 138,
+   "commits": 139,
    "notes": [
-    "講師作品數跟作品集一致",
-    "課程地圖的「17 個講師真實專案」改為 19；首頁「為什麼是我來教」的統計格 13 改為 14",
-    "「14 個正常使用中」改成「14 個收進作品集」"
+    "新頁面「團隊程式健檢＋工作坊」（checkup.html）",
+    "半日資安課「常見的搭配」、首頁工具區與頁尾加上這一頁的入口；sitemap 補上",
+    "講師作品數跟作品集一致"
    ],
-   "notesDate": "2026-11-23",
+   "notesDate": "2026-11-28",
    "public": true,
-   "updated": "2026-11-27"
+   "updated": "2026-11-28"
   },
   "data-hub": {
    "commits": 46,
@@ -95,11 +95,11 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-11-27"
   },
   "repodoctor": {
-   "commits": 20,
+   "commits": 26,
    "notes": [
-    "「只測試 AI 金鑰」拿 Groq 的模型名稱去測 Anthropic，一律回 HTTP 404；現在每家用自己的模型…",
-    "AI 分析可以同時串兩家",
-    "Groq 撞到每分鐘上限時會等一下再試；這兩項單次送出壓在約 12,000 字以符合免費額度，送不下的規範會在報告上寫明"
+    "每份報告附上「這次健檢的資料處理紀錄」",
+    "「隱私與安全」頁新增",
+    "首頁主按鈕下方加上信任標籤"
    ],
    "notesDate": "2026-11-28",
    "public": true,
@@ -128,7 +128,7 @@ window.PORTFOLIO_LIVE = {
   }
  },
  "totals": {
-  "commits": 3177,
+  "commits": 3188,
   "repos": 27
  }
 };
