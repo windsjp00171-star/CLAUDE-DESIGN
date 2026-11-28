@@ -1,7 +1,7 @@
 /* 自動產生，請不要手改：scripts/update_live.py 每小時由 GitHub Actions 更新。
    沒有這個檔、或內容是 null 時，網頁照樣顯示 data/projects.js 的內容。 */
 window.PORTFOLIO_LIVE = {
- "generatedAt": "2026-11-28T03:19Z",
+ "generatedAt": "2026-11-28T04:32Z",
  "projects": {
   "acts-survivors": {
    "commits": 204,
@@ -63,9 +63,9 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-11-27"
   },
   "finance": {
-   "commits": 208,
+   "commits": 209,
    "public": false,
-   "updated": "2026-11-27"
+   "updated": "2026-11-28"
   },
   "fooding-hunter": {
    "commits": 49,
@@ -95,15 +95,15 @@ window.PORTFOLIO_LIVE = {
    "updated": "2026-11-27"
   },
   "repodoctor": {
-   "commits": 19,
+   "commits": 20,
    "notes": [
+    "「只測試 AI 金鑰」拿 Groq 的模型名稱去測 Anthropic，一律回 HTTP 404；現在每家用自己的模型…",
     "AI 分析可以同時串兩家",
-    "Groq 撞到每分鐘上限時會等一下再試；這兩項單次送出壓在約 12,000 字以符合免費額度，送不下的規範會在報告上寫明",
-    "隱私權政策、隱私與安全頁補上 Groq 與各項檢查送去哪一家"
+    "Groq 撞到每分鐘上限時會等一下再試；這兩項單次送出壓在約 12,000 字以符合免費額度，送不下的規範會在報告上寫明"
    ],
-   "notesDate": "2026-11-27",
+   "notesDate": "2026-11-28",
    "public": true,
-   "updated": "2026-11-27"
+   "updated": "2026-11-28"
   },
   "secretary": {
    "commits": 32,
@@ -128,7 +128,7 @@ window.PORTFOLIO_LIVE = {
   }
  },
  "totals": {
-  "commits": 3171,
+  "commits": 3175,
   "repos": 27
  }
 };
